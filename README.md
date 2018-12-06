@@ -1,0 +1,1 @@
+# aws-resource-access-manager-user-guide
