@@ -6,19 +6,25 @@ To start sharing a resource that you own using AWS RAM, do the following:
 
 ## Enable Sharing with AWS Organizations<a name="getting-started-sharing-orgs"></a>
 
-If you use AWS Organizations, you can enable sharing within your organization\. After sharing with AWS Organizations is enabled, you can share resources within your organization without exchanging invitations\.
+If you would like to share resources with your organization or organizational units, then you must use the AWS RAM console or CLI command to enable sharing with AWS Organizations\.
+
+When you share resources within your organization, AWS RAM does not send invitations to principals\. Principals in your organization get access to shared resources without exchanging invitations\.
+
+If you do not enable sharing with AWS Organizations, you cannot share resources with your organization or organizational units within your organization\. However, you can still share resources with individual AWS accounts in your organization\. In this case, principals receive and invitation, and they must accept it to get access to the resources\.
 
 **Requirements**
-+ Only the master account can enable sharing with AWS Organizations\. The master account must have all features enabled in AWS Organizations\. For more information, see [ Enabling All Features in Your Organization](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html) in the *AWS Organizations User Guide*\.
++ Only the master account can enable sharing with AWS Organizations\.
 
-**To enable sharing with AWS Organizations**
+**To enable sharing with AWS Organizations \(Console\)**
 
 1. Open the **Settings** page of AWS RAM console at [https://console\.aws\.amazon\.com/ram/home\#Settings](https://console.aws.amazon.com/ram/home#Settings)\.
 
 1. Choose **Enable sharing with AWS Organizations**\.
 
-**To enable sharing with AWS Organizations using the AWS CLI**  
+**To enable sharing with AWS Organizations \(AWS CLI\)**  
 Use the [enable\-sharing\-with\-aws\-organization](https://docs.aws.amazon.com/cli/latest/reference/ram/enable-sharing-with-aws-organization.html) command\.
+
+This command can be used in any region, and it enables sharing with AWS Organizations in all regions in which AWS RAM is supported\.
 
 ## Create a Resource Share<a name="getting-started-sharing-create"></a>
 
@@ -30,7 +36,7 @@ To share resources that you own, create a resource share, add the resources to s
 + After you add an organization to a resource share, changes to the OU or organization affect the resource share\. For example, if you add a new account to the organization, it has access to the shared resources\.
 + You can't add the following to a resource share as principals: IAM users, IAM roles, or OUs or organizations outside your organization in AWS Organizations\.
 
-**To create a resource share**
+**To create a resource share \(Console\)**
 
 1. Open the AWS RAM console at [https://console\.aws\.amazon\.com/ram](https://console.aws.amazon.com/ram/)\.
 
@@ -63,5 +69,5 @@ To share resources that you own, create a resource share, add the resources to s
 
 1. You can add and remove resources and principals or apply custom tags to your resource share at any time\. You can delete your resource share when you no longer want to share the resources\. For more information, see [Sharing Resources Owned by You](working-with-sharing.md)\.
 
-**To create a resource share using the AWS CLI**  
+**To create a resource share \(AWS CLI\)**  
 Use the [create\-resource\-share](https://docs.aws.amazon.com/cli/latest/reference/ram/create-resource-share.html) command\.

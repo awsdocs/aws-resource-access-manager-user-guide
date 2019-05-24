@@ -58,4 +58,4 @@ The AWS RAM HTTPS Query API gives you programmatic access to AWS RAM and AWS\. T
 
 ## Pricing<a name="what-is-pricing"></a>
 
-There are no additional charges for creating resource shares and sharing your resources across accounts\. Resource usage charges vary depending on the resource type\.
+There are no additional charges for creating resource shares and sharing your resources across accounts\. Resource usage charges vary depending on the resource type\. For more information about about how shareable resources are billed, refer to the respective service's documentation\.
