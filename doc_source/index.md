@@ -15,6 +15,7 @@ Amazon's trademarks and trade dress may not be used in
 -----
 ## Contents
 + [What Is AWS RAM?](what-is.md)
+   + [Shareable Resources](shareable.md)
 + [Getting Started with AWS RAM](getting-started.md)
    + [Sharing Your Resources](getting-started-sharing.md)
    + [Using Shared Resources](getting-started-shared.md)

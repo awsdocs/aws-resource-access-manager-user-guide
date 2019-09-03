@@ -14,18 +14,17 @@ By default, IAM users don't have permission to create or modify AWS RAM resource
 An IAM policy is a JSON document that includes the following statements: Effect, Action, Resource, and Condition\. An IAM policy typically takes the following form:
 
 ```
-			{
-  "Statement":[{
-    "Effect":"effect",
-    "Action":"action",
-    "Resource":"arn",
-    "Condition":{
-      "condition":{
-        "key":"value"
+{
+    "Statement":[{
+        "Effect":"effect",
+        "Action":"action",
+        "Resource":"arn",
+        "Condition":{
+            "condition":{
+                "key":"value"
+            }
         }
-      }
-    }
-  ]
+    }]
 }
 ```
 
@@ -50,17 +49,47 @@ The *Resource* statement specifies the AWS RAM resources that are affected by th
 + `ram:AllowsExternalPrincipals` — Indicates that the action can be performed only on resource shares that allow or deny sharing with external principals\. An external principal is an AWS account outside of your AWS organization
 + `ram:Principal` — Indicates that the action can be performed only on the specified principal\.
 + `ram:RequestedResourceType` — Indicates that the action can be performed only on the specified resource type\. Resource types must be specified in the following format: 
-  + `route53resolver:ResolverRule`
-  + `ec2:TransitGateway`
+  + `ec2:CapacityReservation`
   + `ec2:Subnet`
+  + `ec2:TrafficMirrorTarget`
+  + `ec2:TransitGateway`
   + `license-manager:LicenseConfiguration`
+  + `rds:Cluster`
+  + `route53resolver:ResolverRule`
 + `ram:ResourceArn` — Indicates that the action can be performed only on a resource with the specified ARN\.
 + `ram:ResourceShareName` — Indicates that the action can be performed only on a resource share with the specified name\.
 + `ram:ShareOwnerAccountId` — Indicates that the action can be performed only on resource shares owned by a specific account\.
 
 ## Example IAM Policies<a name="iam-examples"></a>
 
-### Allow Sharing of Specific Resource Types<a name="owner-share-resource-types"></a>
+**Topics**
++ [Allow Sharing of Specific Resources](#owner-share-specific-resources)
++ [Allow Sharing of Specific Resource Types](#owner-share-resource-types)
++ [Restrict Sharing with External AWS Accounts](#control-access-owner-external)
+
+### Example 1: Allow Sharing of Specific Resources<a name="owner-share-specific-resources"></a>
+
+You can use an IAM policy to restrict principals to associating only specific resources with resource shares\.
+
+For example, the following policy limits principals to sharing only the resolver rule with the specified Amazon Resource Name \(ARN\)\.
+
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [{
+        "Effect": "Allow",
+        "Action": ["ram:CreateResourceShare", "ram:AssociateResourceShare"],
+        "Resource": "*",
+        "Condition": {
+            "StringEquals": {
+                "ram:ResourceArn": "arn:aws:route53resolver:us-west-2:123456789012:resolver-rule/rslvr-rr-5328a0899aexample"
+            }
+        }
+    }]
+}
+```
+
+### Example 2: Allow Sharing of Specific Resource Types<a name="owner-share-resource-types"></a>
 
 You can use an IAM policy to limit principals to associating only specific resource types with resource shares\.
 
@@ -68,21 +97,21 @@ For example, the following policy limits principals to sharing only resolver rul
 
 ```
 {
-	  "Version": "2012-10-17",
-	  "Statement": [{
-	     "Effect": "Allow",
-	     "Action": ["ram:CreateResourceShare", "ram:AssociateResourceShare"],
-	     "Resource": "*",
-	     "Condition": {
-	        "StringEquals": {
-	           "ram:RequestedResourceType": "route53resolver:ResolverRule"
-	        }
-	     }
-	  }]
-	}
+    "Version": "2012-10-17",
+    "Statement": [{
+        "Effect": "Allow",
+        "Action": ["ram:CreateResourceShare", "ram:AssociateResourceShare"],
+        "Resource": "*",
+        "Condition": {
+            "StringEquals": {
+                "ram:RequestedResourceType": "route53resolver:ResolverRule"
+            }
+        }
+    }]
+}
 ```
 
-### Restrict Sharing with External AWS Accounts<a name="control-access-owner-external"></a>
+### Example 3: Restrict Sharing with External AWS Accounts<a name="control-access-owner-external"></a>
 
 You can use an IAM policy to prevent principals from sharing resources with AWS accounts that are outside of its AWS organization\.
 
@@ -90,16 +119,16 @@ For example, the following IAM policy prevents principals from adding external A
 
 ```
 {
-	  "Version": "2012-10-17",
-	  "Statement": [{
-	     "Effect": "Allow",
-	     "Action": "ram:CreateResourceShare",
-	     "Resource": "*",
-	     "Condition": {
-	        "Bool": {
-	           "ram:AllowsExternalPrincipals": "false"
-	        }
-	     }
-	  }]
-	}
+    "Version": "2012-10-17",
+    "Statement": [{
+        "Effect": "Allow",
+        "Action": "ram:CreateResourceShare",
+        "Resource": "*",
+        "Condition": {
+            "Bool": {
+                "ram:AllowsExternalPrincipals": "false"
+            }
+        }
+    }]
+}
 ```

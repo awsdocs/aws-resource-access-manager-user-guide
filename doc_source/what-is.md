@@ -1,6 +1,14 @@
 # What Is AWS RAM?<a name="what-is"></a>
 
-AWS Resource Access Manager \(AWS RAM\) enables you to share your resources with any AWS account or through AWS Organizations\. If you have multiple AWS accounts, you can create resources centrally and use AWS RAM to share those resources with other accounts\.
+AWS Resource Access Manager \(AWS RAM\) lets you share your resources with any AWS account or through AWS Organizations\. If you have multiple AWS accounts, you can create resources centrally and use AWS RAM to share those resources with other accounts\.
+
+**Topics**
++ [Benefits](#what-is-features)
++ [How Resource Sharing Works](#what-is-how)
++ [Service Limits](#what-is-limits)
++ [Accessing AWS RAM](#what-is-accessing)
++ [Pricing](#what-is-pricing)
++ [Shareable Resources](shareable.md)
 
 ## Benefits<a name="what-is-features"></a>
 
@@ -21,14 +29,6 @@ You can share resources that you own by creating a resource share\. When you cre
 
 When the owner of a resource shares it with your account, you can access the shared resource just as you would if it was owned by your account\. You can access the resource using the respective service's console, AWS CLI, and API\. The actions that users are allowed to perform vary depending on the resource type\. All IAM policies and service control policies configured in your account apply, which enables you to leverage your existing investments in security and governance controls\.
 
-## Shareable Resources<a name="what-is-supported-resources"></a>
-
-To learn more about the AWS resources that can be shared using AWS RAM, see the following documentation:
-+ [Sharing Forwarding Rules with Other AWS Accounts and Using Shared Rules](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver-rules-managing.html#resolver-rules-managing-sharing) in the *Amazon Route 53 Developer Guide*
-+ [Sharing a Transit Gateway](https://docs.aws.amazon.com/vpc/latest/tgw/tgw-transit-gateways.html#tgw-sharing) in *Amazon VPC Transit Gateways*
-+ [Working with VPC Sharing](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html) in the *Amazon VPC User Guide*
-+ [Configuring License Manager Settings](https://docs.aws.amazon.com/license-manager/latest/userguide/settings.html) in the *AWS License Manager User Guide*
-
 ## Service Limits<a name="what-is-limits"></a>
 
 Your AWS account has the following limits related to AWS RAM\. You can request an increase for some of these limits\. To request a limit increase, contact [AWS Support](https://console.aws.amazon.com/support/home#/)\.
@@ -36,7 +36,7 @@ Your AWS account has the following limits related to AWS RAM\. You can request a
 
 | Resource | Default limit | 
 | --- | --- | 
-|  Maximum number of resource shares per account  |  500  | 
+|  Maximum number of resource shares per account  |  5000  | 
 |  Maximum number of shared resources per account  |  5000  | 
 |  Maximum number of pending invitations per account  |  20  | 
 

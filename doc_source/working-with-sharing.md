@@ -133,4 +133,4 @@ Use the [delete\-resource\-share](https://docs.aws.amazon.com/cli/latest/referen
 
 ## Supported Actions on Shared Resources<a name="working-with-sharing-view-permissions"></a>
 
-You can use the AWS CLI to view the actions that principals can perform on shared resources\. For more information,see the [get\-resource\-policies](https://docs.aws.amazon.com/cli/latest/reference/ram/get-resource-policies.html) command\.
+You can use the AWS CLI to view the actions that principals can perform on shared resources\. For more information, see the [get\-resource\-policies](https://docs.aws.amazon.com/cli/latest/reference/ram/get-resource-policies.html) command\.

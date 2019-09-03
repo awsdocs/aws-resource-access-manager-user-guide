@@ -22,8 +22,4 @@ If you receive an invitation to join a resource share, you must accept it to gai
 
 ## Use the Resources that are Shared with You<a name="getting-started-shared-use-resources"></a>
 
-After you accept the invitation to join a resource share, you gain the ability to perform specific actions on the shared resources\. These actions vary by resource type\. For more information, see the following documentation:
-+ [Sharing Forwarding Rules with Other AWS Accounts and Using Shared Rules](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver-rules-managing.html#resolver-rules-managing-sharing) in the *Amazon Route 53 Developer Guide*
-+ [Sharing a Transit Gateway](https://docs.aws.amazon.com/vpc/latest/tgw/tgw-transit-gateways.html#tgw-sharing) in *Amazon VPC Transit Gateways*
-+ [Working with VPC Sharing](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html) in the *Amazon VPC User Guide*
-+ [Configuring License Manager Settings](https://docs.aws.amazon.com/license-manager/latest/userguide/settings.html) in the *AWS License Manager User Guide*
+After you accept the invitation to join a resource share, you gain the ability to perform specific actions on the shared resources\. These actions vary by resource type\. For more information, see [Shareable Resources](shareable.md)\.

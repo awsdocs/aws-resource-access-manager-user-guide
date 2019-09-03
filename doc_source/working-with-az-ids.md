@@ -13,3 +13,7 @@ To identify the location of your resources relative to your accounts, you must u
 1. The AZ IDs for the current Region are under **Your AZ ID**\.
 
 Viewing AZ IDs enables you to determine the location of resources in one account relative to the resources in another account\. For example, if you share a subnet in the Availability Zone with the AZ ID `use-az2` with another account, this subnet is available to that account in the Availability Zone whose AZ ID is also `use-az2`\. The AZ ID for each virtual private cloud \(VPC\) and subnet is displayed in the Amazon VPC console\.
+
+**To view AZ IDs using the AWS CLI**
++ [describe\-availability\-zones](https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-availability-zones.html)
++ [DescribeAvailabilityZones](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html)

@@ -4,16 +4,21 @@ To start sharing a resource that you own using AWS RAM, do the following:
 + [Enable Sharing with AWS Organizations](#getting-started-sharing-orgs)
 + [Create a Resource Share](#getting-started-sharing-create)
 
+**Note**  
+Some resources have special considerations and prerequisites for sharing\. For more information, see [Shareable Resources](shareable.md)\.
+
 ## Enable Sharing with AWS Organizations<a name="getting-started-sharing-orgs"></a>
 
 If you would like to share resources with your organization or organizational units, then you must use the AWS RAM console or CLI command to enable sharing with AWS Organizations\.
 
 When you share resources within your organization, AWS RAM does not send invitations to principals\. Principals in your organization get access to shared resources without exchanging invitations\.
 
-If you do not enable sharing with AWS Organizations, you cannot share resources with your organization or organizational units within your organization\. However, you can still share resources with individual AWS accounts in your organization\. In this case, principals receive and invitation, and they must accept it to get access to the resources\.
+**Important**  
+If you do not enable sharing with AWS Organizations, you cannot share resources with your organization or organizational units within your organization\. However, you can still share resources with individual AWS accounts in your organization\. In this case, the accounts are treated as external principals\. They receive an invitation to join the resource share, and they must accept the invitation to get access to the shared resources\.
 
 **Requirements**
 + Only the master account can enable sharing with AWS Organizations\.
++ The organization must be enabled for all features\. For more information, see [ Enabling All Features in Your Organization](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html) in the *AWS Organizations User Guide*\.
 
 **To enable sharing with AWS Organizations \(Console\)**
 
