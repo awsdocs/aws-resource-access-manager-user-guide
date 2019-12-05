@@ -19,7 +19,7 @@ AWS RAM offers the following benefits:
 
 ## How Resource Sharing Works<a name="what-is-how"></a>
 
-When you share a resource with another account, then that account is granted access to the resource\. Any policies and permissions in that account apply to the shared resource\.
+When you share a resource with another account, then that account is granted access to the resource\. Any policies and permissions that apply to the account with which you have shared the resource apply to the shared resource\.
 
 ### Sharing Your Resources<a name="what-is-how-sharing"></a>
 

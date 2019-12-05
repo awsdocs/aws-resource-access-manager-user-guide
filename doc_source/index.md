@@ -24,6 +24,8 @@ Amazon's trademarks and trade dress may not be used in
    + [Accessing Resources Shared With You](working-with-shared.md)
    + [AZ IDs for Your Resources](working-with-az-ids.md)
 + [Authentication and Access Control](control-access.md)
+   + [IAM Policies for AWS RAM](iam-policies.md)
+   + [AWS RAM Permissions](permissions.md)
    + [Disabling Sharing with AWS Organizations](disable-sharing.md)
 + [Monitoring AWS RAM](monitoring-overview.md)
    + [Monitoring with CloudWatch Events](using-cloudwatch-events.md)

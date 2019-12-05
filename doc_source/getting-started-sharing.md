@@ -13,12 +13,13 @@ If you would like to share resources with your organization or organizational un
 
 When you share resources within your organization, AWS RAM does not send invitations to principals\. Principals in your organization get access to shared resources without exchanging invitations\.
 
-**Important**  
-If you do not enable sharing with AWS Organizations, you cannot share resources with your organization or organizational units within your organization\. However, you can still share resources with individual AWS accounts in your organization\. In this case, the accounts are treated as external principals\. They receive an invitation to join the resource share, and they must accept the invitation to get access to the shared resources\.
-
 **Requirements**
 + Only the master account can enable sharing with AWS Organizations\.
 + The organization must be enabled for all features\. For more information, see [ Enabling All Features in Your Organization](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html) in the *AWS Organizations User Guide*\.
+
+**Important**  
+If you do not enable sharing with AWS Organizations, you cannot share resources with your organization or organizational units within your organization\. However, you can still share resources with individual AWS accounts in your organization\. In this case, the accounts are treated as external principals\. They receive an invitation to join the resource share, and they must accept the invitation to get access to the shared resources\.
+You must enable sharing with AWS Organizations using the AWS RAM console or the [enable\-sharing\-with\-aws\-organization](https://docs.aws.amazon.com/cli/latest/reference/ram/enable-sharing-with-aws-organization.html) AWS CLI command\. This ensures that the `AWSResourceAccessManagerServiceRolePolicy` service\-linked role is created\. If you enable trusted access with AWS Organizations using the AWS Organizations console or the [ enable\-aws\-service\-access](https://docs.aws.amazon.com/cli/latest/reference/organizations/enable-aws-service-access.html) AWS CLI command, the `AWSResourceAccessManagerServiceRolePolicy` service\-linked role is not created, and you will not be able to share resources within your organization\.
 
 **To enable sharing with AWS Organizations \(Console\)**
 
