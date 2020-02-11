@@ -1,7 +1,7 @@
 # AWS Resource Access Manager User Guide
 
 -----
-*****Copyright &copy; 2019 Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
+*****Copyright &copy; 2020 Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
 
 -----
 Amazon's trademarks and trade dress may not be used in 
@@ -23,11 +23,16 @@ Amazon's trademarks and trade dress may not be used in
    + [Sharing Resources Owned by You](working-with-sharing.md)
    + [Accessing Resources Shared With You](working-with-shared.md)
    + [AZ IDs for Your Resources](working-with-az-ids.md)
-+ [Authentication and Access Control](control-access.md)
-   + [IAM Policies for AWS RAM](iam-policies.md)
++ [Security in AWS RAM](security.md)
+   + [Data Protection in AWS Resource Access Manager](data-protection.md)
+   + [Identity and Access Management for AWS RAM](control-access.md)
+      + [How AWS RAM Works with IAM](iam-policies.md)
+      + [Example IAM Policies](iam-examples.md)
+      + [Disabling Sharing with AWS Organizations](disable-sharing.md)
    + [AWS RAM Permissions](permissions.md)
-   + [Disabling Sharing with AWS Organizations](disable-sharing.md)
-+ [Monitoring AWS RAM](monitoring-overview.md)
-   + [Monitoring with CloudWatch Events](using-cloudwatch-events.md)
-   + [Logging AWS RAM API Calls with AWS CloudTrail](logging-using-cloudtrail.md)
+   + [Logging and Monitioring in AWS RAM](monitoring-overview.md)
+      + [Monitoring with CloudWatch Events](using-cloudwatch-events.md)
+      + [Logging AWS RAM API Calls with AWS CloudTrail](logging-using-cloudtrail.md)
+   + [Resilience in AWS Resource Access Manager](disaster-recovery-resiliency.md)
+   + [Infrastructure Security in AWS RAM](infrastructure-security.md)
 + [Document History for AWS RAM User Guide](doc-history.md)

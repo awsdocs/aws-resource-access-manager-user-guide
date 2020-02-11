@@ -1,6 +1,6 @@
 # Disabling Sharing with AWS Organizations<a name="disable-sharing"></a>
 
-If you previously enabled sharing with AWS Organizations and you no longer need to share resources with your entire organization or organizational units, you can disable sharing\.
+If you previously enabled sharing with AWS Organizations and you no longer need to share resources with your entire organization or organizational units, you can disable sharing\. When you disable sharing with AWS Organizations, all organizations or organizational units are removed from the resource shares that you have created and they lose access to the shared resources\.
 
 **To disable sharing with AWS Organizations**
 

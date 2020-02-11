@@ -6,6 +6,7 @@ The following sections list the services that integrate with AWS RAM, and the re
 
 **Topics**
 + [Amazon Aurora](#shareable-aur)
++ [AWS CodeBuild](#shareable-codebuild)
 + [Amazon EC2](#shareable-ec2)
 + [Amazon EC2 Image Builder](#shareable-imagebuilder)
 + [AWS License Manager](#shareable-byol)
@@ -20,6 +21,16 @@ You can share the following Amazon Aurora resources using AWS RAM\.
 | Resource | Use case | 
 | --- | --- | 
 |  DB clusters  |  Create and manage a DB cluster centrally, and share it with other AWS accounts\. This lets multiple AWS accounts clone a shared, centrally\-managed DB cluster\. For more information, see [ Cross\-Account Aurora DB Cluster Cloning](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Clone.html#Aurora.Managing.Clone.Cross-Account) in the *Amazon Aurora User Guide*\.  | 
+
+## AWS CodeBuild<a name="shareable-codebuild"></a>
+
+You can share the following AWS CodeBuild resources using AWS RAM\.
+
+
+| Resource | Use case | 
+| --- | --- | 
+|  Projects  |  Create a project and use it to run builds\. Share the project with other AWS accounts or users\. This lets multiple AWS accounts and users view information about a project and analyze its builds\. For more information, see [Working with Shared Projects](https://docs.aws.amazon.com/codebuild/latest/userguide/project-sharing.html) in the * AWS CodeBuild User Guide*\.  | 
+|  Report groups  |  Create a report group and use it to create reports when you build a project\. Share the report group with other AWS accounts or users\. This lets multiple AWS accounts and users view the report group and its reports, and the test case results for each report\. A report can be viewed for 30 days after it is created, and then it expires and is no longer available to view\. For more information, see [Working with Shared Report Groups](https://docs.aws.amazon.com/codebuild/latest/userguide/project-sharing.html) in the *AWS CodeBuild User Guide*\.  | 
 
 ## Amazon EC2<a name="shareable-ec2"></a>
 
