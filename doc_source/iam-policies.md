@@ -40,17 +40,11 @@ The *Resource* statement specifies the AWS RAM resources that are affected by th
 
 *Condition* statements are optional\. They can be used to further refine the conditions under which the policy applies\. AWS RAM supports the following condition keys:
 + `aws:RequestTag/${TagKey}` — Specifies a tag key and value pair that must be used when creating or tagging a resource share\. 
-+ a`ws:ResourceTag/${TagKey}` — Indicates that the action can be performed only on resources that have the specified tag key and value pair\.
++ `aws:ResourceTag/${TagKey}` — Indicates that the action can be performed only on resources that have the specified tag key and value pair\.
 + `aws:TagKeys` — Specifies the tag keys that can be used when creating or tagging a resource share\.
 + `ram:AllowsExternalPrincipals` — Indicates that the action can be performed only on resource shares that allow or deny sharing with external principals\. An external principal is an AWS account outside of your AWS organization
 + `ram:Principal` — Indicates that the action can be performed only on the specified principal\.
 + `ram:RequestedResourceType` — Indicates that the action can be performed only on the specified resource type\. Resource types must be specified in the following format: 
-  + `aws:RequestTag/${TagKey}` — Specifies a tag key and value pair that must be used when creating or tagging a resource share\. 
-  + a`ws:ResourceTag/${TagKey}` — Indicates that the action can be performed only on resources that have the specified tag key and value pair\.
-  + `aws:TagKeys` — Specifies the tag keys that can be used when creating or tagging a resource share\.
-  + `ram:AllowsExternalPrincipals` — Indicates that the action can be performed only on resource shares that allow or deny sharing with external principals\. An external principal is an AWS account outside of your AWS organization
-  + `ram:Principal` — Indicates that the action can be performed only on the specified principal\.
-  + `ram:RequestedResourceType` — Indicates that the action can be performed only on the specified resource type\. Resource types must be specified in the following format: 
     + Amazon Aurora
       + `rds:Cluster`
     + AWS CodeBuild
@@ -72,9 +66,7 @@ The *Resource* statement specifies the AWS RAM resources that are affected by th
       + `resource-groups:Group`
     + Amazon Route 53
       + `route53resolver:ResolverRule`
-  + `ram:ResourceArn` — Indicates that the action can be performed only on a resource with the specified ARN\.
-  + `ram:ResourceShareName` — Indicates that the action can be performed only on a resource share with the specified name\.
-  + `ram:ShareOwnerAccountId` — Indicates that the action can be performed only on resource shares owned by a specific account\.
+
 + `ram:ResourceArn` — Indicates that the action can be performed only on a resource with the specified ARN\.
 + `ram:ResourceShareName` — Indicates that the action can be performed only on a resource share with the specified name\.
 + `ram:ShareOwnerAccountId` — Indicates that the action can be performed only on resource shares owned by a specific account\.
