@@ -1,4 +1,4 @@
-# Monitoring with CloudWatch Events<a name="using-cloudwatch-events"></a>
+# Monitoring AWS RAM using CloudWatch Events<a name="using-cloudwatch-events"></a>
 
 Using Amazon CloudWatch Events, you can set up automatic notifications for specific events in AWS RAM\. Events from AWS RAM are delivered to CloudWatch Events in near\-real time\. You can configure CloudWatch Events to monitor events and invoke targets in response to events that indicate changes to your resource shares\. Changes to a resource share trigger events for both the owner of the resource share and the principals that were granted access to the resource share\.
 

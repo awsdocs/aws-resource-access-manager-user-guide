@@ -1,4 +1,4 @@
-# AZ IDs for Your Resources<a name="working-with-az-ids"></a>
+# AZ IDs for your AWS resources<a name="working-with-az-ids"></a>
 
 To ensure that resources are distributed across the Availability Zones for a Region, we independently map Availability Zones to names for each account\. For example, the Availability Zone `us-east-1a` for your AWS account might not have the same location as `us-east-1a` for another AWS account\. For more information, see [Regions and Availability Zones](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html) in the *Amazon EC2 User Guide*\.
 

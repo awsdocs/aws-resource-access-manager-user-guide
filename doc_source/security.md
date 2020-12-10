@@ -1,4 +1,4 @@
-# Security in AWS RAM<a name="security"></a>
+# Security in AWS Resource Access Manager<a name="security"></a>
 
 Cloud security at AWS is the highest priority\. As an AWS customer, you benefit from a data center and network architecture that is built to meet the requirements of the most security\-sensitive organizations\.
 
@@ -9,9 +9,9 @@ Security is a shared responsibility between AWS and you\. The [shared responsibi
 This documentation helps you understand how to apply the shared responsibility model when using AWS RAM\. The following topics show you how to configure AWS RAM to meet your security and compliance objectives\. You also learn how to use other AWS services that help you to monitor and secure your AWS RAM resources\. 
 
 **Topics**
-+ [Data Protection](data-protection.md)
-+ [Identity and Access Management](control-access.md)
-+ [AWS RAM Permissions](permissions.md)
-+ [Logging and Monitioring](monitoring-overview.md)
++ [Data protection](data-protection.md)
++ [Identity and access management](control-access.md)
++ [AWS RAM permissions](permissions.md)
++ [Logging and monitoring](monitoring-overview.md)
 + [Resilience](disaster-recovery-resiliency.md)
-+ [Infrastructure Security](infrastructure-security.md)
++ [Infrastructure security](infrastructure-security.md)

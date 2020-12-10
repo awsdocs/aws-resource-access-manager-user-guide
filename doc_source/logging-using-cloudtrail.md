@@ -1,10 +1,10 @@
-# Logging AWS RAM API Calls with AWS CloudTrail<a name="logging-using-cloudtrail"></a>
+# Logging AWS RAM API calls with AWS CloudTrail<a name="logging-using-cloudtrail"></a>
 
 AWS RAM is integrated with AWS CloudTrail, a service that provides a record of actions taken by a user, role, or an AWS service in AWS RAM\. CloudTrail captures all API calls for AWS RAM as events\. The calls captured include calls from the AWS RAM console and code calls to the AWS RAM API operations\. If you create a trail, you can enable continuous delivery of CloudTrail events to an Amazon S3 bucket, including events for AWS RAM\. If you don't configure a trail, you can still view the most recent events in the CloudTrail console in **Event history**\. Use the information collected by CloudTrail to determine the request that was made to AWS RAM, the requesting IP address, the requester, when it was made, and additional details\.
 
 For more information about CloudTrail, see the [AWS CloudTrail User Guide](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/)\.
 
-## AWS RAM Information in CloudTrail<a name="ram-info-in-cloudtrail"></a>
+## AWS RAM information in CloudTrail<a name="ram-info-in-cloudtrail"></a>
 
 CloudTrail is enabled on your AWS account when you create the account\. When activity occurs in AWS RAM, that activity is recorded in a CloudTrail event along with other AWS service events in **Event history**\. You can view, search, and download recent events in your AWS account\. For more information, see [Viewing Events with CloudTrail Event History](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/view-cloudtrail-events.html)\.
 
@@ -23,7 +23,7 @@ Every event or log entry contains information about who generated the request\. 
 
 For more information, see the [CloudTrail userIdentity Element](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-event-reference-user-identity.html)\.
 
-## Understanding AWS RAM Log File Entries<a name="understanding-ram-entries"></a>
+## Understanding AWS RAM log file entries<a name="understanding-ram-entries"></a>
 
 A trail is a configuration that enables delivery of events as log files to an Amazon S3 bucket that you specify\. CloudTrail log files contain one or more log entries\. An event represents a single request from any source and includes information about the requested action, the date and time of the action, request parameters, and so on\. CloudTrail log files aren't an ordered stack trace of the public API calls, so they don't appear in any specific order\.
 

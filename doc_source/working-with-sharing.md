@@ -1,23 +1,23 @@
-# Sharing Resources Owned by You<a name="working-with-sharing"></a>
+# Sharing AWS resources owned by you<a name="working-with-sharing"></a>
 
 AWS RAM enables you to share the resources that you specify with the principals that you specify\. At any time, you can modify resource shares that you have created and delete them when they are no longer needed\.
 
 **Topics**
-+ [Creating a Resource Share](#working-with-sharing-create)
-+ [Updating a Resource Share](#working-with-sharing-update)
-+ [Viewing a Resource Share](#working-with-sharing-view-rs)
-+ [Viewing Your Shared Resources](#working-with-sharing-view-sr)
-+ [Viewing Principals](#working-with-sharing-view-accounts)
-+ [Deleting a Resource Share](#working-with-sharing-delete)
-+ [Supported Actions on Shared Resources](#working-with-sharing-view-permissions)
++ [Creating a resource share](#working-with-sharing-create)
++ [Updating a resource share](#working-with-sharing-update)
++ [Viewing a resource share](#working-with-sharing-view-rs)
++ [Viewing your shared resources](#working-with-sharing-view-sr)
++ [Viewing principals](#working-with-sharing-view-accounts)
++ [Deleting a resource share](#working-with-sharing-delete)
++ [Supported actions on shared resources](#working-with-sharing-view-permissions)
 
-## Creating a Resource Share<a name="working-with-sharing-create"></a>
+## Creating a resource share<a name="working-with-sharing-create"></a>
 
 To share resources that you own, create a resource share, add the resources to share, and specify the principals with whom they are to be shared\.
 
-To create a resource share, follow the directions in [Sharing Your Resources](getting-started-sharing.md)\.
+To create a resource share, follow the directions in [Sharing your AWS resources](getting-started-sharing.md)\.
 
-## Updating a Resource Share<a name="working-with-sharing-update"></a>
+## Updating a resource share<a name="working-with-sharing-update"></a>
 
 You can update a resource share at any time\. You can add principals, resources, or tags to a resource share that you created\. You can revoke access to shared resources by removing principals or resources from a resource share\. If you revoke access, principals no longer have access to the shared resources\.
 
@@ -53,7 +53,7 @@ Use the following commands:
 + [tag\-resource](https://docs.aws.amazon.com/cli/latest/reference/ram/tag-resource.html)
 + [update\-resource\-share](https://docs.aws.amazon.com/cli/latest/reference/ram/update-resource-share.html)
 
-## Viewing a Resource Share<a name="working-with-sharing-view-rs"></a>
+## Viewing a resource share<a name="working-with-sharing-view-rs"></a>
 
 You can view a list of all the resource shares that you have created\. You can see which resources you are sharing and the principals with whom they are shared\.
 
@@ -74,7 +74,7 @@ You can view a list of all the resource shares that you have created\. You can s
 **To view your resource shares using the AWS CLI**  
 Use the [get\-resource\-shares](https://docs.aws.amazon.com/cli/latest/reference/ram/get-resource-shares.html) command\.
 
-## Viewing Your Shared Resources<a name="working-with-sharing-view-sr"></a>
+## Viewing your shared resources<a name="working-with-sharing-view-sr"></a>
 
 You can view the resources that are shared by your account, across all resource shares\. This enables you to determine which resources you are currently sharing, the number of resource shares they are included in, and the number of principals that have access to them\.
 
@@ -94,7 +94,7 @@ You can view the resources that are shared by your account, across all resource 
 **To view the resources that you're sharing using the AWS CLI**  
 Use the [list\-resources](https://docs.aws.amazon.com/cli/latest/reference/ram/list-resources.html) command\.
 
-## Viewing the Principals with Whom You're Sharing<a name="working-with-sharing-view-accounts"></a>
+## Viewing the principals with whom you're sharing<a name="working-with-sharing-view-accounts"></a>
 
 You can view the principals with whom you are sharing your resources, across all resource shares\. Viewing the principals with whom you are sharing enables you to determine who has access to your shared resources\.
 
@@ -112,7 +112,7 @@ You can view the principals with whom you are sharing your resources, across all
 **To view the principals with whom you're sharing using the AWS CLI**  
 Use the [list\-principals](https://docs.aws.amazon.com/cli/latest/reference/ram/list-principals.html) command\.
 
-## Deleting a Resource Share<a name="working-with-sharing-delete"></a>
+## Deleting a resource share<a name="working-with-sharing-delete"></a>
 
 You can delete a resource share at any time\. When you delete a resource share, all principals that were associated with the resource share lose access to the shared resources\. Deleting a resource share does not delete the shared resources\.
 
@@ -131,6 +131,6 @@ The deleted resource share remains visible in the console for a short period aft
 **To delete a resource share using the AWS CLI**  
 Use the [delete\-resource\-share](https://docs.aws.amazon.com/cli/latest/reference/ram/delete-resource-share.html) command\.
 
-## Supported Actions on Shared Resources<a name="working-with-sharing-view-permissions"></a>
+## Supported actions on shared resources<a name="working-with-sharing-view-permissions"></a>
 
 You can use the AWS CLI to view the actions that principals can perform on shared resources\. For more information, see the [get\-resource\-policies](https://docs.aws.amazon.com/cli/latest/reference/ram/get-resource-policies.html) command\.
