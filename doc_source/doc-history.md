@@ -5,6 +5,7 @@ The following table describes the documentation updates for AWS RAM\.
 
 | Change | Description | Date | 
 | --- | --- | --- | 
+| Support for sharing AWS Transit Gateway resources | Use AWS RAM to share transit gateway multicast domains\. For more information, see [Amazon VPC](shareable.md#shareable-vpc)\. | December 10, 2020 | 
 | Support for sharing AWS Network Firewall resources | Use AWS RAM to share AWS Network Firewall and rule groups\. For more information, see [AWS Network Firewall](shareable.md#shareable-network-firewall)\. | November 17, 2020 | 
 | Support for sharing Outposts and local gateway route tables | Use AWS RAM to share Outposts and local gateway route tables\. For more information, see [AWS Outposts](shareable.md#shareable-out) and [Amazon VPC](shareable.md#shareable-vpc)\. | October 15, 2020 | 
 | Support for sharing query logs | Use AWS RAM to share Route 53 query logs\. For more information, see [Amazon Route 53](shareable.md#shareable-r53)\. | September 7, 2020 | 
