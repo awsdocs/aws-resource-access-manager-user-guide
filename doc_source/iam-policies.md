@@ -49,45 +49,19 @@ The *Resource* statement specifies the AWS RAM resources that are affected by th
 + `ram:AllowsExternalPrincipals` — Indicates that the action can be performed only on resource shares that allow or deny sharing with external principals\. An external principal is an AWS account outside of your AWS organization
 + `ram:Principal` — Indicates that the action can be performed only on the specified principal\.
 + `ram:RequestedResourceType` — Indicates that the action can be performed only on the specified resource type\. Resource types must be specified in the following format:
-  + AWS App Mesh
-    + `appmesh:Mesh`
-  + Amazon Aurora
-    + `rds:Cluster`
-  + AWS Certificate Manager Private Certificate Authority
-    + `acm-pca:CertificateAuthority`
-  + AWS CodeBuild
-    + `codebuild:Project`
-    + `codebuild:ReportGroup`
-  + Amazon EC2
-    + `ec2:CapacityReservation`
-    + `ec2:DedicatedHost`
-  + Amazon EC2 Image Builder
-    + `imagebuilder:Component`
-    + `imagebuilder:Image`
-    + `imagebuilder:ImageRecipe`
-  + AWS Glue
-    + `glue:Catalog`
-    + `glue:Database`
-    + `glue:Table`
-  + AWS License Manager
-    + `license-manager:LicenseConfiguration`
-  + AWS Network Firewall
-    + `network-firewall:FirewallPolicy`
-    + `network-firewall:StatefulRuleGroup`
-    + `network-firewall:StatelessRuleGroup`
-  + AWS Outposts
-    + `outposts:Outpost`
-  + AWS Resource Groups
-    + `resource-groups:Group`
-  + Amazon Route 53
-    + `route53resolver:ResolverRule`
-    + `route53resolver:ResolverQueryLogConfig`
-  + Amazon VPC
-    + `ec2:PrefixList`
-    + `ec2:Subnet`
-    + `ec2:TrafficMirrorTarget`
-    + `ec2:TransitGateway`
-    + `ec2:LocalGatewayRouteTable`
+  + AWS App Mesh — `appmesh:Mesh`
+  + Amazon Aurora — `rds:Cluster`
+  + AWS Certificate Manager Private Certificate Authority — `acm-pca:CertificateAuthority`
+  + AWS CodeBuild — `codebuild:Project` \| `codebuild:ReportGroup`
+  + Amazon EC2 — `ec2:CapacityReservation` \| `ec2:DedicatedHost`
+  + Amazon EC2 Image Builder — `imagebuilder:Component` \| `imagebuilder:Image` \| `imagebuilder:ImageRecipe` \| `imagebuilder:ContainerRecipe`
+  + AWS Glue — `glue:Catalog` \| `glue:Database` \| `glue:Table`
+  + AWS License Manager — `license-manager:LicenseConfiguration`
+  + AWS Network Firewall — `network-firewall:FirewallPolicy` \| `network-firewall:StatefulRuleGroup` \| `network-firewall:StatelessRuleGroup`
+  + AWS Outposts — `outposts:Outpost`
+  + AWS Resource Groups — `resource-groups:Group`
+  + Amazon Route 53 — `route53resolver:ResolverRule` \| `route53resolver:ResolverQueryLogConfig`
+  + Amazon VPC — `ec2:PrefixList` \| `ec2:Subnet` \| `ec2:TrafficMirrorTarget` \| `ec2:TransitGateway` \| `ec2:LocalGatewayRouteTable`
 + `ram:ResourceArn` — Indicates that the action can be performed only on a resource with the specified ARN\.
 + `ram:ResourceShareName` — Indicates that the action can be performed only on a resource share with the specified name\.
 + `ram:ShareOwnerAccountId` — Indicates that the action can be performed only on resource shares owned by a specific account\.

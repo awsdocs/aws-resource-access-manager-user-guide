@@ -44,89 +44,90 @@ AWS RAM provides the following default AWS\-managed permissions:
 AWS RAM provides the following default AWS\-managed permissions for shareable AWS App Mesh resources\.
 
 
-| Resource type | Permission name and ARN | Effect | Actions | 
-| --- | --- | --- | --- | 
-| appmesh:Mesh |  **Name:** AWSRAMDefaultPermissionAppMesh **ARN:** arn:aws:ram::aws:permission/AWSRAMDefaultPermissionAppMesh  | Allow |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html)  | 
+| Resource type | Permission name and ARN | Allowed actions | 
+| --- | --- | --- | 
+| appmesh:Mesh |  **Name:** AWSRAMDefaultPermissionAppMesh **ARN:** arn:aws:ram::aws:permission/AWSRAMDefaultPermissionAppMesh  |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html)  | 
 
 ### Amazon Aurora<a name="ram-perm-aur"></a>
 
 AWS RAM provides the following default AWS\-managed permissions for shareable Amazon Aurora resources\.
 
 
-| Resource type | Permission name and ARN | Effect | Actions | 
-| --- | --- | --- | --- | 
-| rds:Cluster |  **Name:** AWSRAMDefaultPermissionRDSCluster **ARN:** arn:aws:ram::aws:permission/AWSRAMDefaultPermissionRDSCluster  | Allow |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html)  | 
+| Resource type | Permission name and ARN | Allowed actions | 
+| --- | --- | --- | 
+| rds:Cluster |  **Name:** AWSRAMDefaultPermissionRDSCluster **ARN:** arn:aws:ram::aws:permission/AWSRAMDefaultPermissionRDSCluster  |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html)  | 
 
 ### AWS Certificate Manager Private Certificate Authority<a name="ram-perm-pca"></a>
 
 AWS RAM provides the following default AWS\-managed permissions for shareable ACM Private CA resources\.
 
 
-| Resource type | Permission name and ARN | Effect | Actions | 
-| --- | --- | --- | --- | 
-| acm\-pca:CertificateAuthority |  **Name:** AWSRAMDefaultPermissionCertificateAuthority **ARN:** arn:aws:ram::aws:permission/AWSRAMDefaultPermissionCertificateAuthority  | Allow |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html)  | 
+| Resource type | Permission name and ARN | Allowed actions | 
+| --- | --- | --- | 
+| acm\-pca:CertificateAuthority |  **Name:** AWSRAMDefaultPermissionCertificateAuthority **ARN:** arn:aws:ram::aws:permission/AWSRAMDefaultPermissionCertificateAuthority  |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html)  | 
 
 ### AWS CodeBuild<a name="ram-perm-code"></a>
 
 AWS RAM provides the following default AWS\-managed permissions for shareable AWS CodeBuild resources\.
 
 
-| Resource type | Permission name and ARN | Effect | Actions | 
-| --- | --- | --- | --- | 
-| codebuild:Project |  **Name:** AWSRAMDefaultPermissionCodeBuildProject **ARN:** arn:aws:ram::aws:permission/AWSRAMDefaultPermissionCodeBuildProject  | Allow |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html)  | 
-| codebuild:ReportGroup |  **Name:** AWSRAMDefaultPermissionCodeBuildReportGroup **ARN:** arn:aws:ram::aws:permission/AWSRAMDefaultPermissionCodeBuildReportGroup  | Allow |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html)  | 
+| Resource type | Permission name and ARN | Allowed actions | 
+| --- | --- | --- | 
+| codebuild:Project |  **Name:** AWSRAMDefaultPermissionCodeBuildProject **ARN:** arn:aws:ram::aws:permission/AWSRAMDefaultPermissionCodeBuildProject  |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html)  | 
+| codebuild:ReportGroup |  **Name:** AWSRAMDefaultPermissionCodeBuildReportGroup **ARN:** arn:aws:ram::aws:permission/AWSRAMDefaultPermissionCodeBuildReportGroup  |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html)  | 
 
 ### Amazon EC2<a name="ram-perm-ec2"></a>
 
 AWS RAM provides the following default AWS\-managed permissions for shareable Amazon EC2 resources\.
 
 
-| Resource type | Permission name and ARN | Effect | Actions | 
-| --- | --- | --- | --- | 
-| ec2:CapacityReservation |  **Name:** AWSRAMDefaultPermissionCapacityReservation **ARN:** arn:aws:ram::aws:permission/AWSRAMDefaultPermissionCapacityReservation  | Allow |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html)  | 
-| ec2:DedicatedHost |  **Name:** AWSRAMDefaultPermissionDedicatedHost **ARN:** arn:aws:ram::aws:permission/AWSRAMDefaultPermissionDedicatedHost  | Allow |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html)  | 
+| Resource type | Permission name and ARN | Allowed actions | 
+| --- | --- | --- | 
+| ec2:CapacityReservation |  **Name:** AWSRAMDefaultPermissionCapacityReservation **ARN:** arn:aws:ram::aws:permission/AWSRAMDefaultPermissionCapacityReservation  |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html)  | 
+| ec2:DedicatedHost |  **Name:** AWSRAMDefaultPermissionDedicatedHost **ARN:** arn:aws:ram::aws:permission/AWSRAMDefaultPermissionDedicatedHost  |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html)  | 
 
 ### Amazon EC2 Image Builder<a name="ram-perm-image"></a>
 
 AWS RAM provides the following default AWS\-managed permissions for shareable Amazon EC2 Image Builder resources\.
 
 
-| Resource type | Permission name and ARN | Effect | Actions | 
-| --- | --- | --- | --- | 
-| imagebuilder:Component | **Name:** AWSRAMDefaultPermissionImageBuilderComponent **ARN:** arn:aws:ram::aws:permission/AWSRAMDefaultPermissionImageBuilderComponent | Allow |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html)  | 
-| imagebuilder:Image |  **Name:** AWSRAMDefaultPermissionImageBuilderImage **ARN:** arn:aws:ram::aws:permission/AWSRAMDefaultPermissionImageBuilderImage  | Allow |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html)  | 
-| imagebuilder:ImageRecipe |  **Name:** AWSRAMDefaultPermissionImageBuilderImageRecipe **ARN:** arn:aws:ram::aws:permission/imagebuilder:AWSRAMDefaultPermissionImageBuilderImageRecipe  | Allow |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html)  | 
+| Resource type | Permission name and ARN | Allowed actions | 
+| --- | --- | --- | 
+| imagebuilder:Component | **Name:** AWSRAMDefaultPermissionImageBuilderComponent **ARN:** arn:aws:ram::aws:permission/AWSRAMDefaultPermissionImageBuilderComponent |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html)  | 
+| imagebuilder:Image |  **Name:** AWSRAMDefaultPermissionImageBuilderImage **ARN:** arn:aws:ram::aws:permission/AWSRAMDefaultPermissionImageBuilderImage  |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html)  | 
+| imagebuilder:ImageRecipe |  **Name:** AWSRAMDefaultPermissionImageBuilderImageRecipe **ARN:** arn:aws:ram::aws:permission/imagebuilder:AWSRAMDefaultPermissionImageBuilderImageRecipe  |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html)  | 
+| imagebuilder:ContainerRecipe |  **Name:** AWSRAMDefaultPermissionImageBuilderContainerRecipe **ARN:** arn:aws:ram::aws:permission/imagebuilder:AWSRAMDefaultPermissionImageBuilderContainerRecipe  |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html)  | 
 
 ### AWS Glue<a name="ram-perm-glue"></a>
 
 AWS RAM provides the following default AWS\-managed permissions for shareable AWS Glue resources\.
 
 
-| Resource type | Permission name and ARN | Effect | Actions | 
-| --- | --- | --- | --- | 
-| glue:Catalog | **Name:** AWSRAMDefaultPermissionGlueCatalog **ARN:** arn:aws:ram::aws:permission/AWSRAMDefaultPermissionGlueCatalog | Allow |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html)  | 
-| glue:Database | **Name:** AWSRAMDefaultPermissionGlueDatabase **ARN:** arn:aws:ram::aws:permission/AWSRAMDefaultPermissionGlueDatabase | Allow |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html)  | 
-| glue:Table | **Name:** AWSRAMDefaultPermissionGlueTable **ARN:** arn:aws:ram::aws:permission/AWSRAMDefaultPermissionGlueTable | Allow |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html)  | 
+| Resource type | Permission name and ARN | Allowed actions | 
+| --- | --- | --- | 
+| glue:Catalog | **Name:** AWSRAMDefaultPermissionGlueCatalog **ARN:** arn:aws:ram::aws:permission/AWSRAMDefaultPermissionGlueCatalog |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html)  | 
+| glue:Database | **Name:** AWSRAMDefaultPermissionGlueDatabase **ARN:** arn:aws:ram::aws:permission/AWSRAMDefaultPermissionGlueDatabase |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html)  | 
+| glue:Table | **Name:** AWSRAMDefaultPermissionGlueTable **ARN:** arn:aws:ram::aws:permission/AWSRAMDefaultPermissionGlueTable |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html)  | 
 
 ### AWS License Manager<a name="ram-perm-lic"></a>
 
 AWS RAM provides the following default AWS\-managed permissions for shareable AWS License Manager resources\.
 
 
-| Resource type | Permission name and ARN | Effect | Actions | 
-| --- | --- | --- | --- | 
-| license\-manager:LicenseConfiguration |  **Name:** AWSRAMDefaultPermissionLicenseConfiguration **ARN:** arn:aws:ram::aws:permission/AWSRAMDefaultPermissionLicenseConfiguration  | Allow |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html)  | 
+| Resource type | Permission name and ARN | Allowed actions | 
+| --- | --- | --- | 
+| license\-manager:LicenseConfiguration |  **Name:** AWSRAMDefaultPermissionLicenseConfiguration **ARN:** arn:aws:ram::aws:permission/AWSRAMDefaultPermissionLicenseConfiguration  |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html)  | 
 
 ### AWS Network Firewall<a name="ram-perm-network-firewall"></a>
 
 AWS RAM provides the following default AWS\-managed permissions for shareable AWS Network Firewall resources\.
 
 
-| Resource type | Permission name and ARN | Effect | Actions | 
-| --- | --- | --- | --- | 
-| network\-firewall:FirewallPolicy |  **Name:** AWSRAMDefaultPermissionNetworkFirewallPolicy **ARN:** arn:aws:ram::aws:permission/AWSRAMDefaultPermissionNetworkFirewallPolicy  | Allow |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html)  | 
-| network\-firewall:StatefulRuleGroup |  **Name:** AWSRAMDefaultPermissionNetworkFirewallStatefulRuleGroup **ARN:** arn:aws:ram::aws:permission/AWSRAMDefaultPermissionNetworkFirewallStatefulRuleGroup  | Allow |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html)  | 
-| network\-firewall:StatelessRuleGroup |  **Name:** AWSRAMDefaultPermissionNetworkFirewallStatelessRuleGroup **ARN:** arn:aws:ram::aws:permission/AWSRAMDefaultPermissionNetworkFirewallStatelessRuleGroup  | Allow |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html)  | 
+| Resource type | Permission name and ARN | Allowed actions | 
+| --- | --- | --- | 
+| network\-firewall:FirewallPolicy |  **Name:** AWSRAMDefaultPermissionNetworkFirewallPolicy **ARN:** arn:aws:ram::aws:permission/AWSRAMDefaultPermissionNetworkFirewallPolicy  |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html)  | 
+| network\-firewall:StatefulRuleGroup |  **Name:** AWSRAMDefaultPermissionNetworkFirewallStatefulRuleGroup **ARN:** arn:aws:ram::aws:permission/AWSRAMDefaultPermissionNetworkFirewallStatefulRuleGroup  |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html)  | 
+| network\-firewall:StatelessRuleGroup |  **Name:** AWSRAMDefaultPermissionNetworkFirewallStatelessRuleGroup **ARN:** arn:aws:ram::aws:permission/AWSRAMDefaultPermissionNetworkFirewallStatelessRuleGroup  |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html)  | 
 
 ### AWS Outposts<a name="ram-perm-out"></a>
 
@@ -136,38 +137,38 @@ AWS RAM provides the following default AWS\-managed permissions for shareable AW
 For the default AWS\-managed permissions for shared subnets and local gateway route tables on Outposts, see [Subnets](#subnet) and [local gateway route tables](#lgw)\.
 
 
-| Resource type | Permission name and ARN | Effect | Actions | 
-| --- | --- | --- | --- | 
-| outposts:Outpost |  **Name:** AWSRAMDefaultPermissionOutpostsOutpost **ARN:** arn:aws:ram::aws:permission/AWSRAMDefaultPermissionOutpostsOutpost  | Allow |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html)  | 
+| Resource type | Permission name and ARN | Allowed actions | 
+| --- | --- | --- | 
+| outposts:Outpost |  **Name:** AWSRAMDefaultPermissionOutpostsOutpost **ARN:** arn:aws:ram::aws:permission/AWSRAMDefaultPermissionOutpostsOutpost  |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html)  | 
 
 ### AWS Resource Groups<a name="ram-perm-rgs"></a>
 
 AWS RAM provides the following default AWS\-managed permissions for shareable AWS Resource Groups resources\.
 
 
-| Resource type | Permission name and ARN | Effect | Actions | 
-| --- | --- | --- | --- | 
-| resource\-groups:Group |  **Name:** AWSRAMDefaultPermissionResourceGroup **ARN:** arn:aws:ram::aws:permission/AWSRAMDefaultPermissionResourceGroup  | Allow |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html)  | 
+| Resource type | Permission name and ARN | Allowed actions | 
+| --- | --- | --- | 
+| resource\-groups:Group |  **Name:** AWSRAMDefaultPermissionResourceGroup **ARN:** arn:aws:ram::aws:permission/AWSRAMDefaultPermissionResourceGroup  |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html)  | 
 
 ### Amazon Route 53<a name="ram-perm-r53"></a>
 
 AWS RAM provides the following default AWS\-managed permissions for shareable Amazon Route 53 resources\.
 
 
-| Resource type | Permission name and ARN | Effect | Actions | 
-| --- | --- | --- | --- | 
-| route53resolver:ResolverRule |  **Name:** AWSRAMDefaultPermissionResolverRule **ARN:** arn:aws:ram::aws:permission/AWSRAMDefaultPermissionResolverRule  | Allow |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html)  | 
-| route53resolver:ResolverQueryLogConfig |  **Name:** AWSRAMDefaultPermissionResolverQueryLogConfig **ARN:** arn:aws:ram::aws:permission/AWSRAMDefaultPermissionResolverQueryLogConfig  | Allow |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html)  | 
+| Resource type | Permission name and ARN | Allowed actions | 
+| --- | --- | --- | 
+| route53resolver:ResolverRule |  **Name:** AWSRAMDefaultPermissionResolverRule **ARN:** arn:aws:ram::aws:permission/AWSRAMDefaultPermissionResolverRule  |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html)  | 
+| route53resolver:ResolverQueryLogConfig |  **Name:** AWSRAMDefaultPermissionResolverQueryLogConfig **ARN:** arn:aws:ram::aws:permission/AWSRAMDefaultPermissionResolverQueryLogConfig  |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html)  | 
 
 ### Amazon VPC<a name="ram-perm-vpc"></a>
 
 AWS RAM provides the following default AWS\-managed permissions for shareable Amazon VPC resources\.
 
 
-| Resource type | Permission name and ARN | Effect | Actions | 
-| --- | --- | --- | --- | 
-| ec2:PrefixList |  **Name:** AWSRAMDefaultPermissionPrefixList **ARN:** arn:aws:ram::aws:permission/AWSRAMDefaultPermissionPrefixList  |  Allow  |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html)  | 
-| <a name="subnet"></a>ec2:Subnet |  **Name:** AWSRAMDefaultPermissionSubnet **ARN:** arn:aws:ram::aws:permission/AWSRAMDefaultPermissionSubnet  | Allow |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html)  | 
-| ec2:TrafficMirrorTarget |  **Name:** AWSRAMDefaultPermissionTrafficMirror **ARN:** arn:aws:ram::aws:permission/AWSRAMDefaultPermissionTrafficMirror  | Allow |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html)  | 
-| ec2:TransitGateway |  **Name:** AWSRAMDefaultPermissionTransitGateway **ARN:** arn:aws:ram::aws:permission/AWSRAMDefaultPermissionTransitGateway  | Allow |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html)  | 
-| <a name="lgw"></a>ec2:LocalGatewayRouteTable |  **Name:** AWSRAMDefaultPermissionLocalGateway **ARN:** arn:aws:ram::aws:permission/AWSRAMDefaultPermissionLocalGateway  | Allow |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html) [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html) [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html) [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html) [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html) [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html) [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html) [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html) [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html)  | 
+| Resource type | Permission name and ARN | Allowed actions | 
+| --- | --- | --- | 
+| ec2:PrefixList |  **Name:** AWSRAMDefaultPermissionPrefixList **ARN:** arn:aws:ram::aws:permission/AWSRAMDefaultPermissionPrefixList  |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html)  | 
+| <a name="subnet"></a>ec2:Subnet |  **Name:** AWSRAMDefaultPermissionSubnet **ARN:** arn:aws:ram::aws:permission/AWSRAMDefaultPermissionSubnet  |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html)  | 
+| ec2:TrafficMirrorTarget |  **Name:** AWSRAMDefaultPermissionTrafficMirror **ARN:** arn:aws:ram::aws:permission/AWSRAMDefaultPermissionTrafficMirror  |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html)  | 
+| ec2:TransitGateway |  **Name:** AWSRAMDefaultPermissionTransitGateway **ARN:** arn:aws:ram::aws:permission/AWSRAMDefaultPermissionTransitGateway  |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html)  | 
+| <a name="lgw"></a>ec2:LocalGatewayRouteTable |  **Name:** AWSRAMDefaultPermissionLocalGateway **ARN:** arn:aws:ram::aws:permission/AWSRAMDefaultPermissionLocalGateway  |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html) [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html) [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html) [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html) [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html) [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html) [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html) [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html) [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/permissions.html)  | 
