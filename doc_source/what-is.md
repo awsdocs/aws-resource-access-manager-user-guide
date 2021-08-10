@@ -1,6 +1,6 @@
 # What is AWS RAM?<a name="what-is"></a>
 
-AWS Resource Access Manager \(AWS RAM\) lets you share your resources with any AWS account or through AWS Organizations\. If you have multiple AWS accounts, you can create resources centrally and use AWS RAM to share those resources with other accounts\.
+AWS Resource Access Manager \(AWS RAM\) lets you share your resources with an organization or organizational units \(OUs\) in AWS Organizations, and AWS accounts\. For [supported resource types](permissions.md#permissions-rbp-supported-resource-types), you can also share resources with IAM roles and IAM users\. If you have multiple AWS accounts, you can use AWS RAM to share those resources with other accounts\.
 
 **Topics**
 + [Benefits](#what-is-features)
@@ -9,25 +9,35 @@ AWS Resource Access Manager \(AWS RAM\) lets you share your resources with any A
 + [Accessing AWS RAM](#what-is-accessing)
 + [Pricing](#what-is-pricing)
 + [Shareable resources](shareable.md)
++ [AWS RAM managed permissions](permissions.md)
 
 ## Benefits<a name="what-is-features"></a>
 
 AWS RAM offers the following benefits:
-+ **Reduces operational overhead**—Create resources centrally and use AWS RAM to share those resources with other accounts\. This eliminates the need to provision duplicate resources in every account, which reduces operational overhead\.
-+ **Provides security and consistency**—Govern consumption of shared resources using existing policies and permissions, to achieve security and control\. AWS RAM offers a consistent experience for sharing different types of AWS resources\.
++ **Reduces operational overhead**—Create resource shares and use AWS RAM to share those resources with other accounts\. This eliminates the need to provision duplicate resources in every account, which reduces operational overhead\.
++ **Provides security and consistency**—Govern consumption of shared resources by using existing policies and permissions, to achieve security and control\. AWS RAM offers a consistent experience for sharing different types of AWS resources\.
 + **Provides visibility and auditability**—View usage details for shared resources through integration with Amazon CloudWatch and AWS CloudTrail\. AWS RAM provides comprehensive visibility into shared resources and accounts\.
 
 ## How resource sharing works<a name="what-is-how"></a>
 
-When you share a resource with another account, then that account is granted access to the resource\. Any policies and permissions that apply to the account with which you have shared the resource apply to the shared resource\.
+When you share a resource with another AWS account, that account is granted access to the resource\. Any policies and permissions that apply to the account with which you have shared the resource apply to the shared resource\.
 
 ### Sharing your resources<a name="what-is-how-sharing"></a>
 
-You can share resources that you own by creating a resource share\. When you create a resource share, you specify a name, the resources to share, and the principals with whom to share\. Principals can be AWS accounts, organizational units, or an entire organization from AWS Organizations\. Your account retains full ownership of the resources that you share\.
+With AWS RAM, you share resources that you own by creating a resource share\. When you create a resource share, you specify the following:
++ A name for the resource share
++ The type of resources to share \(for example, Subnets\)\.
++ The specific resources for each type \(for example, a specific subnet\)\.
++ The AWS RAM managed permission to associate with each resource type\.
++ The principals to which to grant access to the share\. Principals can be an organization or organizational units \(OUs\) in AWS Organizations, AWS accounts, IAM roles, and IAM users\.
+**Note**  
+Not all resource types can be shared with IAM roles and IAM users\. For a list of resource types that you can share with these principals, see [Sharing with IAM roles and IAM users](permissions.md#permissions-rbp-supported-resource-types)\.
+
+Your account retains full ownership of the resources that you share\.
 
 ### Using shared resources<a name="what-is-how-shared"></a>
 
-When the owner of a resource shares it with your account, you can access the shared resource just as you would if it was owned by your account\. You can access the resource using the respective service's console, AWS CLI, and API\. The actions that users are allowed to perform vary depending on the resource type\. All IAM policies and service control policies configured in your account apply, which enables you to leverage your existing investments in security and governance controls\.
+When the owner of a resource shares it with your account, you can access the shared resource just as you would if it was owned by your account\. You can access the resource by using the respective service's console, AWS CLI commands, and API actions\. The actions that principals are allowed to perform vary depending on the resource type\. All IAM policies and service control policies configured in your account apply, which enables you to leverage your existing investments in security and governance controls\.
 
 ## Service limits<a name="what-is-limits"></a>
 
@@ -46,7 +56,7 @@ Your AWS account has the following limits related to AWS RAM\. You can request a
 You can work with AWS RAM in any of the following ways:
 
 **AWS RAM Console**  
-AWS RAM provides a web\-based user interface, the AWS RAM console\. If you've signed up for an AWS account, you can access the AWS RAM console by signing into the [AWS Management Console](https://console.aws.amazon.com/) and selecting AWS RAM from the console home page\.
+AWS RAM provides a web\-based user interface, the AWS RAM console\. If you've signed up for an AWS account, you can access the AWS RAM console by signing into the [AWS Management Console](https://console.aws.amazon.com/) and choosing AWS RAM from the console home page\.
 
 **AWS Command Line Interface \(AWS CLI\)**  
 The AWS CLI provides direct access to the AWS RAM public API operations\. It is supported on Windows, macOS, and Linux\. For more information about getting started, see the [AWS Command Line Interface User Guide](https://docs.aws.amazon.com/cli/latest/userguide/)\. For more information about the commands for AWS RAM, see the [AWS CLI Command Reference](https://docs.aws.amazon.com/cli/latest/reference/)\.

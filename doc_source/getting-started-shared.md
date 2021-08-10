@@ -6,7 +6,7 @@ To start using shared resources, do the following:
 
 ## Respond to the resource share invitation<a name="getting-started-shared-respond-invitation"></a>
 
-If you receive an invitation to join a resource share, you must accept it to gain access to the shared resources\. If you are part of an organization in AWS Organizations and sharing within your organization is enabled, principals in your organization are automatically granted access to the shared resources and do not receive these invitations\.
+If you receive an invitation to join a resource share, you must accept it to gain access to the shared resources\. If you are part of an organization in AWS Organizations and sharing in your organization is enabled, principals in your organization are automatically granted access to the shared resources\. Those principals do not receive these invitations\.
 
 **To respond to invitations**
 
@@ -22,4 +22,4 @@ If you receive an invitation to join a resource share, you must accept it to gai
 
 ## Use the resources that are shared with you<a name="getting-started-shared-use-resources"></a>
 
-After you accept the invitation to join a resource share, you gain the ability to perform specific actions on the shared resources\. These actions vary by resource type\. For more information, see [Shareable AWS resources](shareable.md)\.
+After you accept the invitation to join a resource share, you can perform specific actions on the shared resources\. These actions vary by resource type\. For more information, see [Shareable AWS resources](shareable.md)\.

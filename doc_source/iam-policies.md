@@ -46,7 +46,7 @@ The *Resource* statement specifies the AWS RAM resources that are affected by th
 + `aws:RequestTag/${TagKey}` — Specifies a tag key and value pair that must be used when creating or tagging a resource share\. 
 + `aws:ResourceTag/${TagKey}` — Indicates that the action can be performed only on resources that have the specified tag key and value pair\.
 + `aws:TagKeys` — Specifies the tag keys that can be used when creating or tagging a resource share\.
-+ `ram:AllowsExternalPrincipals` — Indicates that the action can be performed only on resource shares that allow or deny sharing with external principals\. An external principal is an AWS account outside of your AWS organization
++ `ram:AllowsExternalPrincipals` — Indicates that the action can be performed only on resource shares that allow or deny sharing with external principals\. An external principal is an AWS account outside of your organization in AWS Organizations\.
 + `ram:Principal` — Indicates that the action can be performed only on the specified principal\.
 + `ram:RequestedResourceType` — Indicates that the action can be performed only on the specified resource type\. Resource types must be specified in the following format:
   + AWS App Mesh — `appmesh:Mesh`
@@ -60,7 +60,8 @@ The *Resource* statement specifies the AWS RAM resources that are affected by th
   + AWS Network Firewall — `network-firewall:FirewallPolicy` \| `network-firewall:StatefulRuleGroup` \| `network-firewall:StatelessRuleGroup`
   + AWS Outposts — `outposts:Outpost`
   + AWS Resource Groups — `resource-groups:Group`
-  + Amazon Route 53 — `route53resolver:ResolverRule` \| `route53resolver:ResolverQueryLogConfig`
+  + Amazon Route 53 — `route53resolver:FirewallRuleGroup` \| `route53resolver:ResolverRule` \| `route53resolver:ResolverQueryLogConfig`
+  + AWS Systems Manager Incident Manager — `ssm-contacts:Contact` \| `ssm-incidents:ResponsePlan`
   + Amazon VPC — `ec2:PrefixList` \| `ec2:Subnet` \| `ec2:TrafficMirrorTarget` \| `ec2:TransitGateway` \| `ec2:LocalGatewayRouteTable`
 + `ram:ResourceArn` — Indicates that the action can be performed only on a resource with the specified ARN\.
 + `ram:ResourceShareName` — Indicates that the action can be performed only on a resource share with the specified name\.
