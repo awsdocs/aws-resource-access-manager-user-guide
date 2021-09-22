@@ -1,23 +1,22 @@
 # Working with shared AWS resources<a name="working-with"></a>
 
-You can share AWS resources that you own and access AWS resources that are shared with you\.
+You can use AWS RAM to share AWS resources that you own and access AWS resources that are shared with you\.
 
 **Contents**
 + [Share AWS resources owned by you](working-with-sharing.md)
-  + [Create a resource share](working-with-sharing.md#working-with-sharing-create)
-  + [Update a resource share](working-with-sharing.md#working-with-sharing-update)
-  + [View a resource share](working-with-sharing.md#working-with-sharing-view-rs)
-  + [View your shared resources](working-with-sharing.md#working-with-sharing-view-sr)
-  + [View the principals with whom you're sharing](working-with-sharing.md#working-with-sharing-view-accounts)
-  + [View details about AWS RAM managed permissions](working-with-sharing.md#working-with-sharing-view-permissions)
-  + [Delete a resource share](working-with-sharing.md#working-with-sharing-delete)
-  + [Supported actions on shared resources](working-with-sharing.md#working-with-sharing-view-permissions)
+  + [Viewing resource shares you created in AWS Resource Access Manager](working-with-sharing-view-rs.md)
+  + [Creating a resource share in AWS Resource Access Manager](working-with-sharing-create.md)
+  + [Update a resource share in AWS Resource Access Manager](working-with-sharing-update.md)
+  + [Viewing your shared resources in AWS Resource Access Manager](working-with-sharing-view-sr.md)
+  + [Viewing the principals you share resources with in AWS Resource Access Manager](working-with-sharing-view-principals.md)
+  + [Viewing AWS RAM managed permissions](working-with-sharing-view-permissions.md)
+  + [Deleting a resource share in AWS Resource Access Manager](working-with-sharing-delete.md)
 + [Access AWS resources shared with you](working-with-shared.md)
-  + [Accept and reject invitations](working-with-shared.md#working-with-shared-invitation)
-  + [View resource shares](working-with-shared.md#working-with-shared-view-rs)
-  + [View shared resources](working-with-shared.md#working-with-shared-viewing-sr)
-  + [View principals sharing with you](working-with-shared.md#working-with-shared-view-accounts)
-  + [Leave a resource share](working-with-shared.md#working-with-shared-leave)
-    + [Prerequisites for leaving a resource share](working-with-shared.md#working-with-shared-leave-prerequisites)
-    + [How to leave a resource share](working-with-shared.md#working-with-shared-leave-how-to-leave)
+  + [Accepting and rejecting resource share invitations](working-with-shared-invitations.md)
+  + [Viewing resource shares shared with you](working-with-shared-view-rs.md)
+  + [Viewing resources shared with you](working-with-shared-view-sr.md)
+  + [View principals sharing with you](working-with-shared-view-principals.md)
+  + [Leaving a resource share](working-with-shared-leave.md)
+    + [Prerequisites for leaving a resource share](working-with-shared-leave.md#working-with-shared-leave-prerequisites)
+    + [How to leave a resource share](working-with-shared-leave.md#working-with-shared-leave-how-to-leave)
 + [AZ IDs for your AWS resources](working-with-az-ids.md)

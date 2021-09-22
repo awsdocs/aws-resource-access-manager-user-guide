@@ -1,4 +1,4 @@
-# Example IAM policies for AWS RAM<a name="iam-examples"></a>
+# Example IAM policies for AWS RAM<a name="security-iam-policies-examples"></a>
 
 **Topics**
 + [Allow sharing of specific resources](#owner-share-specific-resources)

@@ -1,6 +1,12 @@
-# How AWS RAM works with IAM<a name="iam-policies"></a>
+# How AWS RAM works with IAM<a name="security-iam-policies"></a>
 
-By default, IAM users don't have permission to create or modify AWS RAM resources\. To allow IAM users to create or modify resources and perform tasks, you must create IAM policies that grant permission to use specific resources and API actions\. You then attach those policies to the IAM users or groups that require those permissions\.
+By default, IAM users don't have permission to create or modify AWS RAM resources\. To allow IAM users to create or modify resources and perform tasks, you must either attach an AWS managed policy or create and attach new IAM policies that grant permission to use specific resources and API actions\. You then attach those policies to the IAM users or groups that require those permissions\.
+
+AWS RAM provides several AWS managed policies that you can use that will address the needs of many users\. For more information about these, see [AWS managed policies for AWS Resource Access Manager](security-iam-managed-policies.md)\.
+
+If you need finer control over the permissions you grant to your users, you can construct your own policies in the IAM console\. For information about creating policies and attaching them to your IAM users and roles, see [Policies and permissions in IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html) in the *AWS Identity and Access Management User Guide*\.
+
+The following sections provide the AWS RAM specific details for building an IAM permission policy\.
 
 **Contents**
 + [Policy structure](#structure)
@@ -15,17 +21,17 @@ An IAM policy is a JSON document that includes the following statements: Effect,
 
 ```
 {
-	    "Statement":[{
-	        "Effect":"effect",
-	        "Action":"action",
-	        "Resource":"arn",
-	        "Condition":{
-	            "condition":{
-	                "key":"value"
-	            }
-	        }
-	    }]
-	}
+    "Statement":[{
+        "Effect":"effect",
+        "Action":"action",
+        "Resource":"arn",
+        "Condition":{
+            "condition":{
+                "key":"value"
+            }
+        }
+    }]
+}
 ```
 
 ### Effect<a name="iam-policies-effect"></a>
@@ -59,8 +65,9 @@ The *Resource* statement specifies the AWS RAM resources that are affected by th
   + AWS License Manager — `license-manager:LicenseConfiguration`
   + AWS Network Firewall — `network-firewall:FirewallPolicy` \| `network-firewall:StatefulRuleGroup` \| `network-firewall:StatelessRuleGroup`
   + AWS Outposts — `outposts:Outpost`
+  + Amazon S3 on Outposts; `s3-outposts:Outpost`
   + AWS Resource Groups — `resource-groups:Group`
-  + Amazon Route 53 — `route53resolver:FirewallRuleGroup` \| `route53resolver:ResolverRule` \| `route53resolver:ResolverQueryLogConfig`
+  + Amazon Route 53 — `route53resolver:FirewallRuleGroup` \| `route53resolver:ResolverRule` \| `route53resolver:ResolverQueryLogConfig`
   + AWS Systems Manager Incident Manager — `ssm-contacts:Contact` \| `ssm-incidents:ResponsePlan`
   + Amazon VPC — `ec2:PrefixList` \| `ec2:Subnet` \| `ec2:TrafficMirrorTarget` \| `ec2:TransitGateway` \| `ec2:LocalGatewayRouteTable`
 + `ram:ResourceArn` — Indicates that the action can be performed only on a resource with the specified ARN\.
