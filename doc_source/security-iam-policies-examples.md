@@ -1,5 +1,7 @@
 # Example IAM policies for AWS RAM<a name="security-iam-policies-examples"></a>
 
+This topic includes examples of IAM policies for AWS RAM that demonstrate sharing specific resources and resource types and restricting sharing\.
+
 **Topics**
 + [Allow sharing of specific resources](#owner-share-specific-resources)
 + [Allow sharing of specific resource types](#owner-share-resource-types)

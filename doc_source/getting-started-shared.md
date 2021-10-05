@@ -1,12 +1,14 @@
 # Using shared AWS resources<a name="getting-started-shared"></a>
 
+To start using resources that were shared with your account using AWS Resource Access Manager, complete the following tasks\.
+
 **Topics**
 + [Respond to the resource share invitation](#getting-started-shared-respond-invitation)
 + [Use the resources that are shared with you](#getting-started-shared-use-resources)
 
 ## Respond to the resource share invitation<a name="getting-started-shared-respond-invitation"></a>
 
-If you receive an invitation to join a resource share, you must accept it to gain access to the shared resources\. If you are part of an organization in AWS Organizations and sharing in your organization is enabled, principals in your organization are automatically granted access to the shared resources\. Those principals do not receive invitations\.
+If you receive an invitation to join a resource share, you must accept it to gain access to the shared resources\. If you're part of an organization in AWS Organizations and sharing in your organization is enabled, principals in your organization are automatically granted access to the shared resources\. Those principals don't receive invitations\.
 
 ------
 #### [ Console ]
@@ -21,7 +23,7 @@ If you receive an invitation to join a resource share, you must accept it to gai
 
    The **Status** column indicates your current participation status for the resource share\. The `Pending` status indicates that you have been added to a resource share, but you have not yet accepted or rejected the invitation\.
 
-1. To respond to the resource share invitation, select the resource share ID and choose **Accept resource share** to accept the invitation, or **Reject resource share** to decline the invitation\. If you reject the invitation, you do not get access to the resources\. If you accept the invitation, you gain access to the resources\.
+1. To respond to the resource share invitation, select the resource share ID and choose **Accept resource share** to accept the invitation, or **Reject resource share** to decline the invitation\. If you reject the invitation, you don't get access to the resources\. If you accept the invitation, you gain access to the resources\.
 
 ------
 #### [ AWS CLI ]
@@ -45,7 +47,7 @@ $ aws ram get-resource-share-invitations
 }
 ```
 
-You can use the ARN of the invitation from the previous command as a parameter to the next command to accept that invitation\.
+You can use the Amazon Resource Name \(ARN\) of the invitation from the previous command as a parameter in the next command to accept that invitation\.
 
 ```
 $ aws ram accept-resource-share-invitation \
@@ -63,7 +65,7 @@ $ aws ram accept-resource-share-invitation \
 }
 ```
 
-Note that the output now shows that the `status` has changed to `ACCEPTED`\. The resources that are included in that resource share are now available to principals in the accepting account\.
+The output now shows that the `status` has changed to `ACCEPTED`\. The resources that are included in that resource share are now available to principals in the accepting account\.
 
 ------
 

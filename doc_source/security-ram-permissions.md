@@ -1,6 +1,6 @@
 # AWS RAM managed permissions<a name="security-ram-permissions"></a>
 
-For each shareable resource type, there is at least one AWS RAM managed permission that defines the actions that principals with access to the resources in a resource share are allowed to perform on those resources\. Some resource types have only one AWS RAM managed permission and it is used automatically by default, with no action required by you\. Some resource types define more than one, and you can choose which one to use in a resource share\.
+For each shareable resource type, there is at least one AWS Resource Access Manager \(AWS RAM\) managed permission that defines the actions that principals with access to the resources in a resource share are allowed to perform on those resources\. Some resource types have only one AWS RAM managed permission, and it's used automatically by default, with no action required by you\. Some resource types define more than one managed permission, and you can choose which one to use in a resource share\.
 
 **Topics**
 + [How AWS RAM managed permissions work](#permissions-work)
@@ -15,20 +15,20 @@ After you create the resource share, AWS RAM provides the managed permission tha
 
 AWS RAM managed permissions specify the following:
 
-**[Effect](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_effect.html)**  
-Indicates whether to `Allow` or `Deny` the principal permission to perform an operation on a shared resource\. For an AWS RAM managed permission, the effect is always `Allow`\.
+**Effect**  
+Indicates whether to `Allow` or `Deny` the principal permission to perform an operation on a shared resource\. For an AWS RAM managed permission, the effect is always `Allow`\. For more information, see [Effect](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_effect.html) in the *IAM User Guide*\.
 
-**[Principal](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html)**  
-The ID number of an AWS account, or the [Amazon Resource Name \(ARN\)](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) of an organization or organizational unit \(OU\) in AWS Organizations, or the ARN of an IAM role or user to whom you want to grant access the shared resource\.  
+**Principal**  
+The ID number of an AWS account, or the [Amazon Resource Name \(ARN\)](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) of an organization or organizational unit \(OU\) in AWS Organizations, or the Amazon Resource Name \(ARN\) of an AWS Identity and Access Management \(IAM\) role or user to whom you want to grant access the shared resource\. For more information, see [Principal](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html) in the *IAM User Guide*\.  
 Not all resource types can be shared with IAM roles and users\. For information about resources that you can share with these principals, see [Shareable AWS resources](shareable.md)\.
 
-**[Action](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_action.html)**  
-The operation that the principal is granted permission to perform\. This can be an action in the AWS Management Console or an operation in the AWS CLI or AWS API\. The actions are defined by the AWS RAM permission\.
+**Action**  
+The operation that the principal is granted permission to perform\. This can be an action in the AWS Management Console or an operation in the AWS Command Line Interface \(AWS CLI\) or AWS API\. The actions are defined by the AWS RAM permission\. For more information, see [Action](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_action.html) in the *IAM User Guide*\.
 
 ## Types of AWS RAM managed permissions<a name="permissions-types"></a>
 
 When you create a resource share, you choose the AWS RAM permission to associate with each resource type that you include in the resource share\. Managed permissions are defined by the resource\-owning service and managed by AWS RAM\.
-+ **Default managed permission** – There is one default manged permission available for each resource type that AWS RAM supports\. The default managed permission allows principals to perform specific actions that are defined by the service for the resource type\. For example, for the Amazon VPC `ec2:Subnet` resource type, the default managed permission allows principals to perform the following actions:
++ **Default managed permission** – There is one default managed permission available for each resource type that AWS RAM supports\. The default managed permission allows principals to perform specific actions that are defined by the service for the resource type\. For example, for the Amazon VPC `ec2:Subnet` resource type, the default managed permission allows principals to perform the following actions:
   + `ec2:RunInstances`
   + `ec2:CreateNetworkInterface`
   + `ec2:DescribeSubnets`
@@ -49,7 +49,7 @@ For services that work with AWS RAM, the following sections list the default man
 + [AWS Certificate Manager Private Certificate Authority](#ram-perm-pca)
 + [AWS CodeBuild](#ram-perm-code)
 + [Amazon EC2](#ram-perm-ec2)
-+ [Amazon EC2 Image Builder](#ram-perm-image)
++ [EC2 Image Builder](#ram-perm-image)
 + [AWS Glue](#ram-perm-glue)
 + [AWS License Manager](#ram-perm-lic)
 + [AWS Network Firewall](#ram-perm-network-firewall)
@@ -99,7 +99,7 @@ Following are the default AWS RAM managed permissions for shareable AWS CodeBuil
 
 ### Amazon EC2<a name="ram-perm-ec2"></a>
 
-Following are the default AWS RAM managed permissions for shareable Amazon EC2 resources\.
+Following are the default AWS RAM managed permissions for shareable Amazon Elastic Compute Cloud \(Amazon EC2\) resources\.
 
 
 | Resource type | Permission name and ARN | Allowed actions | 
@@ -107,9 +107,9 @@ Following are the default AWS RAM managed permissions for shareable Amazon EC2 r
 | ec2:CapacityReservation |  ** AWSRAMDefaultPermissionCapacityReservation**  arn:aws:ram::aws:permission/AWSRAMDefaultPermissionCapacityReservation  |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/security-ram-permissions.html)  | 
 | ec2:DedicatedHost |  ** AWSRAMDefaultPermissionDedicatedHost**  arn:aws:ram::aws:permission/AWSRAMDefaultPermissionDedicatedHost  |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/security-ram-permissions.html)  | 
 
-### Amazon EC2 Image Builder<a name="ram-perm-image"></a>
+### EC2 Image Builder<a name="ram-perm-image"></a>
 
-Following are the default AWS RAM managed permissions for shareable Amazon EC2 Image Builder resources\.
+Following are the default AWS RAM managed permissions for shareable EC2 Image Builder resources\.
 
 
 | Resource type | Permission name and ARN | Allowed actions | 
@@ -204,7 +204,7 @@ Following are the default AWS RAM managed permissions for shareable AWS Systems 
 
 ### Amazon VPC<a name="ram-perm-vpc"></a>
 
-Following are the default AWS RAM managed permissions for shareable Amazon VPC resources\.
+Following are the default AWS RAM managed permissions for shareable Amazon Virtual Private Cloud \(Amazon VPC\) resources\.
 
 
 | Resource type | Permission name and ARN | Allowed actions | 

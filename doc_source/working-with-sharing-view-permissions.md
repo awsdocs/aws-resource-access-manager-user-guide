@@ -1,6 +1,6 @@
 # Viewing AWS RAM managed permissions<a name="working-with-sharing-view-permissions"></a>
 
-You can view details about AWS RAM managed permissions that are available to assign to resource types in your resource shares\. You can identify which managed permissions are by which resource shares\. To see these details, use the **Permissions library** in the AWS RAM console\.
+You can view details about AWS RAM managed permissions that are available to assign to resource types in your resource shares\. You can identify the managed permissions that are assigned to resource shares\. To see these details, use the **Permissions library** in the AWS RAM console\.
 
 ------
 #### [ Console ]
@@ -9,7 +9,7 @@ You can view details about AWS RAM managed permissions that are available to ass
 
 1. Navigate to the **[https://console.aws.amazon.com/ram/home#Permissions:](https://console.aws.amazon.com/ram/home#Permissions:)** page in the AWS RAM console\.
 
-1. Because AWS RAM resource shares exist in specific AWS Regions, choose the appropriate AWS Region from the drop\-down list in the upper\-right corner of the console\.
+1. Because AWS RAM resource shares exist in specific AWS Regions, choose the appropriate AWS Region from the dropdown list in the upper\-right corner of the console\.
 
 1. In the **Permissions **list, choose the managed permission for which you want to view details\. You can use the search box to filter the list of permissions by entering part of a name or a resource type\.
 
@@ -45,7 +45,7 @@ You can view details about AWS RAM managed permissions that are available to ass
 ------
 #### [ AWS CLI ]
 
-**To view the principals you're sharing resources with**  
+**To view details about AWS RAM managed permissions**  
 You can use the [list\-permissions](https://docs.aws.amazon.com/cli/latest/reference/ram/list-permissions.html) command to get a list of the permissions available to use on resource shares in the current AWS Region for the calling account\.
 
 ```

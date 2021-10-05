@@ -1,6 +1,6 @@
-# Viewing resource shares you created in AWS Resource Access Manager<a name="working-with-sharing-view-rs"></a>
+# Viewing resource shares you created in AWS RAM<a name="working-with-sharing-view-rs"></a>
 
-You can view a list of all the resource shares that you have created\. You can see which resources you are sharing and the principals with whom they are shared\.
+You can view a list of all the resource shares that you have created\. You can see which resources you're sharing and the principals with whom they're shared\.
 
 ------
 #### [ Console ]
@@ -9,9 +9,9 @@ You can view a list of all the resource shares that you have created\. You can s
 
 1. Open the [https://console.aws.amazon.com/ram/home#OwnedResourceShares:](https://console.aws.amazon.com/ram/home#OwnedResourceShares:) page in the AWS RAM console\.
 
-1. Because AWS RAM resource shares exist in specific AWS Regions, choose the appropriate AWS Region from the drop\-down list in the upper\-right corner of the console\.
+1. Because AWS RAM resource shares exist in specific AWS Regions, choose the appropriate AWS Region from the dropdown list in the upper\-right corner of the console\.
 
-1. \(Optional\) Apply a filter to find specific resource shares\. You can apply multiple filters to narrow your search\. You can type a keyword, such as part of the a resource share name to list only those resource shares that include that text in the name\. Choose the text box to see a drop\-down list of suggested attribute fields\. After you choose one, you can choose from the list of available values for that field\. You can add other attributes or keywords as well until you find the resource you want\.
+1. \(Optional\) Apply a filter to find specific resource shares\. You can apply multiple filters to narrow your search\. You can type a keyword, such as part of a resource share name to list only those resource shares that include that text in the name\. Choose the text box to see a dropdown list of suggested attribute fields\. After you choose one, you can choose from the list of available values for that field\. You can add other attributes or keywords until you find the resource you want\.
 
 1. Choose the name of the resource share to review\. The console displays the following information about the resource share:
    + **Summary** – Lists the resource share name, ID, owner, Amazon Resource Name \(ARN\), creation date, whether it allows sharing with external accounts, and its current status\.

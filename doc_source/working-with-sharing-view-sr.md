@@ -1,6 +1,6 @@
-# Viewing your shared resources in AWS Resource Access Manager<a name="working-with-sharing-view-sr"></a>
+# Viewing your shared resources in AWS RAM<a name="working-with-sharing-view-sr"></a>
 
-You can view the list of individual resources that you shared, across all resource shares\. This enables you to determine which resources you are currently sharing, the number of resource shares they are included in, and the number of principals that have access to them\.
+You can view the list of individual resources that you shared, across all resource shares\. The list helps you to determine which resources you're currently sharing, the number of resource shares that they're included in, and the number of principals that have access to them\.
 
 ------
 #### [ Console ]
@@ -9,13 +9,13 @@ You can view the list of individual resources that you shared, across all resour
 
 1. Open the [https://console.aws.amazon.com/ram/home#OwnedResources:](https://console.aws.amazon.com/ram/home#OwnedResources:) page in the AWS RAM console\.
 
-1. Because AWS RAM resource shares exist in specific AWS Regions, choose the appropriate AWS Region from the drop\-down list in the upper\-right corner of the console\.
+1. Because AWS RAM resource shares exist in specific AWS Regions, choose the appropriate AWS Region from the dropdown list in the upper\-right corner of the console\.
 
 1. For each shared resource, the following information is available:
    + **Resource ID** – The ID of the resource\. Choose the ID of a resource to open a new browser tab to view the resource in its native service console\.
    + **Resource type** – The type of resource\.
    + **Last share date** – The date on which the resource was last shared\.
-   + **Resource shares** – The number of resource shares that include the resource\. Choose the value to list the resource shares\.
+   + **Resource shares** – The number of resource shares that include the resource\. To see the list of the resource shares, choose the number\.
    + **Principals** – The number of principals who can access the resource\. Choose the value to view the principals\.
 
 ------

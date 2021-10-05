@@ -1,6 +1,6 @@
-# Using AWS Resource Access Manager with an AWS SDK<a name="sdk-general-info"></a>
+# Using AWS RAM with an AWS SDK<a name="sdk-general-info"></a>
 
-AWS software development kits \(SDKs\) are available for many popular programming languages\. Each SDK provides an API, code examples, and documentation that make it easier for developers to build applications in their preferred language\.
+AWS software development kits \(SDKs\) are available for many popular programming languages\. Each SDK provides an API, code examples, and documentation that help developers to build applications in their preferred language\.
 
 
 | SDK documentation | Code examples | 

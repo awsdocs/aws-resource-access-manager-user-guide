@@ -1,12 +1,15 @@
-# AWS managed policies for AWS Resource Access Manager<a name="security-iam-managed-policies"></a>
+# AWS managed policies for AWS RAM<a name="security-iam-managed-policies"></a>
+
+AWS Resource Access Manager currently provides several AWS RAM managed policies, which are described in this topic\.
 
 **Topics**
 + [AWSResourceAccessManagerReadOnlyAccess](#security-iam-managed-policies-AWSResourceAccessManagerReadOnlyAccess)
 + [AWSResourceAccessManagerFullAccess](#security-iam-managed-policies-AWSResourceAccessManagerFullAccess)
 + [AWSResourceAccessManagerResourceShareParticipantAccess](#security-iam-managed-policies-AWSResourceAccessManagerResourceShareParticipantAccess)
 + [AWSResourceAccessManagerServiceRolePolicy](#security-iam-managed-policies-AWSResourceAccessManagerServiceRolePolicy)
++ [Policy updates](#security-iam-awsmanpol-updates)
 
-The first three you can attach to your IAM users and roles to grant permissions\. The last policy is reserved for the AWS RAM service's service\-linked role\.
+In the preceding list, you can attach the first three policies to your IAM users and roles to grant permissions\. The last policy in the list is reserved for the AWS RAM service's service\-linked role\.
 
 To add permissions to users, groups, and roles, it is easier to use AWS managed policies than to write policies yourself\. It takes time and expertise to [create IAM customer managed policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create-console.html) that provide your team with only the permissions they need\. To get started quickly, you can use our AWS managed policies\. These policies cover common use cases and are available in your AWS account\. For more information about AWS managed policies, see [AWS managed policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html#aws-managed-policies) in the *IAM User Guide*\.
 
@@ -73,7 +76,7 @@ This policy includes the following permissions\.
 
 You can attach the `AWSResourceAccessManagerResourceShareParticipantAccess` policy to your IAM identities\.
 
-This policy provides principals the ability to accept or reject resource shares that are shared with this AWS account, and to view details about thise resource shares\. It doesn't provide any ability to modify those resource shares\.
+This policy provides principals the ability to accept or reject resource shares that are shared with this AWS account, and to view details about these resource shares\. It doesn't provide any ability to modify those resource shares\.
 
 It does this by granting permission to run some `ram` operations\.
 
@@ -105,7 +108,7 @@ This policy includes the following permissions\.
 
 ## AWS managed policy: AWSResourceAccessManagerServiceRolePolicy<a name="security-iam-managed-policies-AWSResourceAccessManagerServiceRolePolicy"></a>
 
-The AWS managed policy `AWSAccountManagementFullAccess` can be used only with the service\-linked role for AWS RAM\. You cannot attach, detach, modify, or delete this policy\.
+The AWS managed policy `AWSResourceAccessManagerServiceRolePolicy`can be used only with the service\-linked role for AWS RAM\. You can't attach, detach, modify, or delete this policy\.
 
 This policy provides AWS RAM with read\-only access to your organization's structure\. When you enable integration between AWS RAM and AWS Organizations, AWS RAM automatically creates a service\-linked role named [AWSServiceRoleForResourceAccessManager](https://console.aws.amazon.com/iam/home#/roles/AWSServiceRoleForResourceAccessManager) that the service assumes when it needs to look up information about your organization and its accounts, for example, when you view the organization's structure in the AWS RAM console\.
 
@@ -147,3 +150,12 @@ This policy includes the following permissions\.
     ]
 }
 ```
+
+## AWS RAM updates to AWS managed policies<a name="security-iam-awsmanpol-updates"></a>
+
+View details about updates to AWS managed policies for AWS RAM since this service began tracking these changes\. For automatic alerts about changes to this page, subscribe to the RSS feed on the AWS RAM Document history page\.
+
+
+| Change | Description | Date | 
+| --- | --- | --- | 
+|  AWS Resource Access Manager started tracking changes  |  AWS RAM documented its existing managed policies and started tracking changes\.  | September 16, 2021 | 

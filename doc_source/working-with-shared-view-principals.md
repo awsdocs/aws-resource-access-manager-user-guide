@@ -1,6 +1,6 @@
 # View principals sharing with you<a name="working-with-shared-view-principals"></a>
 
-You can view a list of all the principals that are sharing resources with you\. You can see which resources and resource shares they are sharing with you\.
+You can view a list of all the principals that are sharing resources with you\. You can see which resources and resource shares they're sharing with you\.
 
 ------
 #### [ Console ]
@@ -14,9 +14,9 @@ You can view a list of all the principals that are sharing resources with you\. 
 1. \(Optional\) You can apply a filter to find specific principals\. You can apply multiple filters to narrow your search\.
 
 1. The console displays the following information:
-   + **Principal ID**—The ID of the principal who is sharing with you\.
-   + **Resource shares**—The number of resource shares to which the principal has added you\. Choose the number to view the list of resource shares\.
-   + **Resources**—The number of resources the principal is sharing with you\. Choose the value to view the list of resources\.
+   + **Principal ID** – The ID of the principal who is sharing with you\.
+   + **Resource shares** – The number of resource shares to which the principal has added you\. Choose the number to view the list of resource shares\.
+   + **Resources** – The number of resources the principal is sharing with you\. Choose the value to view the list of resources\.
 
 ------
 #### [ AWS CLI ]

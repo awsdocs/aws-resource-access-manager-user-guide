@@ -1,6 +1,6 @@
 # Viewing resources shared with you<a name="working-with-shared-view-sr"></a>
 
-You can view the shared resources that you can access\. You can see which principals shared the resources with you and which resource shares include them\.
+You can view the shared resources that you can access\. You can see which principals shared the resources with you and which resource shares include the resources\.
 
 ------
 #### [ Console ]
@@ -12,16 +12,16 @@ You can view the shared resources that you can access\. You can see which princi
 1. Apply a filter to find specific shared resources\. You can apply multiple filters to narrow your search\.
 
 1. The following information is available:
-   + **Resource ID**—The ID of the resource\. Choose the ID of the resource to view it in its service console\.
-   + **Resource type**—The type of resource\.
-   + **Last share date**—The date on which the resource was shared with you\.
-   + **Resource shares**—The number of resource shares in which the resource is included\. Choose the value to view the resource shares\.
-   + **Owner ID**—The ID of the principal who owns the resource\.
+   + **Resource ID** – The ID of the resource\. Choose the ID of the resource to view it in its service console\.
+   + **Resource type** – The type of resource\.
+   + **Last share date** – The date on which the resource was shared with you\.
+   + **Resource shares** – The number of resource shares in which the resource is included\. Choose the value to view the resource shares\.
+   + **Owner ID** – The ID of the principal who owns the resource\.
 
 ------
 #### [ AWS CLI ]
 
-**To view shared resources**  
+**To view resources shared with you**  
 You can use the [list\-resources](https://docs.aws.amazon.com/cli/latest/reference/ram/list-resources.html) command to view resources that are shared with you\.
 
 The following example command displays details about the resource accessible through a resource share from another AWS account\.
