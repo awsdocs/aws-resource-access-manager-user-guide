@@ -11,6 +11,6 @@ This documentation helps you understand how to apply the shared responsibility m
 **Topics**
 + [Data protection](data-protection.md)
 + [Identity and access management](control-access.md)
-+ [Logging and monitoring](security-monitoring.md)
++ [Logging and monitoring](monitoring-overview.md)
 + [Resilience](disaster-recovery-resiliency.md)
 + [Infrastructure security](infrastructure-security.md)

@@ -3,6 +3,9 @@
 You can use AWS Resource Access Manager \(AWS RAM\) to share AWS resources that you own and access AWS resources that are shared with you\.
 
 **Contents**
++ [Sharing regional resources versus global resources](working-with-regional-vs-global.md)
+  + [What is the difference between regional and global resources?](working-with-regional-vs-global.md#regional-resources)
+  + [Resource shares and their Regions](working-with-regional-vs-global.md#shares-with-regional-only)
 + [Share AWS resources owned by you](working-with-sharing.md)
   + [Viewing resource shares you created in AWS RAM](working-with-sharing-view-rs.md)
   + [Creating a resource share in AWS RAM](working-with-sharing-create.md)
