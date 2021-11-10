@@ -117,7 +117,9 @@ You can share the following AWS Outposts resources by using AWS RAM\.
 
 | Resource type and code | Use case | Share with IAM users and roles | 
 | --- | --- | --- | 
-|  Outposts `outposts:Outpost`  |  Create and manage Outposts centrally, and share them with other AWS accounts or your organization\. This enables multiple accounts to create subnets and EBS volumes on your shared, centrally managed Outposts\. For more information, see [ Working with shared AWS Outposts resources](https://docs.aws.amazon.com/outposts/latest/userguide/sharing-outposts.html) in the *AWS Outposts User Guide*\.   |  ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ram/latest/userguide/images/icon-no.png) No  | 
+|  Outposts `outposts:Outpost`  |  Create and manage Outposts centrally, and share them with other AWS accounts in your organization\. This lets multiple accounts create subnets and EBS volumes on your shared, centrally managed Outposts\. For more information, see [ Working with shared AWS Outposts resources](https://docs.aws.amazon.com/outposts/latest/userguide/sharing-outposts.html) in the *AWS Outposts User Guide*\.   |  ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ram/latest/userguide/images/icon-no.png) No  | 
+|  Local gateway route table `ec2:LocalGatewayRouteTable`  |  Create and manage VPC associations to a local gateway centrally, and share them with other AWS accounts in your organization\. This lets multiple accounts create VPC associations to a local gateway, and view route table and virtual interface configuration\. For more information, see [Shareable Outpost resources](https://docs.aws.amazon.com/outposts/latest/userguide/sharing-outposts.html#sharing-resources) in the *AWS Outposts User Guide*\.  |  ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ram/latest/userguide/images/icon-no.png) No  | 
+|  Sites `outposts:Site`  |  Create and manage Outpost sites and share them with other AWS accounts in your organization\. This lets multiple accounts create and manage Outposts at the shared site and supports split control between the Outpost resources and the site\. For more information, see [ Working with shared AWS Outposts resources](https://docs.aws.amazon.com/outposts/latest/userguide/sharing-outposts.html) in the *AWS Outposts User Guide*\.   |  ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ram/latest/userguide/images/icon-no.png) No  | 
 
 ## Amazon S3 on Outposts<a name="shareable-s3outposts"></a>
 
@@ -126,7 +128,7 @@ You can share the following Amazon S3 on Outposts resource by using AWS RAM\.
 
 | Resource type and code | Use case | Share with IAM users and roles | 
 | --- | --- | --- | 
-|  S3 on Outpost `s3-outposts:Outpost`  |  Create and manage Amazon S3 buckets, access points, and endpoints on the Outpost\. This enables you to share capacity with the AWS accounts or your organization\. For more information, see [ Working with shared AWS Outposts resources](https://docs.aws.amazon.com/outposts/latest/userguide/sharing-outposts.html) in the *AWS Outposts User Guide*\.  |  ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ram/latest/userguide/images/icon-no.png) No  | 
+|  S3 on Outpost `s3-outposts:Outpost`  |  Create and manage Amazon S3 buckets, access points, and endpoints on the Outpost\. This lets multiple accounts create and manage Outposts at the shared site and supports split control between the Outpost resources and the site\. For more information, see [ Working with shared AWS Outposts resources](https://docs.aws.amazon.com/outposts/latest/userguide/sharing-outposts.html) in the *AWS Outposts User Guide*\.  |  ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ram/latest/userguide/images/icon-no.png) No  | 
 
 ## AWS Resource Groups<a name="shareable-arg"></a>
 

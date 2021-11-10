@@ -95,4 +95,25 @@ $ aws ram list-permissions
 }
 ```
 
+After you find the ARN of a specific permission you're interested in, you can retrieve its details, including the JSON policy text, by running the command [get\-permission](https://docs.aws.amazon.com/cli/latest/reference/ram/get-permission.html)\.
+
+```
+$ aws ram get-permission \
+    --permission-arn arn:aws:ram::aws:permission/AWSRAMDefaultPermissionResourceGroup
+                {
+    "permission": {
+        "arn": "arn:aws:ram::aws:permission/AWSRAMDefaultPermissionResourceGroup",
+        "version": "1",
+        "defaultVersion": true,
+        "name": "AWSRAMDefaultPermissionResourceGroup",
+        "resourceType": "resource-groups:Group",
+        "permission": "{\"Effect\":\"Allow\",\"Action\":[\"resource-groups:GetGroup\",
+                        \"resource-groups:GetGroupConfiguration\",\"resource-groups:ListGroupResources\"]}",
+        "creationTime": 1582832306.525,
+        "lastUpdatedTime": 1582832306.525,
+        "isResourceTypeDefault": true
+    }
+}
+```
+
 ------

@@ -1,4 +1,4 @@
-# Security in AWS Resource Access Manager<a name="security"></a>
+# Security in AWS RAM<a name="security"></a>
 
 Cloud security at AWS is the highest priority\. As an AWS customer, you benefit from a data center and network architecture that is built to meet the requirements of the most security\-sensitive organizations\.
 
@@ -11,6 +11,6 @@ This documentation helps you understand how to apply the shared responsibility m
 **Topics**
 + [Data protection](data-protection.md)
 + [Identity and access management](control-access.md)
-+ [Logging and monitoring](monitoring-overview.md)
++ [Logging and monitoring](security-monitoring.md)
 + [Resilience](disaster-recovery-resiliency.md)
 + [Infrastructure security](infrastructure-security.md)

@@ -4,6 +4,7 @@ AWS Identity and Access Management \(IAM\) is an AWS service that helps an admin
 
 **Topics**
 + [How AWS RAM works with IAM](security-iam-policies.md)
-+ [AWS managed policies](security-iam-managed-policies.md)
-+ [Example IAM policies](security-iam-policies-examples.md)
-+ [Disable sharing with Organizations](security-disable-sharing-with-orgs.md)
++ [AWS managed policies for AWS RAM](security-iam-managed-policies.md)
++ [Example IAM policies for AWS RAM](security-iam-policies-examples.md)
++ [Example service control policies for AWS Organizations and AWS RAM](scp.md)
++ [Disabling resource sharing with AWS Organizations](security-disable-sharing-with-orgs.md)
