@@ -6,7 +6,7 @@ To share a resource that you own by using AWS RAM, do the following:
 
 **Notes**  
 Sharing a resource makes it available for use by principals outside of the AWS account that created the resource\. Sharing doesn't change any permissions or quotas that apply to the resource in the account that created it\.
-AWS RAM is a Regional service\. The principals that you share with can access the resource share in only the AWS Region in which it was created\.
+AWS RAM is a Regional service\. The principals that you share with can access resource shares in only the AWS Regions in which thy were created\.
 Some resources have special considerations and prerequisites for sharing\. For more information, see [Shareable AWS resources](shareable.md)\.
 
 ## Enable resource sharing within AWS Organizations<a name="getting-started-sharing-orgs"></a>
@@ -54,17 +54,19 @@ $ aws ram enable-sharing-with-aws-organization
 
 To share resources that you own, create a resource share\. When you create a resource share, you do the following:
 
-1. Add the resources to share\.
+1. Add the resources that you want to share\.
 
-1. If more than the default AWS RAM managed permission is available, choose a permission to associate with each resource type\. If only the default permission is available, AWS RAM automatically associates this permission with the resource type\. 
+1. For each resource type that you include in the share, specify the permission to use for that resource type\.
+   + If only the *default permission* is available for a resource type, then AWS RAM automatically associates that permission with the resource type and there is no action for you\.
+   + If more than the default AWS RAM managed permission is available for a resource type, then you must choose the permission to associate with that resource type\. 
 
 1. Specify the principals that you want to have access to the resources\.
 
 **Considerations**
 + You can share a resource only if you own it\. You can't share a resource that is shared with you\.
-+ AWS RAM is a Regional service\. When you share a resource with principals in other AWS accounts, they must access it from the same AWS Region that it was created in\. 
++ AWS RAM is a Regional service\. When you share a resource with principals in other AWS accounts, they must access each resource from the same AWS Region that it was created in\. For supported global resources, you can access those resources from any AWS Region that is supported by that resource's service console and tools\. Note that you can view such resource shares and their global resources in the AWS RAM console and tools only in the designated home Region, US East \(N\. Virginia\), `us-east-1`\. For more information about AWS RAM and global resources, see [Sharing Regional resources compared to global resources](working-with-regional-vs-global.md)\.
 + If you're part of an organization in AWS Organizations and sharing within your organization is enabled, principals in the organization are automatically granted access to the shared resources without the use of invitations\. A principal in an account with whom you share outside of the context of an organization receives an invitation to join the resource share and is granted access to the shared resources only after they accept the invitation\.
-+ After you add an organization to a resource share, changes to the accounts that are in an OU or accounts that join or leave an organization dynamically affect the resource share\. For example, if you add a new account to an OU that has access to a resource share, then the new account automatically has access to the shared resources\.
++ After you add an organization or an organization unit \(OU\) to a resource share, changes to the accounts that are in an OU or accounts that join or leave an organization dynamically affect the resource share\. For example, if you add a new account to an OU that has access to a resource share, then the new member account automatically receives access to the shared resources\.
 + You can add only the organization your account is a member of, and OUs from that organization to your resource shares\. You can't add OUs or organizations from outside your own organization to a resource share as principals\. However, you can add individual AWS accounts, IAM users, and IAM roles from outside your organization as principals to a resource share\.
 **Note**  
 Not all resource types can be shared with IAM roles and users\. For information about resources that you can share with these principals, see [Shareable AWS resources](shareable.md)\.
@@ -76,7 +78,7 @@ Not all resource types can be shared with IAM roles and users\. For information 
 
 1. Open the [AWS RAM console](https://console.aws.amazon.com/ram/home)\.
 
-1. Because AWS RAM resource shares exist in specific AWS Regions, choose the appropriate AWS Region from the dropdown list in the upper\-right corner of the console\.
+1. Because AWS RAM resource shares exist in specific AWS Regions, choose the appropriate AWS Region from the dropdown list in the upper\-right corner of the console\. To see resource shares that contain global resources, you must set the AWS Region to US East \(N\. Virginia\), \(`us-east-1`\)\. For more information about sharing global resources, see [Sharing Regional resources compared to global resources](working-with-regional-vs-global.md)\. If you want to include global resources in the resource share, then you must choose the designated home Region, US East \(N\. Virginia\), `us-east-1`\.
 
 1. If you're new to AWS RAM, choose **Create a resource share** from the home page\. Otherwise, choose **Create resource share** from the [https://console.aws.amazon.com/ram/home#OwnedResourceShares:](https://console.aws.amazon.com/ram/home#OwnedResourceShares:) page\.
 
@@ -88,7 +90,7 @@ Not all resource types can be shared with IAM roles and users\. For information 
       + For **Select resource type**, choose the type of resource to share\. This filters the list of shareable resources to only those resources of the selected type\.
       + In the resulting list of resources, select the check boxes next to the individual resources that you want to share\. The selected resources move under **Selected resources**\.
 
-        If you're sharing zonal resources, using the Availability Zone ID \(AZ ID\) helps you determine the relative location of these resources across accounts\. For more information, see [Availability Zone IDs for your AWS resources](working-with-az-ids.md)\.
+        If you're sharing resources that are associated with a specific availability zone, then using the Availability Zone ID \(AZ ID\) helps you determine the relative location of these resources across accounts\. For more information, see [Availability Zone IDs for your AWS resources](working-with-az-ids.md)\.
 
    1. \(Optional\) To [attach tags](https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html) to the resource share, under **Tags**, enter a tag key and value\. Add others by choosing **Add new tag**\. Repeat this step as needed\. These tags applied to only the resource share itself, not to the resources in the resource share\.
 
@@ -163,10 +165,11 @@ Use the [create\-resource\-share](https://docs.aws.amazon.com/cli/latest/referen
 
 ```
 $ aws ram create-resource-share \
+    --region us-east-1 \
     --name MyLicenseConfigShare \
     --permission-arns arn:aws:ram::aws:permission/AWSRAMDefaultPermissionLicenseConfiguration \
     --resource-arns arn:aws:license-manager:us-east-1:123456789012:license-configuration:lic-abc123 \
-    --principals arn:aws:organizations::ExampleAWSAccountNo3;:organization/o-1234abcd
+    --principals arn:aws:organizations::123456789012:organization/o-1234abcd
 {
     "resourceShare": {
         "resourceShareArn": "arn:aws:ram:us-east-1:123456789012:resource-share/12345678-abcd-09876543",

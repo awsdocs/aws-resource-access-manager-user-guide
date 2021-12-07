@@ -9,7 +9,7 @@ You can view details about AWS RAM managed permissions that are available to ass
 
 1. Navigate to the **[https://console.aws.amazon.com/ram/home#Permissions:](https://console.aws.amazon.com/ram/home#Permissions:)** page in the AWS RAM console\.
 
-1. Because AWS RAM resource shares exist in specific AWS Regions, choose the appropriate AWS Region from the dropdown list in the upper\-right corner of the console\.
+1. Because AWS RAM resource shares exist in specific AWS Regions, choose the appropriate AWS Region from the dropdown list in the upper\-right corner of the console\. To see resource shares that contain global resources, you must set the AWS Region to US East \(N\. Virginia\), \(`us-east-1`\)\. For more information about sharing global resources, see [Sharing Regional resources compared to global resources](working-with-regional-vs-global.md)\. Although all Regions share the same available managed permissions, this affects the list of associated resource shares in step 5\.
 
 1. In the **Permissions **list, choose the managed permission for which you want to view details\. You can use the search box to filter the list of permissions by entering part of a name or a resource type\.
 

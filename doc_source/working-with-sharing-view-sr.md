@@ -1,6 +1,6 @@
 # Viewing your shared resources in AWS RAM<a name="working-with-sharing-view-sr"></a>
 
-You can view the list of individual resources that you shared, across all resource shares\. The list helps you to determine which resources you're currently sharing, the number of resource shares that they're included in, and the number of principals that have access to them\.
+You can view the list of individual resources that you've shared, across all resource shares\. The list helps you to determine which resources you're currently sharing, the number of resource shares that they're included in, and the number of principals that have access to them\.
 
 ------
 #### [ Console ]
@@ -9,7 +9,7 @@ You can view the list of individual resources that you shared, across all resour
 
 1. Open the [https://console.aws.amazon.com/ram/home#OwnedResources:](https://console.aws.amazon.com/ram/home#OwnedResources:) page in the AWS RAM console\.
 
-1. Because AWS RAM resource shares exist in specific AWS Regions, choose the appropriate AWS Region from the dropdown list in the upper\-right corner of the console\.
+1. Because AWS RAM resource shares exist in specific AWS Regions, choose the appropriate AWS Region from the dropdown list in the upper\-right corner of the console\. To see resource shares that contain global resources, you must set the AWS Region to US East \(N\. Virginia\), \(`us-east-1`\)\. For more information about sharing global resources, see [Sharing Regional resources compared to global resources](working-with-regional-vs-global.md)\.
 
 1. For each shared resource, the following information is available:
    + **Resource ID** – The ID of the resource\. Choose the ID of a resource to open a new browser tab to view the resource in its native service console\.
@@ -24,10 +24,11 @@ You can view the list of individual resources that you shared, across all resour
 **To view the resources that you're currently sharing**  
 You can use the [list\-resources](https://docs.aws.amazon.com/cli/latest/reference/ram/list-resources.html) command with the parameter `--resource-owner` set to `SELF` to display details of the resources that you currently share\.
 
-The following example shows the resources that are included in resource shares in the current AWS Region \(`us-east-1`\) for the calling AWS account\. To get the resources that you share in a different Region, use the `--region <region-code>` parameter\.
+The following example shows the resources that are included in resource shares in the AWS Region \(`us-east-1`\) for the calling AWS account\. To get the resources that you share in a different Region, use the `--region <region-code>` parameter\.
 
 ```
 $ aws ram list-resources \
+    --region us-east-1 \
     --resource-owner SELF
 {
     "resources": [

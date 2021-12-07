@@ -9,6 +9,8 @@ You can view the shared resources that you can access\. You can see which princi
 
 1. Navigate to the [https://console.aws.amazon.com/ram/home#SharedResources:](https://console.aws.amazon.com/ram/home#SharedResources:) page in the AWS RAM console\.
 
+1. Because AWS RAM resource shares exist in specific AWS Regions, choose the appropriate AWS Region from the dropdown list in the upper\-right corner of the console\. To see resource shares that contain global resources, you must set the AWS Region to US East \(N\. Virginia\), \(`us-east-1`\)\. For more information about sharing global resources, see [Sharing Regional resources compared to global resources](working-with-regional-vs-global.md)\.
+
 1. Apply a filter to find specific shared resources\. You can apply multiple filters to narrow your search\.
 
 1. The following information is available:
@@ -24,10 +26,11 @@ You can view the shared resources that you can access\. You can see which princi
 **To view resources shared with you**  
 You can use the [list\-resources](https://docs.aws.amazon.com/cli/latest/reference/ram/list-resources.html) command to view resources that are shared with you\.
 
-The following example command displays details about the resource accessible through a resource share from another AWS account\.
+The following example command displays details about the resource accessible through a resource share in the specified AWS Region from another AWS account\.
 
 ```
 $ aws ram list-resources \
+    --region us-east-1 \
     --resource-owner OTHER-ACCOUNTS
 {
     "resources": [

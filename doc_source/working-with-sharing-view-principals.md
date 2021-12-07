@@ -9,7 +9,7 @@ You can view the principals you share your resources with, across all resource s
 
 1. Navigate to the [https://console.aws.amazon.com/ram/home#OwnedPrincipals:](https://console.aws.amazon.com/ram/home#OwnedPrincipals:) page in the AWS RAM console\.
 
-1. Because AWS RAM resource shares exist in specific AWS Regions, choose the appropriate AWS Region from the dropdown list in the upper\-right corner of the console\.
+1. Because AWS RAM resource shares exist in specific AWS Regions, choose the appropriate AWS Region from the dropdown list in the upper\-right corner of the console\. To see resource shares that contain global resources, you must set the AWS Region to US East \(N\. Virginia\), \(`us-east-1`\)\. For more information about sharing global resources, see [Sharing Regional resources compared to global resources](working-with-regional-vs-global.md)\.
 
 1. Apply a filter to find specific principals\. You can apply multiple filters to narrow your search\. Choose the text box to see a dropdown list of suggested attribute fields\. After you choose one, you can choose from the list of available values for that field\. You can add other attributes or keywords until you find the resource you want\.
 
@@ -24,10 +24,11 @@ You can view the principals you share your resources with, across all resource s
 **To view the principals you're sharing resources with**  
 You can use the [list\-principals](https://docs.aws.amazon.com/cli/latest/reference/ram/list-principals.html) command to get a list of the principals you reference in resource shares that you created in the current AWS Region for the calling account\.
 
-The following example lists the principals that have access to shares created in the default Region for the calling account\. In this example, the principals are the calling account's organization and a separate AWS account, as part of two different resource shares\.
+The following example lists the principals that have access to shares created in the default Region for the calling account\. In this example, the principals are the calling account's organization and a separate AWS account, as part of two different resource shares\. You must use the service endpoint for the AWS Region that contains the resource share\.
 
 ```
 $ aws ram list-principals \
+    --region us-east-1 \
     --resource-owner SELF
 {
     "principals": [
@@ -40,7 +41,7 @@ $ aws ram list-principals \
         },
         {
             "id": "111111111111",
-            "resourceShareArn": "arn:aws:ram:us-east-1:111111111111:resource-share/6405fa7c-0786-4e15-8c9f-8aec02802f18",
+            "resourceShareArn": "arn:aws:ram:us-east-1:123456789012:resource-share/6405fa7c-0786-4e15-8c9f-8aec02802f18",
             "creationTime": "2021-09-15T15:00:31.601000-07:00",
             "lastUpdatedTime": "2021-09-15T15:14:13.618000-07:00",
             "external": true

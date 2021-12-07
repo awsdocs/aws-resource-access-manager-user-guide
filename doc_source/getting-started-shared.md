@@ -16,10 +16,10 @@ If you receive an invitation to join a resource share, you must accept it to gai
 **To respond to invitations**
 
 1. Open the [https://console.aws.amazon.com/ram/home#SharedResourceShares:](https://console.aws.amazon.com/ram/home#SharedResourceShares:) page in the AWS RAM console\.
+**Note**  
+A resource share is visible in only the AWS Region in which it was created\. If an expected resource share doesn't appear in the console, you might need to switch to a different AWS Region using the drop\-down control in the upper\-right corner\.
 
-1. In the navigation pane, choose **Shared with me**, **Resource shares**\.
-
-1. Review the list of resource shares to which you have been added\.
+1. Review the list of resource shares to which you have been granted access\.
 
    The **Status** column indicates your current participation status for the resource share\. The `Pending` status indicates that you have been added to a resource share, but you have not yet accepted or rejected the invitation\.
 
@@ -65,10 +65,10 @@ $ aws ram accept-resource-share-invitation \
 }
 ```
 
-The output now shows that the `status` has changed to `ACCEPTED`\. The resources that are included in that resource share are now available to principals in the accepting account\.
+The output shows that the `status` has changed to `ACCEPTED`\. The resources that are included in that resource share are now available to principals in the accepting account\.
 
 ------
 
 ## Use the resources that are shared with you<a name="getting-started-shared-use-resources"></a>
 
-After you accept the invitation to join a resource share, you can perform specific actions on the shared resources\. These actions vary by resource type\. For more information, see [Shareable AWS resources](shareable.md)\.
+After you accept the invitation to join a resource share, you can perform specific actions on the shared resources\. These actions vary by resource type\. For more information, see [Shareable AWS resources](shareable.md)\. The resources are available directly in each resource's service console and API/CLI operations\. If the resource is regional, then you must use the correct AWS Region in the service console or API/CLI command\. If the resource is global, then you must use the designated home Region, US East \(N\. Virginia\), `us-east-1` To view the resource in AWS RAM, you must open the AWS RAM console to the AWS Region that the resource share was created in\.

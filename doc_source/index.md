@@ -19,6 +19,7 @@ Amazon's trademarks and trade dress may not be used in
    + [Sharing your AWS resources](getting-started-sharing.md)
    + [Using shared AWS resources](getting-started-shared.md)
 + [Working with shared AWS resources](working-with.md)
+   + [Sharing Regional resources compared to global resources](working-with-regional-vs-global.md)
    + [Share AWS resources owned by you](working-with-sharing.md)
       + [Viewing resource shares you created in AWS RAM](working-with-sharing-view-rs.md)
       + [Creating a resource share in AWS RAM](working-with-sharing-create.md)

@@ -11,11 +11,11 @@ The deleted resource share remains visible in the AWS RAM console for a short pe
 
 1. Open the [https://console.aws.amazon.com/ram/home#OwnedResourceShares:](https://console.aws.amazon.com/ram/home#OwnedResourceShares:) page in the AWS RAM console\.
 
-1. Because AWS RAM resource shares exist in specific AWS Regions, choose the appropriate AWS Region from the dropdown list in the upper\-right corner of the console\.
+1. Because AWS RAM resource shares exist in specific AWS Regions, choose the appropriate AWS Region from the dropdown list in the upper\-right corner of the console\. To see resource shares that contain global resources, you must set the AWS Region to US East \(N\. Virginia\), \(`us-east-1`\)\. For more information about sharing global resources, see [Sharing Regional resources compared to global resources](working-with-regional-vs-global.md)\.
 
-1. Select the resource share you want to delete\. Be sure to select the correct resource share\. 
+1. Select the resource share you want to delete\.
 **Warning**  
-You can't recover a resource share after you delete it\.
+ Be sure to select the correct resource share\. You can't recover a resource share after you delete it\.
 
 1. Choose **Delete**, then in the confirmation message, choose **Delete**\.
 
@@ -29,6 +29,7 @@ The following example first uses the [get\-resource\-shares](https://docs.aws.am
 
 ```
 $  aws ram get-resource-shares \
+    --region us-east-1 \
     --resource-owner SELF
 {
     "resourceShares": [
@@ -45,6 +46,7 @@ $  aws ram get-resource-shares \
     ]
 }
 $ aws ram delete-resource-share \
+    -region us-east-1 \
     --resource-share-arn arn:aws:ram:us-east-1:123456789012:resource-share/2ebe77d7-4156-4a93-87a4-228568d04425
 {
     "returnValue": true

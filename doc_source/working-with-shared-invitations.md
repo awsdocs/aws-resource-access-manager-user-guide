@@ -2,7 +2,7 @@
 
 To access shared resources, the owner of the resource share must add you as a principal\.
 
-If you're added to the resource share through an AWS account in an organization in AWS Organizations, and sharing within the organization is enabled, then you automatically get access to the shared resources without having to accept an invitation\.
+If you're added to the resource share through an AWS account that is in an organization in AWS Organizations, and sharing within the organization is enabled, then you automatically get access to the shared resources without having to accept an invitation\.
 
 If you're added to a resource share by one of the following, you receive an invitation to join the resource share:
 + An account outside of your organization in AWS Organizations
@@ -10,7 +10,7 @@ If you're added to a resource share by one of the following, you receive an invi
 
 If you receive an invitation to join a resource share, you must accept it to access its shared resources\. If you decline the invitation, you can't access the shared resources\.
 
-You have seven days to accept an invitation to join a resource share\. If you don't accept the invitation within seven days, it expires and is automatically declined\.
+You have seven days to accept an invitation to join a resource share\. If you don't accept the invitation within seven days, the invitation expires and is automatically declined\.
 
 ------
 #### [ Console ]
@@ -19,7 +19,7 @@ You have seven days to accept an invitation to join a resource share\. If you do
 
 1. Navigate to the [https://console.aws.amazon.com/ram/home#SharedResourceShares:](https://console.aws.amazon.com/ram/home#SharedResourceShares:) page in the AWS RAM console\.
 
-1. Because AWS RAM resource shares exist in specific AWS Regions, choose the appropriate AWS Region from the dropdown list in the upper\-right corner of the console\.
+1. Because AWS RAM resource shares exist in specific AWS Regions, choose the appropriate AWS Region from the dropdown list in the upper\-right corner of the console\. To see resource shares that contain global resources, you must set the AWS Region to US East \(N\. Virginia\), \(`us-east-1`\)\. For more information about sharing global resources, see [Sharing Regional resources compared to global resources](working-with-regional-vs-global.md)\.
 
 1. Review the list of resource shares to which you have been added\.
 
@@ -36,10 +36,11 @@ You can use the following commands to accept or reject invitations to a resource
 + [accept\-resource\-share\-invitation](https://docs.aws.amazon.com/cli/latest/reference/ram/accept-resource-share-invitation.html)
 + [reject\-resource\-share\-invitation](https://docs.aws.amazon.com/cli/latest/reference/ram/reject-resource-share-invitation.html)
 
-1. The following example starts by using the [get\-resource\-share\-invitations](https://docs.aws.amazon.com/cli/latest/reference/ram/get-resource-share-invitations.html) command to retrieve a list of all of the invitations available to the user's AWS account\. The AWS CLI `query` parameter lets you restrict the output to only those invitations with its `status` set to `PENDING`\. This example shows one invitation from account 111111111111 is currently `PENDING` for the current account `123456789012` and AWS Region\.
+1. The following example starts by using the [get\-resource\-share\-invitations](https://docs.aws.amazon.com/cli/latest/reference/ram/get-resource-share-invitations.html) command to retrieve a list of all of the invitations available to the user's AWS account\. The AWS CLI `query` parameter lets you restrict the output to only those invitations with its `status` set to `PENDING`\. This example shows one invitation from account 111111111111 is currently `PENDING` for the current account `123456789012` in the specified AWS Region\.
 
    ```
    $ aws ram get-resource-share-invitations \
+       --region us-east-1 \
        --query 'resourceShareInvitations[?status==`PENDING`]'
    {
        "resourceShareInvitations": [
@@ -60,6 +61,7 @@ You can use the following commands to accept or reject invitations to a resource
 
    ```
    $ aws ram accept-resource-share-invitation \
+       --region us-east-1 \
        --resource-share-invitation-arn arn:aws:ram:us-east-1:111111111111:resource-share-invitation/3b3bc051-fbf6-4336-8377-06c559dfee49
    {
        "resourceShareInvitation": {
@@ -80,6 +82,7 @@ If you instead wanted to reject the invitation, run the [reject\-resource\-share
 
 ```
 $ aws ram reject-resource-share-invitation \
+    --region us-east-1 \
     --resource-share-invitation-arn arn:aws:ram:us-east-1:111111111111:resource-share-invitation/3b3bc051-fbf6-4336-8377-06c559dfee49
 {
     "resourceShareInvitation": {

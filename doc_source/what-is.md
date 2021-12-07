@@ -30,9 +30,14 @@ If you have resources that you have shared by using a resource\-based permission
 
 When you share a resource with another AWS account, you are granting access to principals in that account to the shared resource\. Any policies and permissions that apply to the account you shared the resource with also apply to the shared resource\. The resources in the share look like they are native resources in the AWS accounts you shared them with\.
 
+You can share both global and Regional resources\. For more information, see [Sharing Regional resources compared to global resources](working-with-regional-vs-global.md)\.
+
 ### Sharing your resources<a name="what-is-how-sharing"></a>
 
 With AWS RAM, you share resources that you own by creating a *resource share*\. To create a resource share, you specify the following:
++ The AWS Region in which you want to create the resource share\. In the console, you choose from the **Region** drop\-down menu in the upper\-right corner of the console\. In the AWS CLI, you use the `--region` parameter\.
+  + A resource share can contain only Regional resources that are in the same AWS Region as the resource share\.
+  + A resource share can contain global resources only if the resource share is in the designated home Region, US East \(N\. Virginia\), `us-east-1`\.
 + A name for the resource share\.
 + The list of resources that you want to grant access to as part of this resource share\.
 + The principals to which you grant access to the resource share\. Principals can be individual AWS accounts, the accounts in an organization or an organizational unit \(OU\) in AWS Organizations, or individual AWS Identity and Access Management \(IAM\) roles or users\.
@@ -44,7 +49,11 @@ Your account retains full ownership of the resources that you share\.
 
 ### Using shared resources<a name="what-is-how-shared"></a>
 
-When the owner of a resource shares it with your account, you can access the shared resource just as you would if it was owned by your account\. You can access the resource by using the relevant service's console, AWS Command Line Interface \(AWS CLI\) commands, and API operations\. The API operations that principals in your account are allowed to perform vary depending on the resource type and are specified by the AWS RAM permissions attached to the resource share\. All IAM policies and service control policies configured in your account continue to apply, which enables you to make use of your existing investments in security and governance controls\.
+When the owner of a resource shares it with your account, you can access the shared resource just as you would if it was owned by your account\. You can access the resource by using the relevant service's console, AWS Command Line Interface \(AWS CLI\) commands, and API operations\. The API operations that principals in your account are allowed to perform vary depending on the resource type and are specified by the AWS RAM permission attached to the resource share\. All IAM policies and service control policies configured in your account also continue to apply, which enables you to make use of your existing investments in security and governance controls\.
+
+When you access a shared resource using that resource's service, you have the same abilities and limitations as the AWS account that owns the resource\.
++ If the resource is Regional, then you can access it from only the AWS Region in which it exists in the owning account\.
++ If the resource is global, then you can access it from any AWS Region that the resource's service console and tools support\. Note that you can view and manage the resource share and its global resources in the AWS RAM console and tools only in the designated home Region, US East \(N\. Virginia\), `us-east-1`\.
 
 ## Service quotas<a name="what-is-limits"></a>
 
