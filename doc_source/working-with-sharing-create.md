@@ -11,8 +11,9 @@ To share resources that you own, create a resource share\. When you create a res
 1. Specify the principals that you want to have access to the resources\.
 
 **Considerations**
-+ You can share a resource only if you own it\. You can't share a resource that is shared with you\.
-+ AWS RAM is a Regional service\. When you share a resource with principals in other AWS accounts, they must access each resource from the same AWS Region that it was created in\. For supported global resources, you can access those resources from any AWS Region that is supported by that resource's service console and tools\. Note that you can view such resource shares and their global resources in the AWS RAM console and tools only in the designated home Region, US East \(N\. Virginia\), `us-east-1`\. For more information about AWS RAM and global resources, see [Sharing Regional resources compared to global resources](working-with-regional-vs-global.md)\.
++ The resource types that you can include in a resource share are listed at [Shareable AWS resources](shareable.md)\.
++ You can share a resource only if you own it\. You can't share a resource that's shared with you\.
++ AWS RAM is a Regional service\. When you share a resource with principals in other AWS accounts, they must access each resource from the same AWS Region that it was created in\. For supported global resources, you can access those resources from any AWS Region that's supported by that resource's service console and tools\. Note that you can view such resource shares and their global resources in the AWS RAM console and tools only in the designated home Region, US East \(N\. Virginia\), `us-east-1`\. For more information about AWS RAM and global resources, see [Sharing Regional resources compared to global resources](working-with-regional-vs-global.md)\.
 + If you're part of an organization in AWS Organizations and sharing within your organization is enabled, principals in the organization are automatically granted access to the shared resources without the use of invitations\. A principal in an account with whom you share outside of the context of an organization receives an invitation to join the resource share and is granted access to the shared resources only after they accept the invitation\.
 + After you add an organization or an organization unit \(OU\) to a resource share, changes to the accounts that are in an OU or accounts that join or leave an organization dynamically affect the resource share\. For example, if you add a new account to an OU that has access to a resource share, then the new member account automatically receives access to the shared resources\.
 + You can add only the organization your account is a member of, and OUs from that organization to your resource shares\. You can't add OUs or organizations from outside your own organization to a resource share as principals\. However, you can add individual AWS accounts, IAM users, and IAM roles from outside your organization as principals to a resource share\.
@@ -40,7 +41,7 @@ Not all resource types can be shared with IAM roles and users\. For information 
 
         If you're sharing resources that are associated with a specific availability zone, then using the Availability Zone ID \(AZ ID\) helps you determine the relative location of these resources across accounts\. For more information, see [Availability Zone IDs for your AWS resources](working-with-az-ids.md)\.
 
-   1. \(Optional\) To [attach tags](https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html) to the resource share, under **Tags**, enter a tag key and value\. Add others by choosing **Add new tag**\. Repeat this step as needed\. These tags applied to only the resource share itself, not to the resources in the resource share\.
+   1. \(Optional\) To [attach tags](https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html) to the resource share, under **Tags**, enter a tag key and value\. Add others by choosing **Add new tag**\. Repeat this step as needed\. These tags apply to only the resource share itself, not to the resources in the resource share\.
 
 1. Choose **Next**\.
 

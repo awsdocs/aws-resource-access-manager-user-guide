@@ -11,7 +11,7 @@ This topic includes examples of IAM policies for AWS RAM that demonstrate sharin
 
 You can use an IAM policy to restrict principals to associating only specific resources with resource shares\.
 
-For example, the following policy limits principals to sharing only the resolver rule with the specified Amazon Resource Name \(ARN\)\.
+For example, the following policy limits principals to sharing only the resolver rule with the specified Amazon Resource Name \(ARN\)\. The operator `StringEqualsIfExists` allows a request if either the request doesn't include a `ResourceArn` parameter, or if it does include that parameter, that its value exactly matches the specified ARN\.
 
 ```
 {
@@ -21,7 +21,7 @@ For example, the following policy limits principals to sharing only the resolver
         "Action": ["ram:CreateResourceShare", "ram:AssociateResourceShare"],
         "Resource": "*",
         "Condition": {
-            "StringEquals": {
+            "StringEqualsIfExists": {
                 "ram:ResourceArn": "arn:aws:route53resolver:us-west-2:123456789012:resolver-rule/rslvr-rr-5328a0899aexample"
             }
         }
@@ -43,7 +43,7 @@ For example, the following policy limits principals to sharing only resolver rul
         "Action": ["ram:CreateResourceShare", "ram:AssociateResourceShare"],
         "Resource": "*",
         "Condition": {
-            "StringEquals": {
+            "StringEqualsIfExists": {
                 "ram:RequestedResourceType": "route53resolver:ResolverRule"
             }
         }
