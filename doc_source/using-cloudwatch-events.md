@@ -4,4 +4,7 @@ Using Amazon CloudWatch Events, you can set up automatic notifications for speci
 
 When you create an event pattern, the source is `aws.ram`\.
 
+**Note**  
+Take care writing code that depends on these events\. These events are not guaranteed, but are emitted on a best effort basis\. If an error occurs when AWS RAM attempts to emit an event, the service tries several more times\. However, it can time out and result in the loss of that specific event\.
+
 For more information, see the [Amazon CloudWatch Events User Guide](https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/)\.

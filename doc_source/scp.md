@@ -13,9 +13,10 @@ To use SCPs, you must first do the following:
 
 **Contents**
 + [Example 1: Prevent external sharing](#example-one)
-+ [Example 2: Allow specific accounts to share specific resource types](#example-two)
-+ [Example 3: Prevent sharing with the entire organization or with organizational units](#example-three)
-+ [Example 4: Allow sharing with only specific principals](#example-four)
++ [Example 2: Prevent users from accepting resource share invitations from external accounts outside your organization](#example-two)
++ [Example 3: Allow specific accounts to share specific resource types](#example-three)
++ [Example 4: Prevent sharing with the entire organization or with organizational units](#example-four)
++ [Example 5: Allow sharing with only specific principals](#example-five)
 
 The following examples show how you can control various aspects of resource sharing in an organization\.
 
@@ -44,7 +45,24 @@ The following SCP prevents users from creating resource shares that allow sharin
 }
 ```
 
-### Example 2: Allow specific accounts to share specific resource types<a name="example-two"></a>
+### Example 2: Prevent users from accepting resource share invitations from external accounts outside your organization<a name="example-two"></a>
+
+The following SCP blocks any principal in an affected account from accepting an invitation to use a resource share\. Resource shares that are shared to other accounts in the same organization as the sharing account don't generate invitations and are therefore not affected by this SCP\.
+
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Deny",
+            "Action": "ram:AcceptResourceShareInvitation",
+            "Resource": "*"
+        }
+    ]
+}
+```
+
+### Example 3: Allow specific accounts to share specific resource types<a name="example-three"></a>
 
 The following SCP allows *only* accounts `111111111111` and `222222222222` to create new resource shares that share Amazon EC2 prefix lists or to associate prefix lists with existing resource shares\.
 
@@ -75,7 +93,7 @@ The following SCP allows *only* accounts `111111111111` and `222222222222` to cr
 }
 ```
 
-### Example 3: Prevent sharing with the entire organization or with organizational units<a name="example-three"></a>
+### Example 4: Prevent sharing with the entire organization or with organizational units<a name="example-four"></a>
 
 The following SCP prevents users from creating resource shares that share resources with an entire organization or with any organizational units\. Users *can* share with individual AWS accounts in the organization, or with IAM roles or users\.
 
@@ -103,7 +121,7 @@ The following SCP prevents users from creating resource shares that share resour
 }
 ```
 
-### Example 4: Allow sharing with only specific principals<a name="example-four"></a>
+### Example 5: Allow sharing with only specific principals<a name="example-five"></a>
 
 The following example SCP allows users to share resources with *only* organization `o-12345abcdef,` organizational unit `ou-98765fedcba`, and AWS account `111111111111`\.
 

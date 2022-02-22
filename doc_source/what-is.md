@@ -1,6 +1,6 @@
 # What is AWS Resource Access Manager?<a name="what-is"></a>
 
-AWS Resource Access Manager \(AWS RAM\) helps you securely share the AWS resources that you create in one AWS account with other AWS accounts\. If you have multiple AWS accounts, you can create a resource once and use AWS RAM to make that resource accessible to those other accounts\. If your account is managed by AWS Organizations, then you can share resources with all of the other accounts in the organization, or only those contained by one or more specified organizational units \(OUs\)\. You can also share with specific AWS accounts by account ID, regardless of whether the account is part of an organization\. [Some supported resource types](shareable.md) also let you share them with specified IAM roles and users\.
+AWS Resource Access Manager \(AWS RAM\) helps you securely share the AWS resources that you create in one AWS account with other AWS accounts\. If you have multiple AWS accounts, you can create a resource once and use AWS RAM to make that resource usable by those other accounts\. If your account is managed by AWS Organizations, then you can share resources with all the other accounts in the organization, or only those accounts contained by one or more specified organizational units \(OUs\)\. You can also share with specific AWS accounts by account ID, regardless of whether the account is part of an organization\. [Some supported resource types](shareable.md) also let you share them with specified IAM roles and users\.
 
 **Topics**
 + [Benefits](#what-is-features)
@@ -8,12 +8,13 @@ AWS Resource Access Manager \(AWS RAM\) helps you securely share the AWS resourc
 + [Service quotas](#what-is-limits)
 + [Accessing AWS RAM](#what-is-accessing)
 + [Pricing](#what-is-pricing)
++ [PCI DSS compliance](#certification)
 
 ## Benefits<a name="what-is-features"></a>
 
 Why use AWS RAM? It offers the following benefits:
 + **Reduces your operational overhead** – Create a resource once, and then use AWS RAM to share that resource with other accounts\. This eliminates the need to provision duplicate resources in every account, which reduces operational overhead\.
-+ **Provides security and consistency** – Simplify security management for your shared resources by using a single set of policies and permissions\. If you were to instead create duplicate resources in all of your separate accounts, you would have the task of implementing identical policies and permissions, and then have to keep them identical across all of those accounts\. Instead, all users of an AWS RAM resource share are managed by a single set of policies and permissions\. AWS RAM offers a consistent experience for sharing different types of AWS resources\.
++ **Provides security and consistency** – Simplify security management for your shared resources by using a single set of policies and permissions\. If you were to instead create duplicate resources in all your separate accounts, you would have the task of implementing identical policies and permissions, and then have to keep them identical across all those accounts\. Instead, all users of an AWS RAM resource share are managed by a single set of policies and permissions\. AWS RAM offers a consistent experience for sharing different types of AWS resources\.
 + **Provides visibility and auditability** – View the usage details for your shared resources through the integration of AWS RAM with Amazon CloudWatch and AWS CloudTrail\. AWS RAM provides comprehensive visibility into shared resources and accounts\.
 
 ### What about cross\-account access with resource\-based policies?<a name="what-is-about-res-pol-sharing"></a>
@@ -22,13 +23,13 @@ You can share some types of AWS resources with other AWS accounts by [attaching 
 + You can share with an [organization or an organizational unit \(OU\)](https://docs.aws.amazon.com/ram/latest/userguide/getting-started-sharing.html#getting-started-sharing-orgs) without having to enumerate every one of the AWS account IDs\. All principals in the relevant AWS accounts automatically get access to the resources in such a resource share\.
 + Users can see the resources shared with them directly in the originating AWS service console and API operations as if those resources were directly in the user's account\. For example, if you share a Amazon VPC subnet with another account, users in that account can see the subnet in the Amazon VPC console and in the results of Amazon VPC API operations performed in that account\. Resources shared by policy aren't visible this way; instead, you have to discover and explicitly refer to the resource by its ARN\.
 + The owners of a resource can see which principals have access to each individual resource that they have shared\.
-+ If you share resources with an account that is not part of your organization, then an invitation process is initiated\. The recipient must accept the invitation before access to the resources is granted\. Sharing within an organization doesn't require an invitation\.
++ If you share resources with an account that isn't part of your organization, then AWS RAM initiates an invitation process\. The recipient must accept the invitation before that principal can access the shared resources\. Sharing within an organization doesn't require an invitation\.
 
 If you have resources that you have shared by using a resource\-based permission policy, you can "promote" those resources to fully AWS RAM\-managed resources by using the `[PromoteResourceShareCreatedFromPolicy](https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html)` API operation, or its CLI equivalent, `[promote\-resource\-share\-created\-from\-policy](https://docs.aws.amazon.com/cli/latest/reference/ram/promote-resource-share-created-from-policy.html)`\.
 
 ## How resource sharing works<a name="what-is-how"></a>
 
-When you share a resource with another AWS account, you are granting access to principals in that account to the shared resource\. Any policies and permissions that apply to the account you shared the resource with also apply to the shared resource\. The resources in the share look like they are native resources in the AWS accounts you shared them with\.
+When you share a resource with another AWS account, you are granting access to principals in that account to the shared resource\. Any policies and permissions that apply to the account you shared the resource with also apply to the shared resource\. The resources in the share look like they're native resources in the AWS accounts you shared them with\.
 
 You can share both global and Regional resources\. For more information, see [Sharing Regional resources compared to global resources](working-with-regional-vs-global.md)\.
 
@@ -49,7 +50,7 @@ Your account retains full ownership of the resources that you share\.
 
 ### Using shared resources<a name="what-is-how-shared"></a>
 
-When the owner of a resource shares it with your account, you can access the shared resource just as you would if it was owned by your account\. You can access the resource by using the relevant service's console, AWS Command Line Interface \(AWS CLI\) commands, and API operations\. The API operations that principals in your account are allowed to perform vary depending on the resource type and are specified by the AWS RAM permission attached to the resource share\. All IAM policies and service control policies configured in your account also continue to apply, which enables you to make use of your existing investments in security and governance controls\.
+When the owner of a resource shares it with your account, you can access the shared resource just as you would if your account owned it\. You can access the resource by using the relevant service's console, AWS Command Line Interface \(AWS CLI\) commands, and API operations\. The API operations that principals in your account are allowed to perform vary depending on the resource type and are specified by the AWS RAM permission attached to the resource share\. All IAM policies and service control policies configured in your account also continue to apply, which enables you to make use of your existing investments in security and governance controls\.
 
 When you access a shared resource using that resource's service, you have the same abilities and limitations as the AWS account that owns the resource\.
 + If the resource is Regional, then you can access it from only the AWS Region in which it exists in the owning account\.
@@ -62,10 +63,10 @@ Your AWS account has the following limits related to AWS RAM\. You can request a
 
 | Resource | Default limit | 
 | --- | --- | 
-|  Maximum number of resource shares per account  |  5,000  | 
-|  Maximum number of shared principals per account  |  5,000  | 
-|  Maximum number of shared resources per account  |  5,000  | 
-|  Maximum number of pending invitations per account  |  20  | 
+|  Maximum number of resource shares per AWS Region in an account  |  5,000  | 
+|  Maximum number of shared principals per AWS Region in an account  |  5,000  | 
+|  Maximum number of shared resources per AWS Region in an account  |  5,000  | 
+|  Maximum number of pending invitations per sharing account  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ram/latest/userguide/what-is.html)  |  20  | 
 
 ## Accessing AWS RAM<a name="what-is-accessing"></a>
 
@@ -76,7 +77,7 @@ AWS RAM provides a web\-based user interface, the AWS RAM console\. If you've si
 You can also navigate in your browser directly to the [AWS RAM console](https://console.aws.amazon.com/ram/home)\. If you aren't already signed in, then you're asked to do so before the console appears\.
 
 **AWS CLI and Tools for Windows PowerShell**  
-The AWS CLI and Tools for PowerShell provide direct access to the AWS RAM public API operations\. They are supported on Windows, macOS, and Linux\. For more information about getting started, see the [AWS Command Line Interface User Guide](https://docs.aws.amazon.com/cli/latest/userguide/), or the [AWS Tools for Windows PowerShell User Guide](https://docs.aws.amazon.com/powershell/latest/userguide/)\. For more information about the commands for AWS RAM, see the [AWS CLI Command Reference](https://docs.aws.amazon.com/cli/latest/reference/) or the [AWS Tools for Windows PowerShell Cmdlet Reference](https://docs.aws.amazon.com/powershell/latest/reference/)\.
+The AWS CLI and Tools for PowerShell provide direct access to the AWS RAM public API operations\. AWS supports these tools on Windows, macOS, and Linux\. For more information about getting started, see the [AWS Command Line Interface User Guide](https://docs.aws.amazon.com/cli/latest/userguide/), or the [AWS Tools for Windows PowerShell User Guide](https://docs.aws.amazon.com/powershell/latest/userguide/)\. For more information about the commands for AWS RAM, see the [AWS CLI Command Reference](https://docs.aws.amazon.com/cli/latest/reference/) or the [AWS Tools for Windows PowerShell Cmdlet Reference](https://docs.aws.amazon.com/powershell/latest/reference/)\.
 
 **AWS SDKs**  
 AWS provides API commands for a broad set of programming languages\. For more information about getting started, see *[AWS SDKs and Tools Reference Guide](https://docs.aws.amazon.com/sdkref/latest/guide/)*\.
@@ -86,4 +87,8 @@ If you don't use one of the supported programming languages, then the AWS RAM HT
 
 ## Pricing<a name="what-is-pricing"></a>
 
-There are no additional charges for using AWS RAM or for creating resource shares and sharing your resources across accounts\. Resource usage charges vary depending on the resource type\. For more information about how shareable resources are billed, refer to the documentation for the resource's owning service\.
+There are no additional charges for using AWS RAM or for creating resource shares and sharing your resources across accounts\. Resource usage charges vary depending on the resource type\. For more information about how AWS bills shareable resources, refer to the documentation for the resource's owning service\.
+
+## PCI DSS compliance<a name="certification"></a>
+
+AWS Resource Access Manager \(AWS RAM\) supports the processing, storage, and transmission of credit card data by a merchant or service provider, and has been validated as being compliant with Payment Card Industry \(PCI\) Data Security Standard \(DSS\)\. For more information about PCI DSS, including how to request a copy of the AWS PCI Compliance Package, see [PCI DSS Level 1](http://aws.amazon.com/compliance/pci-dss-level-1-faqs/)\.
