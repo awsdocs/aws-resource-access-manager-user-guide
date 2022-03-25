@@ -4,7 +4,7 @@ AWS maps the physical Availability Zones *randomly* to the available zone names 
 
 The following illustration shows how the AZ IDs are the same for every account even though the Availability Zone names can map differently for each account\.
 
-![\[\]](http://docs.aws.amazon.com/ram/latest/userguide/images/az_ids_example.png)
+![\[\]](http://docs.aws.amazon.com/ram/latest/userguide/images/availability-zone-mapping.png)
 
 For some resources, you must identify not only the AWS Region, but also the Availability Zone\. For example, an Amazon VPC subnet\. Within a single account, the mapping of an Availability Zone to a specific name isn't important\. But, when you use AWS RAM to share such a resource with other AWS accounts, the mapping *is* important\. This random mapping complicates the ability of the account accessing the shared resource to know which Availability Zone to reference\. To help with this, such resources also allow you to identify the actual location of your resources relative to your accounts by using the *AZ ID*\. An AZ ID is a unique and consistent identifier for an Availability Zone across all AWS accounts\. For example, `use1-az1` is an AZ ID for an Availability Zone in the `us-east-1` Region and it represents the same physical location in every AWS account\.
 

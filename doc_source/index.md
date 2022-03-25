@@ -27,6 +27,7 @@ Amazon's trademarks and trade dress may not be used in
       + [Viewing your shared resources in AWS RAM](working-with-sharing-view-sr.md)
       + [Viewing the principals you share resources with in AWS RAM](working-with-sharing-view-principals.md)
       + [Viewing AWS RAM managed permissions](working-with-sharing-view-permissions.md)
+      + [Updating AWS RAM managed permissions to a newer version](working-with-sharing-update-permissions.md)
       + [Deleting a resource share in AWS RAM](working-with-sharing-delete.md)
    + [Access AWS resources shared with you](working-with-shared.md)
       + [Accepting and rejecting resource share invitations](working-with-shared-invitations.md)

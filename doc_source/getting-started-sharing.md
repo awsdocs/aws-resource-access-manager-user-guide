@@ -6,7 +6,7 @@ To share a resource that you own by using AWS RAM, do the following:
 
 **Notes**  
 Sharing a resource makes it available for use by principals outside of the AWS account that created the resource\. Sharing doesn't change any permissions or quotas that apply to the resource in the account that created it\.
-AWS RAM is a Regional service\. The principals that you share with can access resource shares in only the AWS Regions in which thy were created\.
+AWS RAM is a Regional service\. The principals that you share with can access resource shares in only the AWS Regions in which they were created\.
 Some resources have special considerations and prerequisites for sharing\. For more information, see [Shareable AWS resources](shareable.md)\.
 
 ## Enable resource sharing within AWS Organizations<a name="getting-started-sharing-orgs"></a>
