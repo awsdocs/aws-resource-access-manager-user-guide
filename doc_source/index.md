@@ -43,6 +43,7 @@ Amazon's trademarks and trade dress may not be used in
    + [Identity and access management for AWS RAM](control-access.md)
       + [How AWS RAM works with IAM](security-iam-policies.md)
       + [AWS managed policies for AWS RAM](security-iam-managed-policies.md)
+      + [Using Service-Linked Roles for AWS RAM](security-iam-service-linked-roles.md)
       + [Example IAM policies for AWS RAM](security-iam-policies-examples.md)
       + [Example service control policies for AWS Organizations and AWS RAM](scp.md)
       + [Disabling resource sharing with AWS Organizations](security-disable-sharing-with-orgs.md)

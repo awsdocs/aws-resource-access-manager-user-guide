@@ -84,7 +84,7 @@ The following SCP allows *only* accounts `111111111111` and `222222222222` to cr
                         "222222222222"
                     ]
                 },
-                "StringEquals": {
+                "StringEqualsIfExists": {
                     "ram:RequestedResourceType": "ec2:PrefixList"
                 }
             }
@@ -109,7 +109,7 @@ The following SCP prevents users from creating resource shares that share resour
             ],
             "Resource": "*",
             "Condition": {
-                "ForAnyValue:StringLike": {
+                "StringLikeIfExists": {
                     "ram:Principal": [
                         "arn:aws:organizations::*:organization/*",
                         "arn:aws:organizations::*:ou/*"
@@ -137,7 +137,7 @@ The following example SCP allows users to share resources with *only* organizati
             ],
             "Resource": "*",
             "Condition": {
-                "ForAnyValue:StringNotEquals": {
+                "StringNotEqualsIfExists": {
                     "ram:Principal": [
                         "arn:aws:organizations::123456789012:organization/o-12345abcdef",
                         "arn:aws:organizations::123456789012:ou/o-12345abcdef/ou-98765fedcba",

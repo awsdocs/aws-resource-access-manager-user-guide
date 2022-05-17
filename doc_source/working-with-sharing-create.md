@@ -53,9 +53,9 @@ Not all resource types can be shared with IAM roles and users\. For information 
 
 1. In **Step 3: Choose principals to grant access**, do the following:
 
-   1. By default, **Allow sharing with external principals** is selected, which means that you can share resources with AWS accounts that are outside of your organization\. For [supported resource types](shareable.md), you can also share resources with IAM roles and users\.
+   1. By default, **Allow sharing with external principals** is selected, which means that, for those resource types that support it, you can share resources with AWS accounts that are outside of your organization\. This doesn't affect resource types that can be shared *only* within an organization, such as Amazon VPC subnets\. You can also share some [supported resource types](shareable.md) with IAM roles and users\.
 
-      To restrict resource sharing to only principals in your organization, choose **Allow sharing with principals in your organization only**\.
+      To restrict resource sharing to only accounts and principals in your organization, choose **Allow sharing with principals in your organization only**\.
 
    1. For **Principals**, do the following:
       + To add the organization, an organizational unit \(OU\), or an AWS account that is part of an organization, turn on **Display organizational structure**\. This displays a tree view of your organization\. Then, select the check box next to each principal that you want to add\.

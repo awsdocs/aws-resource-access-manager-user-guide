@@ -15,11 +15,20 @@ When your account is managed by AWS Organizations, you can take advantage of tha
 
 To share resources within an organization, you must first use the AWS RAM console or AWS Command Line Interface \(AWS CLI\) to enable sharing with AWS Organizations\. When you share resources in your organization, AWS RAM doesn't send invitations to principals\. Principals in your organization gain access to shared resources without exchanging invitations\.
 
+When you enable resource sharing within your organization, AWS RAM creates a service\-linked role called `AWSResourceAccessManagerServiceRolePolicy`\. This role can be assumed by only the AWS RAM service, and grants AWS RAM permission to retrieve information about the organization it is a member of\. 
+
 If you no longer need to share resources with your entire organization or OUs, you can disable resource sharing\. For more information, see [Disabling resource sharing with AWS Organizations](security-disable-sharing-with-orgs.md)\.
 
+**Minimum permissions**
+
+To run the procedures below, you must have the following permissions:
++ `ram:EnableSharingWithAwsOrganization`
++ `iam:CreateServiceLinkedRole`
++ `organizations:DescribeOrganization`
+
 **Requirements**
-+ Only the management account can enable sharing with AWS Organizations\.
-+ The organization must be enabled for all features\. For more information, see [ Enabling all features in your organization](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html) in the *AWS Organizations User Guide*\.
++ You can perform these steps only while signed in as a principal in the organization's management account\.
++ The organization must have all features enabled\. For more information, see [ Enabling all features in your organization](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html) in the *AWS Organizations User Guide*\.
 
 **Important**  
 You must enable sharing with AWS Organizations by using the AWS RAM console or the [enable\-sharing\-with\-aws\-organization](https://docs.aws.amazon.com/cli/latest/reference/ram/enable-sharing-with-aws-organization.html) AWS CLI command\. This ensures that the `AWSServiceRoleForResourceAccessManager` service\-linked role is created\. If you enable trusted access with AWS Organizations by using the AWS Organizations console or the [ enable\-aws\-service\-access](https://docs.aws.amazon.com/cli/latest/reference/organizations/enable-aws-service-access.html) AWS CLI command, the `AWSServiceRoleForResourceAccessManager` service\-linked role isn't created, and you can't share resources within your organization\.
@@ -27,7 +36,7 @@ You must enable sharing with AWS Organizations by using the AWS RAM console or t
 ------
 #### [ Console ]
 
-**To enable resource sharing within AWS Organizations**
+**To enable resource sharing within your organization**
 
 1. Open the [https://console.aws.amazon.com/ram/home#Settings:](https://console.aws.amazon.com/ram/home#Settings:) page in the AWS RAM console\.
 
@@ -36,7 +45,7 @@ You must enable sharing with AWS Organizations by using the AWS RAM console or t
 ------
 #### [ AWS CLI ]
 
-**To enable resource sharing within AWS Organizations**  
+**To enable resource sharing within your organization**  
 Use the [enable\-sharing\-with\-aws\-organization](https://docs.aws.amazon.com/cli/latest/reference/ram/enable-sharing-with-aws-organization.html) command\.
 
 This command can be used in any AWS Region, and it enables sharing with AWS Organizations in all Regions in which AWS RAM is supported\.
@@ -105,9 +114,9 @@ Not all resource types can be shared with IAM roles and users\. For information 
 
 1. In **Step 3: Choose principals to grant access**, do the following:
 
-   1. By default, **Allow sharing with external principals** is selected, which means that you can share resources with AWS accounts that are outside of your organization\. For [supported resource types](shareable.md), you can also share resources with IAM roles and users\.
+   1. By default, **Allow sharing with external principals** is selected, which means that, for those resource types that support it, you can share resources with AWS accounts that are outside of your organization\. This doesn't affect resource types that can be shared *only* within an organization, such as Amazon VPC subnets\. You can also share some [supported resource types](shareable.md) with IAM roles and users\.
 
-      To restrict resource sharing to only principals in your organization, choose **Allow sharing with principals in your organization only**\.
+      To restrict resource sharing to only accounts and principals in your organization, choose **Allow sharing with principals in your organization only**\.
 
    1. For **Principals**, do the following:
       + To add the organization, an organizational unit \(OU\), or an AWS account that is part of an organization, turn on **Display organizational structure**\. This displays a tree view of your organization\. Then, select the check box next to each principal that you want to add\.
