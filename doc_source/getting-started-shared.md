@@ -15,7 +15,7 @@ If you receive an invitation to join a resource share, you must accept it to gai
 
 **To respond to invitations**
 
-1. Open the [https://console.aws.amazon.com/ram/home#SharedResourceShares:](https://console.aws.amazon.com/ram/home#SharedResourceShares:) page in the AWS RAM console\.
+1. Open the **[Shared with me : Resource shares](https://console.aws.amazon.com/ram/home#SharedResourceShares:)** page in the AWS RAM console\.
 **Note**  
 A resource share is visible in only the AWS Region in which it was created\. If an expected resource share doesn't appear in the console, you might need to switch to a different AWS Region using the drop\-down control in the upper\-right corner\.
 

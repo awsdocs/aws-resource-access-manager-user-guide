@@ -15,7 +15,7 @@ When your account is managed by AWS Organizations, you can take advantage of tha
 
 To share resources within an organization, you must first use the AWS RAM console or AWS Command Line Interface \(AWS CLI\) to enable sharing with AWS Organizations\. When you share resources in your organization, AWS RAM doesn't send invitations to principals\. Principals in your organization gain access to shared resources without exchanging invitations\.
 
-When you enable resource sharing within your organization, AWS RAM creates a service\-linked role called `AWSResourceAccessManagerServiceRolePolicy`\. This role can be assumed by only the AWS RAM service, and grants AWS RAM permission to retrieve information about the organization it is a member of\. 
+When you enable resource sharing within your organization, AWS RAM creates a service\-linked role called `AWSServiceRoleForResourceAccessManager`\. This role can be assumed by only the AWS RAM service, and grants AWS RAM permission to retrieve information about the organization it is a member of, by using the AWS managed policy`AWSResourceAccessManagerServiceRolePolicy`\. 
 
 If you no longer need to share resources with your entire organization or OUs, you can disable resource sharing\. For more information, see [Disabling resource sharing with AWS Organizations](security-disable-sharing-with-orgs.md)\.
 
@@ -38,7 +38,7 @@ You must enable sharing with AWS Organizations by using the AWS RAM console or t
 
 **To enable resource sharing within your organization**
 
-1. Open the [https://console.aws.amazon.com/ram/home#Settings:](https://console.aws.amazon.com/ram/home#Settings:) page in the AWS RAM console\.
+1. Open the **[Settings](https://console.aws.amazon.com/ram/home#Settings:)** page in the AWS RAM console\.
 
 1. Choose **Enable sharing with AWS Organizations**, and then choose **Save settings**\.
 
@@ -90,7 +90,7 @@ Not all resource types can be shared with IAM roles and users\. For information 
 
 1. Because AWS RAM resource shares exist in specific AWS Regions, choose the appropriate AWS Region from the dropdown list in the upper\-right corner of the console\. To see resource shares that contain global resources, you must set the AWS Region to US East \(N\. Virginia\), \(`us-east-1`\)\. For more information about sharing global resources, see [Sharing Regional resources compared to global resources](working-with-regional-vs-global.md)\. If you want to include global resources in the resource share, then you must choose the designated home Region, US East \(N\. Virginia\), `us-east-1`\.
 
-1. If you're new to AWS RAM, choose **Create a resource share** from the home page\. Otherwise, choose **Create resource share** from the [https://console.aws.amazon.com/ram/home#OwnedResourceShares:](https://console.aws.amazon.com/ram/home#OwnedResourceShares:) page\.
+1. If you're new to AWS RAM, choose **Create a resource share** from the home page\. Otherwise, choose **Create resource share** from the **[Shared by me : Resource shares](https://console.aws.amazon.com/ram/home#OwnedResourceShares:)** page\.
 
 1. In **Step 1: Specify resource share details**, do the following:
 

@@ -109,7 +109,7 @@ The following SCP prevents users from creating resource shares that share resour
             ],
             "Resource": "*",
             "Condition": {
-                "StringLikeIfExists": {
+                "StringLike": {
                     "ram:Principal": [
                         "arn:aws:organizations::*:organization/*",
                         "arn:aws:organizations::*:ou/*"

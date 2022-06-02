@@ -24,7 +24,7 @@ You don't need to manually create a service\-linked role\. When you turn on AWS 
 
 If you delete this service\-linked role, then AWS RAM no longer has permissions to view the details of your organization's structure\.
 
-## Editing a Service\-Linked Role for AWS RAM<a name="edit-slr"></a>
+## Editing a service\-linked role for AWS RAM<a name="edit-slr"></a>
 
 AWS RAM does not allow you to edit the AWSResourceAccessManagerServiceRolePolicy service\-linked role\. After you create a service\-linked role, you cannot change the name of the role because various entities might reference the role\. However, you can edit the description of the role using IAM\. For more information, see [Editing a Service\-Linked Role](https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html#edit-service-linked-role) in the *IAM User Guide*\.
 

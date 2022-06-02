@@ -29,7 +29,7 @@ Not all resource types can be shared with IAM roles and users\. For information 
 
 1. Because AWS RAM resource shares exist in specific AWS Regions, choose the appropriate AWS Region from the dropdown list in the upper\-right corner of the console\. To see resource shares that contain global resources, you must set the AWS Region to US East \(N\. Virginia\), \(`us-east-1`\)\. For more information about sharing global resources, see [Sharing Regional resources compared to global resources](working-with-regional-vs-global.md)\. If you want to include global resources in the resource share, then you must choose the designated home Region, US East \(N\. Virginia\), `us-east-1`\.
 
-1. If you're new to AWS RAM, choose **Create a resource share** from the home page\. Otherwise, choose **Create resource share** from the [https://console.aws.amazon.com/ram/home#OwnedResourceShares:](https://console.aws.amazon.com/ram/home#OwnedResourceShares:) page\.
+1. If you're new to AWS RAM, choose **Create a resource share** from the home page\. Otherwise, choose **Create resource share** from the **[Shared by me : Resource shares](https://console.aws.amazon.com/ram/home#OwnedResourceShares:)** page\.
 
 1. In **Step 1: Specify resource share details**, do the following:
 

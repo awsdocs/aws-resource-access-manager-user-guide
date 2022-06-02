@@ -7,7 +7,7 @@ You can view the list of individual resources that you've shared, across all res
 
 **To view the resources that you're currently sharing**
 
-1. Open the [https://console.aws.amazon.com/ram/home#OwnedResources:](https://console.aws.amazon.com/ram/home#OwnedResources:) page in the AWS RAM console\.
+1. Open the **[Shared by me : Shared resources](https://console.aws.amazon.com/ram/home#OwnedResources:)** page in the AWS RAM console\.
 
 1. Because AWS RAM resource shares exist in specific AWS Regions, choose the appropriate AWS Region from the dropdown list in the upper\-right corner of the console\. To see resource shares that contain global resources, you must set the AWS Region to US East \(N\. Virginia\), \(`us-east-1`\)\. For more information about sharing global resources, see [Sharing Regional resources compared to global resources](working-with-regional-vs-global.md)\.
 

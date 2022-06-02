@@ -8,7 +8,7 @@ AWS Resource Access Manager \(AWS RAM\) helps you securely share the AWS resourc
 + [Service quotas](#what-is-limits)
 + [Accessing AWS RAM](#what-is-accessing)
 + [Pricing](#what-is-pricing)
-+ [PCI DSS compliance](#certification)
++ [Compliance and international standards](#certification)
 
 ## Benefits<a name="what-is-features"></a>
 
@@ -89,6 +89,28 @@ If you don't use one of the supported programming languages, then the AWS RAM HT
 
 There are no additional charges for using AWS RAM or for creating resource shares and sharing your resources across accounts\. Resource usage charges vary depending on the resource type\. For more information about how AWS bills shareable resources, refer to the documentation for the resource's owning service\.
 
-## PCI DSS compliance<a name="certification"></a>
+## Compliance and international standards<a name="certification"></a>
 
-AWS Resource Access Manager \(AWS RAM\) supports the processing, storage, and transmission of credit card data by a merchant or service provider, and has been validated as being compliant with Payment Card Industry \(PCI\) Data Security Standard \(DSS\)\. For more information about PCI DSS, including how to request a copy of the AWS PCI Compliance Package, see [PCI DSS Level 1](http://aws.amazon.com/compliance/pci-dss-level-1-faqs/)\.
+### PCI DSS<a name="certification-pci-dss"></a>
+
+AWS Resource Access Manager \(AWS RAM\) supports the processing, storage, and transmission of credit card data by a merchant or service provider, and has been validated as being compliant with Payment Card Industry \(PCI\) Data Security Standard \(DSS\)\. 
+
+For more information about PCI DSS, including how to request a copy of the AWS PCI Compliance Package, see [PCI DSS Level 1](http://aws.amazon.com/compliance/pci-dss-level-1-faqs/)\.
+
+### FedRAMP<a name="certification-fedramp"></a>
+
+AWS Resource Access Manager is authorized as FedRAMP Moderate in the following AWS Regions: US East \(N\. Virginia\), US East \(Ohio\), US West \(N\. California\), and US West \(Oregon\)\.
+
+AWS RAM is authorized as FedRAMP High in the following AWS Regions: AWS GovCloud \(US\-West\) and AWS GovCloud \(US\-East\)\.
+
+The Federal Risk and Authorization Management Program \(FedRAMP\) is a US government\-wide program that delivers a standard approach to the security assessment, authorization, and continuous monitoring for cloud products and services\.
+
+For more information about FedRAMP compliance, see [FedRAMP](http://aws.amazon.com/compliance/fedramp-faqs/)\.
+
+### SOC and ISO<a name="certification-soc"></a>
+
+AWS Resource Access Manager can be used for workloads subject to Service Organization Control \(SOC\) compliance and International Organization for Standardization \(ISO\) ISO 9001, ISO 27001, ISO 27017, ISO 27018 and ISO 27701 standards\. Customers in finance, healthcare, and other regulated sectors can get insights into the security processes and controls that protect customer data which can be found in the SOC reports, AWS ISO and CSA STAR certificates in [AWS Artifact](http://aws.amazon.com/artifact)\. 
+
+For more information about SOC compliance, see [SOC](http://aws.amazon.com/compliance/soc-faqs/)\. 
+
+For more information about ISO compliance, see [ISO 9001](http://aws.amazon.com/compliance/iso-9001-faqs/), [ISO 27001](http://aws.amazon.com/compliance/iso-27001-faqs/), [ISO 27017](http://aws.amazon.com/compliance/iso-27017-faqs/), [ISO 27018 ](http://aws.amazon.com/compliance/iso-27018-faqs/) and [ISO 27701](http://aws.amazon.com/compliance/iso-27701-faqs/)\.

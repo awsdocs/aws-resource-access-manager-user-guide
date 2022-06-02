@@ -6,7 +6,9 @@ For notification about these updates, you can subscribe to the AWS RAM RSS feed\
 
 | Change | Description | Date | 
 | --- |--- |--- |
-| [AWS Resource Access Manager receives PCI DSS certification\.](https://docs.aws.amazon.com/ram/latest/userguide/what-is.html#compliance) | AWS RAM has been validated as being compliant with Payment Card Industry \(PCI\) Data Security Standard \(DSS\)\. | February 27, 2022 | 
+| [AWS Resource Access Manager receives SOC and ISO certification\.](https://docs.aws.amazon.com/ram/latest/userguide/what-is.html#certification-soc) | AWS RAM has been validated as being compliant with Service Organization Control \(SOC\) and International Organization for Standardization \(ISO\) ISO 9001, ISO 27001, ISO 27017, ISO 27018 and ISO 27701 standards\. | May 31, 2022 | 
+| [AWS Resource Access Manager receives FedRAMP certification\.](https://docs.aws.amazon.com/ram/latest/userguide/what-is.html#certification-fedramp) | AWS RAM has been validated as being compliant with the Federal Risk and Authorization Management Program \(FedRAMP\)\. | April 8, 2022 | 
+| [AWS Resource Access Manager receives PCI DSS certification\.](https://docs.aws.amazon.com/ram/latest/userguide/what-is.html#certification-pci-dss) | AWS RAM has been validated as being compliant with Payment Card Industry \(PCI\) Data Security Standard \(DSS\)\. | February 27, 2022 | 
 | [Added support for sharing global resources](https://docs.aws.amazon.com/ramug/globalshares/working-with-regional-vs-global.html) | You can now share global resources with other AWS accounts\. | December 2, 2021 | 
 | [Added support for AWS Cloud WAN core networks as shareable global resources\.](https://docs.aws.amazon.com/ram/latest/userguide/shareable.html#shareable-globalwan) | You can now share Cloud WAN core networks with other AWS accounts\. | December 2, 2021 | 
 | [Support for sharing Amazon VPC IP Address Manager \(IPAM\) pools](#doc-history) | You can use AWS RAM to share Amazon VPC IPAM pools\. For more information, see [Sharable AWS resources](https://docs.aws.amazon.com/ram/latest/userguide/shareable.html#shareable-vpc) in the *AWS RAM User Guide*\. | December 1, 2021 | 
