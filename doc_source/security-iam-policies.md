@@ -22,12 +22,12 @@ An IAM policy is a JSON document that includes the following statements: Effect,
 ```
 {
     "Statement":[{
-        "Effect":"effect",
-        "Action":"action",
-        "Resource":"arn",
+        "Effect":"<effect>",
+        "Action":"<action>",
+        "Resource":"<arn>",
         "Condition":{
-            "condition":{
-                "key":"value"
+            "<comparison-operator>":{
+                "<key>":"<value>"
             }
         }
     }]
@@ -49,12 +49,25 @@ The *Resource* statement specifies the AWS RAM resources that are affected by th
 ### Condition<a name="iam-policies-condition"></a>
 
 *Condition* statements are optional\. They can be used to further refine the conditions under which the policy applies\. AWS RAM supports the following condition keys:
-+ `aws:RequestTag/${TagKey}` – Specifies a tag key and value pair that must be used when creating or tagging a resource share\. 
-+ `aws:ResourceTag/${TagKey}` – Indicates that the action can be performed only on resources that have the specified tag key and value pair\.
-+ `aws:TagKeys` – Specifies the tag keys that can be used when creating or tagging a resource share\.
-+ `ram:AllowsExternalPrincipals` – Indicates that the action can be performed only on resource shares that allow or deny sharing with external principals\. An external principal is an AWS account outside of your organization in AWS Organizations\.
-+ `ram:Principal` – Indicates that the action can be performed only on the specified principal\.
-+ `ram:RequestedResourceType` – Indicates that the action can be performed only on the specified resource type\. You must specify resource types using the format shown in the list of [shareable resource types](shareable.md)\.
-+ `ram:ResourceArn` – Indicates that the action can be performed only on a resource with the specified ARN\.
-+ `ram:ResourceShareName` – Indicates that the action can be performed only on a resource share with the specified name\.
-+ `ram:ShareOwnerAccountId` – Indicates that the action can be performed only on resource shares owned by a specific account\.
++ `aws:RequestTag/${TagKey}` – Tests whether the service request includes a tag with the specified tag key exists and has the specified value\.
++ `aws:ResourceTag/${TagKey}` – Tests whether the resource acted on by the service request has an attached tag with a tag key that you specify in the policy\.
+
+  The following example condition checks that the resource referenced in the service request has an attached tag with the key name "Owner" and a value of "Dev Team"\.
+
+  ```
+  "Condition" : { 
+      "StringEquals" : {
+          "aws:ResourceTag/Owner" : "Dev Team" 
+      } 
+  }
+  ```
++ `aws:TagKeys` – Specifies the tag keys that must be used to create or tag a resource share\.
++ `ram:AllowsExternalPrincipals` – Tests whether the resource share in the service request allows sharing with external principals\. An external principal is an AWS account outside of your organization in AWS Organizations\. If this evaluates to `False`, then you can share this resource share with accounts only in the same organization\.
++ `ram:PermissionArn` – Tests whether the permission ARN specified in the service request matches an ARN string that you specify in the policy\.
++ `ram:PermissionResourceType` – Tests whether the permission specified in the service request is valid for the resource type that you specify in the policy\. Specify resource types using the format shown in the list of [shareable resource types](shareable.md)\.
++ `ram:Principal` – Tests whether the identity of the role or user that is performing the service request matches an ARN string that you specify in the policy\.
++ `ram:RequestedAllowsExternalPrincipals` – Tests whether the service request includes the `allowExternalPrincipals` parameter and whether its argument matches the value you specify in the policy\.
++ `ram:RequestedResourceType` – Tests whether the resource type of the resource being acted on matches a resource type string that you specify in the policy\. Specify resource types using the format shown in the list of [shareable resource types](shareable.md)\.
++ `ram:ResourceArn` – Tests whether the ARN of the resource being acted upon by the service request matches an ARN that you specify in the policy\.
++ `ram:ResourceShareName` – Tests whether the name of the resource share being acted upon by the service request matches a string that you specify in the policy\.
++ `ram:ShareOwnerAccountId` – Tests the account ID number of the resource share being acted upon by the service request matches a string that you specify in the policy\. 
