@@ -1,6 +1,6 @@
 # Availability Zone IDs for your AWS resources<a name="working-with-az-ids"></a>
 
-AWS maps the physical Availability Zones *randomly* to the available zone names for each AWS account\. This approach helps to distribute resources across the Availability Zones in an AWS Region, instead of resources likely being concentrated in Availability Zone "a" for each Region\. As a result, the Availability Zone `us-east-1a` for *your* AWS account might not represent the same physical location as `us-east-1a` for a different AWS account\. For more information, see [Regions and Availability Zones](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html) in the *Amazon EC2 User Guide*\.
+AWS maps the physical Availability Zones *randomly* to the Availability Zone names for each AWS account\. This approach helps to distribute resources across the Availability Zones in an AWS Region, instead of resources likely being concentrated in Availability Zone "a" for each Region\. As a result, the Availability Zone `us-east-1a` for *your* AWS account might not represent the same physical location as `us-east-1a` for a different AWS account\. For more information, see [Regions and Availability Zones](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html) in the *Amazon EC2 User Guide*\.
 
 The following illustration shows how the AZ IDs are the same for every account even though the Availability Zone names can map differently for each account\.
 

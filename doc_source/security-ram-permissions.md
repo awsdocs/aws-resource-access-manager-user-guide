@@ -10,6 +10,10 @@ You can retrieve the list of the available managed permissions at any time\. For
 
 ## How AWS RAM managed permissions work<a name="permissions-work"></a>
 
+For a quick overview, watch the following video that demonstrates how AWS RAM managed permissions let you apply the best practice of least privilege access to your AWS resources\.
+
+
+
 AWS RAM managed permissions are similar to [IAM resource\-based policies\.](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_resource-based) When you create a resource share, you associate a AWS RAM managed permission with each resource type that you want to share\.
 
 After you create the resource share, AWS RAM provides the managed permission that you associate with each resource type to the respective resource\-owning service, such as AWS Certificate Manager Private Certificate Authority\. The permissions are then attached to each of the resources in the resource share\.

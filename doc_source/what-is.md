@@ -3,12 +3,23 @@
 AWS Resource Access Manager \(AWS RAM\) helps you securely share the AWS resources that you create in one AWS account with other AWS accounts\. If you have multiple AWS accounts, you can create a resource once and use AWS RAM to make that resource usable by those other accounts\. If your account is managed by AWS Organizations, then you can share resources with all the other accounts in the organization, or only those accounts contained by one or more specified organizational units \(OUs\)\. You can also share with specific AWS accounts by account ID, regardless of whether the account is part of an organization\. [Some supported resource types](shareable.md) also let you share them with specified IAM roles and users\.
 
 **Topics**
++ [Video overviews](#video-intros)
 + [Benefits](#what-is-features)
 + [How resource sharing works](#what-is-how)
 + [Service quotas](#what-is-limits)
 + [Accessing AWS RAM](#what-is-accessing)
 + [Pricing](#what-is-pricing)
 + [Compliance and international standards](#certification)
+
+## Video overviews<a name="video-intros"></a>
+
+The following video provides a brief introduction to AWS RAM and describes how to create a resource share\.
+
+
+
+The following video demonstrates how AWS RAM managed permissions let you apply the best practice of least privilege access to your AWS resources\.
+
+
 
 ## Benefits<a name="what-is-features"></a>
 
@@ -44,7 +55,7 @@ With AWS RAM, you share resources that you own by creating a *resource share*\. 
 + The principals to which you grant access to the resource share\. Principals can be individual AWS accounts, the accounts in an organization or an organizational unit \(OU\) in AWS Organizations, or individual AWS Identity and Access Management \(IAM\) roles or users\.
 **Note**  
 Not all resource types can be shared with IAM roles and users\. For information about resources that you can share with these principals, see [Shareable AWS resources](shareable.md)\.
-+ The AWS RAM permission to associate with each resource type\. This is an AWS managed permission policy that determines what the principals in the other accounts can do with the resources in the resource share\.
++ The AWS RAM permission to associate with each resource type\. This is an AWS managed permission that determines what the principals in the other accounts can do with the resources in the resource share\.
 
 Your account retains full ownership of the resources that you share\.
 

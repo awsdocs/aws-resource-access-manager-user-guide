@@ -6,6 +6,9 @@ For notification about these updates, you can subscribe to the AWS RAM RSS feed\
 
 | Change | Description | Date | 
 | --- |--- |--- |
+| [Added links to two introductory videos about AWS RAM\.](https://docs.aws.amazon.com/ram/latest/userguide) | Added overview videos that describe AWS RAM and provide a walk\-through of sharing a resource with other AWS accounts\. | August 29, 2022 | 
+| [Added support for Amazon SageMaker pipelines\.](https://docs.aws.amazon.com/ram/latest/userguide/shareable.html#shareable-sagemaker) | You can now share SageMaker pipelines with other AWS accounts\. | August 2, 2022 | 
+| [Added support for AWS Service Catalog AppRegistry applications and attribute groups as shareable resource types\.](https://docs.aws.amazon.com/ram/latest/userguide/shareable.html#shareable-sc-appregistry) | You can now share AWS Service Catalog AppRegistry applications and attribute groups with other AWS accounts\. | June 17, 2022 | 
 | [AWS Resource Access Manager receives SOC and ISO certification\.](https://docs.aws.amazon.com/ram/latest/userguide/what-is.html#certification-soc) | AWS RAM has been validated as being compliant with Service Organization Control \(SOC\) and International Organization for Standardization \(ISO\) ISO 9001, ISO 27001, ISO 27017, ISO 27018 and ISO 27701 standards\. | May 31, 2022 | 
 | [AWS Resource Access Manager receives FedRAMP certification\.](https://docs.aws.amazon.com/ram/latest/userguide/what-is.html#certification-fedramp) | AWS RAM has been validated as being compliant with the Federal Risk and Authorization Management Program \(FedRAMP\)\. | April 8, 2022 | 
 | [AWS Resource Access Manager receives PCI DSS certification\.](https://docs.aws.amazon.com/ram/latest/userguide/what-is.html#certification-pci-dss) | AWS RAM has been validated as being compliant with Payment Card Industry \(PCI\) Data Security Standard \(DSS\)\. | February 27, 2022 | 

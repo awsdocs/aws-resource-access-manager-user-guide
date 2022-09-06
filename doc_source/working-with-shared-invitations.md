@@ -10,7 +10,16 @@ If you're added to a resource share by one of the following, you receive an invi
 
 If you receive an invitation to join a resource share, you must accept it to access its shared resources\. If you decline the invitation, you can't access the shared resources\.
 
-You have seven days to accept an invitation to join a resource share\. If you don't accept the invitation within seven days, the invitation expires and is automatically declined\.
+For the following resource types you have seven days to accept the invitation to join the share for the following resource types\. If you don't accept the invitation before it expires, the invitation is automatically declined\.
+
+**Important**  
+For shared resource types **not** on the following list, you have **12 hours** to accept the invitation to join the resource share\. If you try to accept the invitation after 12 hours, RAM fails to process the invitation and the originating account must share the resources again to generate a new invitation\.
++ Amazon Aurora – DB clusters
++ Amazon EC2 – capacity reservations and dedicated hosts
++ AWS License Manager – License configurations
++ AWS Outposts – Local gateway route tables, outposts, and sites 
++ Amazon Route 53 – Forwarding rules
++ Amazon VPC – Customer\-owned IPv4 addresses, prefix lists, subnets, traffic mirror targets, transit gateways, transit gateway multicast domains
 
 ------
 #### [ Console ]

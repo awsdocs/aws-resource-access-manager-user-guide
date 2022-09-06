@@ -21,9 +21,10 @@ If you no longer need to share resources with your entire organization or OUs, y
 
 **Minimum permissions**
 
-To run the procedures below, you must have the following permissions:
+To run the procedures below, you must sign in as a principal in the organization's management account that has the following permissions:
 + `ram:EnableSharingWithAwsOrganization`
 + `iam:CreateServiceLinkedRole`
++ `organizations:enableAWSServiceAccess`
 + `organizations:DescribeOrganization`
 
 **Requirements**
@@ -78,7 +79,7 @@ To share resources that you own, create a resource share\. When you create a res
 + If the account you're sharing from is part of an organization in AWS Organizations and sharing within your organization is enabled, any principals in the organization that you share with are automatically granted access to the shared resources without the use of invitations\. A principal in an account with whom you share outside of the context of an organization receives an invitation to join the resource share and is granted access to the shared resources only after they accept the invitation\.
 + For the following resource types you have seven days to accept the invitation to join the share for the following resource types\. If you don't accept the invitation before it expires, the invitation is automatically declined\.
 **Important**  
-For shared resource types **not** on the following list, you have **12 hours** to accept the invitation to join the resource share\. If you try to accept the invitation after 12 hours, RAM fails to process the invitation and the originating acccount must share the resources again to generate a new invitation\.
+For shared resource types **not** on the following list, you have **12 hours** to accept the invitation to join the resource share\. If you try to accept the invitation after 12 hours, RAM fails to process the invitation and the originating account must share the resources again to generate a new invitation\.
   + Amazon Aurora – DB clusters
   + Amazon EC2 – capacity reservations and dedicated hosts
   + AWS License Manager – License configurations
