@@ -9,8 +9,8 @@ Security is a shared responsibility between AWS and you\. The [shared responsibi
 This documentation helps you understand how to apply the shared responsibility model when using AWS RAM\. The following topics show you how to configure AWS RAM to meet your security and compliance objectives\. You also learn how to use other AWS services that help you to monitor and secure your AWS RAM resources\. 
 
 **Topics**
-+ [Data protection](data-protection.md)
-+ [Identity and access management](control-access.md)
++ [Data protection](security-data-protection.md)
++ [Identity and access management](security-iam.md)
 + [Logging and monitoring](security-monitoring.md)
-+ [Resilience](disaster-recovery-resiliency.md)
-+ [Infrastructure security](infrastructure-security.md)
++ [Resilience](security-disaster-recovery-resiliency.md)
++ [Infrastructure security](security-infrastructure.md)

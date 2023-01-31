@@ -3,7 +3,7 @@
 If you no longer need access to resources that are shared with you, you can leave a resource share at any time\. When you leave a resource share, you lose access to the shared resources\.
 
 ## Prerequisites for leaving a resource share<a name="working-with-shared-leave-prerequisites"></a>
-+ You can leave a resource share only if it was shared with you as an AWS account not in the context of an organization\. You can't leave a resource share if you were added to it by an AWS account inside your organization and sharing with AWS Organizations is enabled\. Access to resource shares within an organization is automatic\.
++ You can leave a resource share only if it was shared with you as an individual AWS account and not in the context of an organization\. You can't leave a resource share if you were added to it by an AWS account inside your organization and sharing with AWS Organizations is enabled\. Access to resource shares within an organization is automatic\.
 + To leave a resource share, verify that the resource share is either empty or that it contains only resource types that support leaving a share\. 
 
   The following resource types ***do not*** support leaving a resource share\. If the resource share contains one or more of these, ask the owner of the resource share to remove your principal from those with permission to the share\.    

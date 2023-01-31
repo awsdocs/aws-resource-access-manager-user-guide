@@ -3,6 +3,7 @@
 You can update a resource share in AWS RAM at any time in the following ways:
 + You can add principals, resources, or tags to a resource share that you created\.
 + For resource types that support more than the default AWS RAM managed permission, you can choose which permission applies to resources of each type\.
++ When a permission attached to the resource share has a new default version, you can update the permission to use the new version\.
 + You can revoke access to shared resources by removing principals or resources from a resource share\. If you revoke access, principals no longer have access to the shared resources\.
 
 **Note**  
@@ -35,31 +36,45 @@ Principals with whom you share resources can leave your resource share if the sh
 
 1. \(Optional\) In **Step 2: Associate a permission with each resource type**, if more than the default AWS RAM managed permission is available, you can choose which permission to associate with the resource type\. For more information, see [Types of AWS RAM managed permissions](security-ram-permissions.md#permissions-types)\. If only the default AWS RAM managed permission is available, then you can't alter anything for this resource type\.
 
-   To display the actions that the AWS RAM managed permission allows, choose **View the actions that are allowed by this permission** to expand it and display the list\.
+   To display the actions that the AWS RAM managed permission allows, choose **View the actions allowed by this permission** to expand it and display the list\.
+
+1. If the version of the permission currently assigned to the resource share isn't the current default version, then you can update to the default version by choosing **Update to default version**\.
+**Note**  
+Until you save your changes to the resource share after the final step, you can cancel the version update by choosing **Revert to previous version**\. After you save the resource share, however, the change is final and you can no longer return to the previous version\.
 
 1. Choose **Next**\.
 
 1. In **Step 3: Choose principals that are allowed to access**, review the selected principals, and if required, update any of the following:
 
    1. \(Optional\) To change whether sharing is enabled with principals inside or outside your organization, choose one of the following options:
-      + To share resources with AWS accounts, IAM users, and IAM roles that are outside of your organization, choose **Allow sharing with external principals**\.
+      + To share resources with AWS accounts or individual IAM roles or users that are outside of your organization, choose **Allow sharing with external principals**\.
       + To restrict resource sharing to only principals in your organization in AWS Organizations, choose **Allow sharing with principals in your organization only**\.
 
    1. For **Principals**, do the following:
       + \(Optional\) To add an organization, organizational unit \(OU\), or member AWS account inside your organization, turn on **Display organizational structure** to display a tree view of your organization\. Then select the check box next to each principal that you want to add\.
+**Important**  
+When you share with an organization or an OU, and that scope includes the account that owns the resource share, all principals in the sharing account automatically get access to the resources in the share\. The access granted is defined by the managed permissions associated with the share\. This is because the resource\-based policy that AWS RAM attaches to each resource in the share uses `"Principal": "*"`\. For more information, see [Implications of using "Principal": "\*" in a resource\-based policy](getting-started-terms-and-concepts.md#term-principal-star)\.  
+Principals in the other consuming accounts don't immediately get access to the share's resources\. The other accounts' administrators must first attach identity\-based permission policies to the appropriate principals\. Those policies must grant `Allow` access to the ARNs of individual resources in the resource share\. The permissions in those policies can't exceed those specified in the AWS RAM managed permission associated with the resource share\.
 **Note**  
 The **Display organizational structure **toggle appears only if sharing with AWS Organizations is enabled and you are signed in as a principal in the organization's management account\.  
-You can't use this method to specify an AWS account outside your organization, or an IAM role or IAM user\. Instead, you must add these principals by entering their identifiers, which are shown in the text box below the **Display organizational structure** switch\. See the next bullet point\.
+You can't use this method to specify an AWS account outside your organization, or an IAM role or user\. Instead, you must add these principals by entering their identifiers, which are shown in the text box below the **Display organizational structure** switch\. See the next bullet point\.
       + \(Optional\) To add a principal by its identifier, choose the principal type from the dropdown list, and then enter the ID or ARN for the principal\. Finally, choose **Add**\.
 
-        The addition immediately appears in the **Selected principals** list\.
+        If you select an individual AWS account, then only that account can access the resource share\. You can choose either of the following options\.
+        + **Another AWS account \(other than the resource owner\)** – makes the resource available to the other account\. The administrator of that account must complete the process by granting access to the shared resource using identity\-based permission policies to individual roles and users\. Those permissions can't exceed those defined in the permissions attached to the resource share\.
+        + **This AWS account \(resource owner\)** – all roles and users in the resource owning account automatically receive the access defined by the permissions attached to the resource share\.
+      + The addition immediately appears in the **Selected principals** list\.
 
         You can then add additional accounts, OUs, or your organization by repeating this step\.
       + \(Optional\) To remove a principal, locate it under **Selected principals**, select its check box, and then choose **Deselect**\. 
 
 1. Choose **Next**\.
 
-1. In **Step 4: Review and update**, review the configuration details for your resource share\. To change the configuration for any step, choose the link that corresponds to the step you want to go back to, and then make the required changes\.
+1. In **Step 4: Review and update**, review the configuration details for your resource share\. 
+
+1. To change the configuration for any step, choose the link that corresponds to the step you want to go back to, and then make the required changes\.
+
+   If any permissions are still using versions other than the default, you have another opportunity to address that by choosing **Update to default version**\.
 
 1. Choose **Update resource share** when you're done making changes\.
 

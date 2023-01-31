@@ -1,10 +1,21 @@
 # How AWS RAM works with IAM<a name="security-iam-policies"></a>
 
-By default, IAM users don't have permission to create or modify AWS RAM resources\. To allow IAM users to create or modify resources and perform tasks, you must either attach an AWS managed policy or create and attach new IAM policies that grant permission to use specific resources and API actions\. You then attach those policies to the IAM users or groups that require those permissions\.
+By default, IAM principals don't have permission to create or modify AWS RAM resources\. To allow IAM principals to create or modify resources and perform tasks, you perform one of the following steps\. These actions grant permission to use specific resources and API actions\. 
+
+To provide access, add permissions to your users, groups, or roles:
++ Users and groups in AWS IAM Identity Center \(successor to AWS Single Sign\-On\):
+
+  Create a permission set\. Follow the instructions in [Create a permission set](https://docs.aws.amazon.com/singlesignon/latest/userguide/howtocreatepermissionset.html) in the *AWS IAM Identity Center \(successor to AWS Single Sign\-On\) User Guide*\.
++ Users managed in IAM through an identity provider:
+
+  Create a role for identity federation\. Follow the instructions in [Creating a role for a third\-party identity provider \(federation\)](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-idp.html) in the *IAM User Guide*\.
++ IAM users:
+  + Create a role that your user can assume\. Follow the instructions in [Creating a role for an IAM user](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html) in the *IAM User Guide*\.
+  + \(Not recommended\) Attach a policy directly to a user or add a user to a user group\. Follow the instructions in [Adding permissions to a user \(console\)](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_change-permissions.html#users_change_permissions-add-console) in the *IAM User Guide*\.
 
 AWS RAM provides several AWS managed policies that you can use that will address the needs of many users\. For more information about these, see [AWS managed policies for AWS RAM](security-iam-managed-policies.md)\.
 
-If you need finer control over the permissions you grant to your users, you can construct your own policies in the IAM console\. For information about creating policies and attaching them to your IAM users and roles, see [Policies and permissions in IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html) in the *AWS Identity and Access Management User Guide*\.
+If you need finer control over the permissions you grant to your users, you can construct your own policies in the IAM console\. For information about creating policies and attaching them to your IAM roles and users, see [Policies and permissions in IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html) in the *AWS Identity and Access Management User Guide*\.
 
 The following sections provide the AWS RAM specific details for building an IAM permission policy\.
 
@@ -17,7 +28,7 @@ The following sections provide the AWS RAM specific details for building an IAM 
 
 ## Policy structure<a name="structure"></a>
 
-An IAM policy is a JSON document that includes the following statements: Effect, Action, Resource, and Condition\. An IAM policy typically takes the following form\.
+An IAM permission policy is a JSON document that includes the following statements: Effect, Action, Resource, and Condition\. An IAM policy typically takes the following form\.
 
 ```
 {
@@ -36,7 +47,7 @@ An IAM policy is a JSON document that includes the following statements: Effect,
 
 ### Effect<a name="iam-policies-effect"></a>
 
-The *Effect* statement indicates whether the policy allows or denies a user permission to perform an action\. The possible values include: `Allow` and `Deny`\.
+The *Effect* statement indicates whether the policy allows or denies a principal permission to perform an action\. The possible values include: `Allow` and `Deny`\.
 
 ### Action<a name="iam-policies-action"></a>
 
@@ -65,7 +76,7 @@ The *Resource* statement specifies the AWS RAM resources that are affected by th
 + `ram:AllowsExternalPrincipals` – Tests whether the resource share in the service request allows sharing with external principals\. An external principal is an AWS account outside of your organization in AWS Organizations\. If this evaluates to `False`, then you can share this resource share with accounts only in the same organization\.
 + `ram:PermissionArn` – Tests whether the permission ARN specified in the service request matches an ARN string that you specify in the policy\.
 + `ram:PermissionResourceType` – Tests whether the permission specified in the service request is valid for the resource type that you specify in the policy\. Specify resource types using the format shown in the list of [shareable resource types](shareable.md)\.
-+ `ram:Principal` – Tests whether the identity of the role or user that is performing the service request matches an ARN string that you specify in the policy\.
++ `ram:Principal` – Tests whether the ARN of the principal specified in the service request matches an ARN string that you specify in the policy\.
 + `ram:RequestedAllowsExternalPrincipals` – Tests whether the service request includes the `allowExternalPrincipals` parameter and whether its argument matches the value you specify in the policy\.
 + `ram:RequestedResourceType` – Tests whether the resource type of the resource being acted on matches a resource type string that you specify in the policy\. Specify resource types using the format shown in the list of [shareable resource types](shareable.md)\.
 + `ram:ResourceArn` – Tests whether the ARN of the resource being acted upon by the service request matches an ARN that you specify in the policy\.

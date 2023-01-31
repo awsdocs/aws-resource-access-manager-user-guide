@@ -11,11 +11,15 @@ You can view a list of the resource shares that you have created\. You can see w
 
 1. Because AWS RAM resource shares exist in specific AWS Regions, choose the appropriate AWS Region from the dropdown list in the upper\-right corner of the console\. To see resource shares that contain global resources, you must set the AWS Region to US East \(N\. Virginia\), \(`us-east-1`\)\. For more information about sharing global resources, see [Sharing Regional resources compared to global resources](working-with-regional-vs-global.md)\.
 
+1. If any of the managed permissions used by the resource shares in the results have a new version of the permission that is designated as the default, then the page displays a banner to alert you\. You can choose to update all permission versions at once by choosing **Review and update all** at the top of the page\.
+
+   Alternatively, for individual resource shares with one or more new versions of permissions, the **Status** column displays **Update available**\. Choosing that link begins the process of reviewing the updated permission versions and letting you assign them as the versions for the relevant resource types in that one resource share\.
+
 1. \(Optional\) Apply a filter to find specific resource shares\. You can apply multiple filters to narrow your search\. You can type a keyword, such as part of a resource share name to list only those resource shares that include that text in the name\. Choose the text box to see a dropdown list of suggested attribute fields\. After you choose one, you can choose from the list of available values for that field\. You can add other attributes or keywords until you find the resource you want\.
 
 1. Choose the name of the resource share to review\. The console displays the following information about the resource share:
    + **Summary** – Lists the resource share name, ID, owner, Amazon Resource Name \(ARN\), creation date, whether it allows sharing with external accounts, and its current status\.
-   + **Permissions** – Lists the AWS RAM managed permissions that are attached to this resource share\. There can be at most one permission per resource type included in the resource share\. 
+   + **Permissions** – Lists the AWS RAM managed permissions that are attached to this resource share\. There can be at most one permission per resource type included in the resource share\. Each permission displays the version of that permission that is associated with the resource share\. If it is not the default version, then the console displays an **Update to default version** link\. If you choose that link, then you are provided with the opportunity to update the resource share to use the default version\.
    + **Shared resources** – Lists the individual resources that are included in the resource share\. Choose the ID of a resource to open a new browser tab to view the resource in its native service's console\.
    + **Shared principals** – Lists the principals with whom the resources are shared\.
    + **Tags** – Lists the tag key\-value pairs that are attached to the resource share itself; these are not the tags attached to the individual resources included in the resource share\.
@@ -26,7 +30,7 @@ You can view a list of the resource shares that you have created\. You can see w
 **To view your resource shares**  
 You can use the [get\-resource\-shares](https://docs.aws.amazon.com/cli/latest/reference/ram/get-resource-shares.html) command with the parameter `--resource-owner` set to `SELF` to display details of the resource shares created in your AWS account\.
 
-The following example shows the resource shares that are shared in the current AWS Region \(`us-east-1`\) for the calling AWS account\. To get the resource shares created in a different Region, use the `--region <region-code>` parameter\. To get resource shares that include global resources, you must specify the Region US East \(N\. Virginia\), `us-east-1`\.
+The following example shows the resource shares that are shared in the current AWS Region \(`us-east-1`\) for the calling AWS account\. To get the resource shares created in a different Region, use the `--region <region-code>` parameter\. To include resource shares that contain global resources, you must specify the Region US East \(N\. Virginia\), `us-east-1`\.
 
 ```
 $  aws ram get-resource-shares \

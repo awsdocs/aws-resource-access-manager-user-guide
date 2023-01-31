@@ -1,8 +1,12 @@
 # Accepting and rejecting resource share invitations<a name="working-with-shared-invitations"></a>
 
-To access shared resources, the owner of the resource share must add you as a principal\.
+To access shared resources, the owner of the resource share must add you as a principal\. The owner can add any of the following as a principal to the resource share\.
++ The organization of which your account is a member
++ An organizational unit \(OU\) that contains your account
++ Your individual account
++ For supported resource types, your specific IAM role or user
 
-If you're added to the resource share through an AWS account that is in an organization in AWS Organizations, and sharing within the organization is enabled, then you automatically get access to the shared resources without having to accept an invitation\.
+If you're added to the resource share through an AWS account that is a member of an organization in AWS Organizations, and sharing within the organization is enabled, then you automatically get access to the shared resources without having to accept an invitation\. If the account through which you receive access is later removed from the organization, then any principals in that account automatically lose access to the resources that were accessed through that resource share\.
 
 If you're added to a resource share by one of the following, you receive an invitation to join the resource share:
 + An account outside of your organization in AWS Organizations

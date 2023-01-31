@@ -1,4 +1,4 @@
-# Logging AWS RAM API calls with AWS CloudTrail<a name="logging-using-cloudtrail"></a>
+# Logging AWS RAM API calls with AWS CloudTrail<a name="cloudtrail-logging"></a>
 
 AWS RAM is integrated with AWS CloudTrail, a service that provides a record of actions taken by a user, role, or an AWS service in AWS RAM\. CloudTrail captures all API calls for AWS RAM as events\. The calls captured include calls from the AWS RAM console and code calls to the AWS RAM API operations\. If you create a trail, you can enable continuous delivery of CloudTrail events to an Amazon S3 bucket that you specify, including events for AWS RAM\. If you don't configure a trail, you can still view the most recent events in the CloudTrail console in **Event history**\. Use the information collected by CloudTrail to determine the request that was made to AWS RAM, the requesting IP address, the requester, when it was made, and additional details\.
 
@@ -16,10 +16,11 @@ For an ongoing record of events in your AWS account, including events for AWS RA
 
 All AWS RAM actions are logged by CloudTrail and are documented in the [AWS RAM API Reference](https://docs.aws.amazon.com/ram/latest/APIReference/)\. For example, calls to the `CreateResourceShare`, `AssociateResourceShare`, and `EnableSharingWithAwsOrganization` actions generate entries in the CloudTrail log files\.
 
-Every event or log entry contains information about who generated the request\. The identity information helps you determine the following:
-+ Whether the request was made with root or AWS Identity and Access Management \(IAM\) user credentials\.
-+ Whether the request was made with temporary security credentials for a role or federated user\.
-+ Whether the request was made by another AWS service\.
+Every event or log entry contains information that helps you determine who made the request\.
++ AWS account root credentials
++ Temporary security credentials from an AWS Identity and Access Management \(IAM\) role or federated user\.
++ Long\-term security credentials from an IAM user\.
++ Another AWS service\.
 
 For more information, see the [CloudTrail userIdentity element](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-event-reference-user-identity.html)\.
 

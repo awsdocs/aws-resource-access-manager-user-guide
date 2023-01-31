@@ -8,7 +8,11 @@ To start using resources that were shared with your account using AWS Resource A
 
 ## Respond to the resource share invitation<a name="getting-started-shared-respond-invitation"></a>
 
-If you receive an invitation to join a resource share, you must accept it to gain access to the shared resources\. If you're part of an organization in AWS Organizations and sharing in your organization is enabled, principals in your organization are automatically granted access to the shared resources\. Those principals don't receive invitations\.
+If you receive an invitation to join a resource share, you must accept it to gain access to the shared resources\. 
+
+Invitations aren't used in the following scenarios:
++ If you're part of an organization in AWS Organizations and sharing in your organization is enabled, then principals in the organization automatically get access to the shared resources without invitations\.
++ If you share with the AWS account that owns the resource, then the principals in that account automatically get access to the shared resources without invitations\.
 
 ------
 #### [ Console ]

@@ -2,6 +2,11 @@
 
 For each shareable resource type, there is at least one AWS Resource Access Manager \(AWS RAM\) managed permission that defines the actions that principals with access to the resources in a resource share are allowed to perform on those resources\. Some resource types have only one AWS RAM managed permission, and it's used automatically by default, with no action required by you\. Some resource types define more than one managed permission, and you can choose which one to use in a resource share\.
 
+Each permission can have one or more versions\. One version is designated as the *default* version for that permission\. From time to time, AWS updates a permission for a resource type by creating a new version and designating that new version as the default\. Permissions that are already attached to a resource share are ***not*** automatically updated\. The AWS RAM console does indicate when a new default version is available, and you can review the changes in the new default version compared to the previous one\. AWS recommends that you update to the new version of the permission as soon as possible, since such updates typically are to add support for new or updated AWS services that can share additional resource types using RAM\. A new default version can also address and correct security vulnerabilities\.
+
+**Important**  
+You can only attach the default version of the permission to a new resource share\. Also, any change you make to an existing permission results in updating to the latest default version\.
+
 You can retrieve the list of the available managed permissions at any time\. For more information, see [Viewing AWS RAM managed permissions](working-with-sharing-view-permissions.md)\.
 
 **Topics**
@@ -14,9 +19,9 @@ For a quick overview, watch the following video that demonstrates how AWS RAM ma
 
 
 
-AWS RAM managed permissions are similar to [IAM resource\-based policies\.](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_resource-based) When you create a resource share, you associate a AWS RAM managed permission with each resource type that you want to share\.
+AWS RAM managed permissions are similar to [IAM resource\-based policies\.](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_resource-based) When you create a resource share, you associate a AWS RAM managed permission with each resource type that you want to share\. If the managed permission has more than one version, it always uses the version designated as the default\.
 
-After you create the resource share, AWS RAM provides the managed permission that you associate with each resource type to the respective resource\-owning service, such as AWS Certificate Manager Private Certificate Authority\. The permissions are then attached to each of the resources in the resource share\.
+After you create the resource share, AWS RAM provides the managed permission that you associate with each resource type to the respective resource\-owning service, such as AWS Private Certificate Authority\. The permissions are then attached to each of the resources in the resource share\.
 
 AWS RAM managed permissions specify the following:
 
@@ -33,13 +38,15 @@ The operation that the principal is granted permission to perform\. This can be 
 ## Types of AWS RAM managed permissions<a name="permissions-types"></a>
 
 When you create a resource share, you choose the AWS RAM permission to associate with each resource type that you include in the resource share\. Managed permissions are defined by the resource\-owning service and managed by AWS RAM\.
-+ **Default managed permission** – There is one default managed permission available for each resource type that AWS RAM supports\. The default managed permission allows principals to perform specific actions that are defined by the service for the resource type\. For example, for the Amazon VPC `ec2:Subnet` resource type, the default managed permission allows principals to perform the following actions:
++ **Default managed permission** – There is one default managed permission available for every resource type that AWS RAM supports\. The default managed permission is the one used for a resource type unless you explicitly choose one of the addition managed permissions\. The default managed permission is intended to support the most common customer scenarios for sharing resources of the specified type\. The default managed permission allows principals to perform specific actions that are defined by the service for the resource type\. For example, for the Amazon VPC `ec2:Subnet` resource type, the default managed permission allows principals to perform the following actions:
   + `ec2:RunInstances`
   + `ec2:CreateNetworkInterface`
   + `ec2:DescribeSubnets`
 
   The names of default managed permissions use the following format: `AWSRAMDefaultPermissionShareableResourceType`\. For example, for the `ec2:Subnet` resource type, the name of the default AWS RAM managed permission is `AWSRAMDefaultPermissionSubnet`\.
-+ **Additional managed permissions** – Some resource types support additional choices for the permission you can attach to a resource type in a resource share\. Examples include read\-only access or full access \(`Read` and `Write` access\)\. These additional managed permissions provide you with more flexibility to choose the permissions to grant to specific principals for supported resource types\. For example, when you share a resource type that supports both a full access \(`Read` and `Write`\) managed permission and a read\-only managed permission, you can share the resources with the full access managed permission granted to an administrator\. You can then share the resources with other team members using the read\-only managed permission to follow the [security best practice of granting least privilege](https://wikipedia.org/wiki/Principle_of_least_privilege)\.
+**Note**  
+The default managed permission is separate from the default *version* of a managed permission\. All managed permissions, whether default or one of the additional managed permissions supported by some resource types, are separate, complete permissions with different effects and actions that support different sharing scenarios, such as read\-write versus read\-only access\. Any managed permission, whether default or additional, can have multiple versions, one of which is the default version for that permission\.
++ **Additional managed permissions** – Some resource types support additional choices for the managed permission that you can attach to a resource type in a resource share\. Examples include read\-only access versus full access \(`Read` and `Write` access\)\. These additional managed permissions provide you with more flexibility to choose the permissions to grant to specific principals for supported resource types\. For example, when you share a resource type that supports both a full access \(`Read` and `Write`\) managed permission and a read\-only managed permission, you can create one resource share for the administrator with the full access managed permission\. You can then create a separate resource share for other team members using the read\-only managed permission to follow the [security best practice of granting least privilege](https://wikipedia.org/wiki/Principle_of_least_privilege)\.
 **Note**  
 Currently, only some AWS services that work with AWS RAM support additional managed permissions beyond the default\. You can view the available permissions for each AWS service on the **[Permissions library](https://console.aws.amazon.com/ram/home#Permissions:)** page\. This page provides details about each available managed permission, including any resource shares that are currently associated with the permission and whether sharing with external principals is allowed, if applicable\. For more information, see [Viewing AWS RAM managed permissions](working-with-sharing-view-permissions.md)\.   
 For services that don’t support additional managed permissions, when you create a resource share, AWS RAM automatically applies the default permission defined for the resource type that you choose\.
