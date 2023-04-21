@@ -15,7 +15,7 @@ You can use AZ IDs to determine the location of resources in one account relativ
 
 **To view the AZ IDs for the Availability Zones in your account**
 
-1. Navigate to the [AWS RAM console home](https://console.aws.amazon.com/ram/home) page in the AWS RAM console\.
+1. Navigate to the [AWS RAM console](https://console.aws.amazon.com/ram/home#home:) page in the AWS RAM console\.
 
 1. You can view the AZ IDs for the current AWS Region under **Your AZ ID**\.
 

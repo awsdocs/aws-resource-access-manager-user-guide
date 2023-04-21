@@ -15,7 +15,7 @@ When your account is managed by AWS Organizations, you can take advantage of tha
 
 To share resources within an organization, you must first use the AWS RAM console or AWS Command Line Interface \(AWS CLI\) to enable sharing with AWS Organizations\. When you share resources in your organization, AWS RAM doesn't send invitations to principals\. Principals in your organization gain access to shared resources without exchanging invitations\.
 
-When you enable resource sharing within your organization, AWS RAM creates a service\-linked role called `AWSServiceRoleForResourceAccessManager`\. This role can be assumed by only the AWS RAM service, and grants AWS RAM permission to retrieve information about the organization it is a member of, by using the AWS managed policy`AWSResourceAccessManagerServiceRolePolicy`\. 
+When you enable resource sharing within your organization, AWS RAM creates a service\-linked role called `AWSServiceRoleForResourceAccessManager`\. This role can be assumed by only the AWS RAM service, and grants AWS RAM permission to retrieve information about the organization it is a member of, by using the AWS managed policy `AWSResourceAccessManagerServiceRolePolicy`\. 
 
 If you no longer need to share resources with your entire organization or OUs, you can disable resource sharing\. For more information, see [Disabling resource sharing with AWS Organizations](security-disable-sharing-with-orgs.md)\.
 
@@ -62,22 +62,24 @@ $ aws ram enable-sharing-with-aws-organization
 
 ## Create a resource share<a name="getting-started-sharing-create"></a>
 
-To share resources that you own, create a resource share\. When you create a resource share, you do the following:
+To share resources that you own, create a resource share\. Here's an overview of the process:
 
 1. Add the resources that you want to share\.
 
-1. For each resource type that you include in the share, specify the permission to use for that resource type\.
-   + If only the *default permission* is available for a resource type, then AWS RAM automatically associates that permission with the resource type and there is no action for you\.
-   + If more than the default AWS RAM managed permission is available for a resource type, then you must choose the permission to associate with that resource type\. 
+1. For each resource type that you include in the share, specify the [managed permission](getting-started-terms-and-concepts.md#term-managed-permission) to use for that resource type\.
+   + You can choose from one of the available AWS managed permissions, an existing customer managed permission, or create a new customer managed permission\.
+   + AWS managed permissions are created by AWS to cover standard use cases\.
+   + Customer managed permissions allow you to tailor your own managed permissions to meet your security and business needs\.
 **Note**  
 If the selected managed permission has multiple versions, then AWS RAM automatically attaches the default version\. You can attach ***only*** the version that is designated as the default\.
 
 1. Specify the principals that you want to have access to the resources\.
 
 **Considerations**
++ If you later need to delete an AWS resource that you included in a share, we recommend that you first either remove the resource from any resource share that includes it, or delete the resource share\.
 + The resource types that you can include in a resource share are listed at [Shareable AWS resources](shareable.md)\.
-+ You can share a resource only if you own it\. You can't share a resource that's shared with you\.
-+ AWS RAM is a Regional service\. When you share a resource with principals in other AWS accounts, those principals must access each resource from the same AWS Region that it was created in\. For supported global resources, you can access those resources from any AWS Region that's supported by that resource's service console and tools\. Note that you can view such resource shares and their global resources in the AWS RAM console and tools only in the designated home Region, US East \(N\. Virginia\), `us-east-1`\. For more information about AWS RAM and global resources, see [Sharing Regional resources compared to global resources](working-with-regional-vs-global.md)\.
++ You can share a resource only if you [own](getting-started-terms-and-concepts.md#term-sharing-account) it\. You can't share a resource that's shared with you\.
++ AWS RAM is a Regional service\. When you share a resource with principals in other AWS accounts, those principals must access each resource from the same AWS Region that it was created in\. For supported global resources, you can access those resources from any AWS Region that's supported by that resource's service console and tools\. You can view such resource shares and their global resources in the AWS RAM console and tools only in the designated home Region, US East \(N\. Virginia\), `us-east-1`\. For more information about AWS RAM and global resources, see [Sharing Regional resources compared to global resources](working-with-regional-vs-global.md)\.
 + If the account you're sharing from is part of an organization in AWS Organizations and sharing within your organization is enabled, any principals in the organization that you share with are automatically granted access to the resource shares without the use of invitations\. A principal in an account with whom you share outside of the context of an organization receives an invitation to join the resource share and is granted access to the shared resources only after they accept the invitation\.
 + If the sharing is between accounts or principals that are part of an organization, then any changes to organization membership dynamically affect access to the resource share\. 
   + If you add an AWS account to the organization or an OU that has access to a resource share, then that new member account automatically gets access to the resource share\. The administrator of the account you shared with can then grant individual principals in that account access to the resources in that share\. 
@@ -85,7 +87,7 @@ If the selected managed permission has multiple versions, then AWS RAM automatic
   + If you shared directly with a member account or with IAM roles or users in the member account and then remove that account from the organization, then any principals in that account lose access to the resources that were accessed through that resource share\.
 **Important**  
 When you share with an organization or an OU, and that scope includes the account that owns the resource share, all principals in the sharing account automatically get access to the resources in the share\. The access granted is defined by the managed permissions associated with the share\. This is because the resource\-based policy that AWS RAM attaches to each resource in the share uses `"Principal": "*"`\. For more information, see [Implications of using "Principal": "\*" in a resource\-based policy](getting-started-terms-and-concepts.md#term-principal-star)\.  
-Principals in the other consuming accounts don't immediately get access to the share's resources\. The other accounts' administrators must first attach identity\-based permission policies to the appropriate principals\. Those policies must grant `Allow` access to the ARNs of individual resources in the resource share\. The permissions in those policies can't exceed those specified in the AWS RAM managed permission associated with the resource share\.
+Principals in the other consuming accounts don't immediately get access to the share's resources\. The other accounts' administrators must first attach identity\-based permission policies to the appropriate principals\. Those policies must grant `Allow` access to the ARNs of individual resources in the resource share\. The permissions in those policies can't exceed those specified in the managed permission associated with the resource share\.
 + You can add only the organization your account is a member of, and OUs from that organization to your resource shares\. You can't add OUs or organizations from outside your own organization to a resource share as principals\. However, you can add individual AWS accounts or, for supported services, IAM roles and users from outside your organization as principals to a resource share\.
 **Note**  
 Not all resource types can be shared with IAM roles and users\. For information about resources that you can share with these principals, see [Shareable AWS resources](shareable.md)\.
@@ -124,11 +126,13 @@ For shared resource types **not** on the following list, you have **12 hours** t
 
 1. Choose **Next**\.
 
-1. In **Step 2: Associate a permission with each resource type**, if more than the default AWS RAM managed permission is available, then you can choose which permission to associate with the resource type\. If only the default permission is available, then AWS RAM automatically associates this permission with the resource type\. For more information, see [Types of AWS RAM managed permissions](security-ram-permissions.md#permissions-types)\.
-**Note**  
-If the selected permission has multiple versions, then AWS RAM automatically attaches the default version\. You can attach ***only*** the version designated as the default\.
+1. In **Step 2: Associate a managed permission with each resource type**, you can choose to associate a managed permission created by AWS with the resource type, choose an existing customer managed permission, or you can create your own customer managed permission for supported resource types\. For more information, see [Types of managed permissions](security-ram-permissions.md#permissions-types)\.
 
-   To display the actions that the permission allows, expand **Actions allowed by this permission**\.
+   Choose **Create customer managed permission** to construct a customer managed permission that meets the requirements of your sharing use case\. For more information see [Create a customer managed permission](create-customer-managed-permissions.md#create_cmp)\. After completing the process, choose ![\[Refresh icon\]](http://docs.aws.amazon.com/ram/latest/userguide/images/refresh_icon.PNG) and then you can select your new customer managed permission from the **Managed permissions** dropdown list\.
+**Note**  
+If the selected managed permission has multiple versions, then AWS RAM automatically attaches the default version\. You can attach ***only*** the version designated as the default\.
+
+   To display the actions that the managed permission allows, expand **View the policy template for this managed permission**\.
 
 1. Choose **Next**\.
 
@@ -142,13 +146,13 @@ If the selected permission has multiple versions, then AWS RAM automatically att
       + To add the organization, an organizational unit \(OU\), or an AWS account that is part of an organization, turn on **Display organizational structure**\. This displays a tree view of your organization\. Then, select the check box next to each principal that you want to add\.
 **Important**  
 When you share with an organization or an OU, and that scope includes the account that owns the resource share, all principals in the sharing account automatically get access to the resources in the share\. The access granted is defined by the managed permissions associated with the share\. This is because the resource\-based policy that AWS RAM attaches to each resource in the share uses `"Principal": "*"`\. For more information, see [Implications of using "Principal": "\*" in a resource\-based policy](getting-started-terms-and-concepts.md#term-principal-star)\.  
-Principals in the other consuming accounts don't immediately get access to the share's resources\. The other accounts' administrators must first attach identity\-based permission policies to the appropriate principals\. Those policies must grant `Allow` access to the ARNs of individual resources in the resource share\. The permissions in those policies can't exceed those specified in the AWS RAM managed permission associated with the resource share\.
+Principals in the other consuming accounts don't immediately get access to the share's resources\. The other accounts' administrators must first attach identity\-based permission policies to the appropriate principals\. Those policies must grant `Allow` access to the ARNs of individual resources in the resource share\. The permissions in those policies can't exceed those specified in the managed permission associated with the resource share\.
         + If you select the organization \(the ID begins with `o-`\), then principals in all AWS accounts in the organization can access the resource share\. 
-        + If you select an OU \(the ID begins with `ou-`\), then princiapals in all AWS accounts in that OU and its child OUs can access the resource share\.
+        + If you select an OU \(the ID begins with `ou-`\), then principals in all AWS accounts in that OU and its child OUs can access the resource share\.
         + If you select an individual AWS account, then only principals in that account can access the resource share\.
 **Note**  
 The **Display organizational structure **toggle appears only if sharing with AWS Organizations is enabled and you're signed in to the management account for the organization\.  
-You can't use this method to specify an AWS account outside your organization, or an IAM role or user\. Instead, you must turn off **Display organizational structure** and use the dropdown list and text box to enter the ID or ARN\.
+You can't use this method to specify an AWS account outside your organization, or an IAM role or user\. Instead, you must turn off **Display organizational structure** and use the drop down list and text box to enter the ID or ARN\.
       + To specify a principal by ID or ARN, including principals that are outside of the organization, then for each principal, select the principal type\. Next, enter the ID \(for an AWS account, organization, or OU\) or ARN \(for an IAM role or user\), and then choose **Add**\. The available principal types and ID and ARN formats are as follows:
         + **AWS account** – To add an AWS account, enter the 12\-digit account ID\. For example:
 
@@ -180,7 +184,7 @@ To obtain the unique ARN for an IAM role, [view the list of roles in the IAM con
           arn:aws:iam::123456789012:user/bob
           ```
 **Note**  
-To obtain the unique ARN for an IAM user, [view the list of users in the IAM console](https://console.aws.amazon.com/iamv2/home?#/users), use the [get\-user](https://docs.aws.amazon.com/cli/latest/reference/iam/get-user.html) AWS CLI command or the [GetUser](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetUser.html) API action\.
+To obtain the unique ARN for an IAM user, [view the list of users in the IAM console](https://console.aws.amazon.com/iamv2/home?#/users), use the [https://docs.aws.amazon.com/cli/latest/reference/iam/get-user.html](https://docs.aws.amazon.com/cli/latest/reference/iam/get-user.html) AWS CLI command, or the [https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetUser.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetUser.html) API action\.
 
    1. For **Selected principals**, verify that the principals you specified appear in the list\.
 
@@ -192,13 +196,16 @@ To obtain the unique ARN for an IAM user, [view the list of users in the IAM con
 
    It can take a few minutes for the resource and principal associations to complete\. Allow this process to complete before you try to use the resource share\.
 
-1. You can add and remove resources and principals or apply custom tags to your resource share at any time\. You can change permission for resource types that are included in your resource share, for those types that support more than the default permission\. You can delete your resource share when you no longer want to share the resources\. For more information, see [Share AWS resources owned by you](working-with-sharing.md)\.
+1. You can add and remove resources and principals or apply custom tags to your resource share at any time\. You can change the managed permission for resource types that are included in your resource share, for those types that support more than the default managed permission\. You can delete your resource share when you no longer want to share the resources\. For more information, see [Share AWS resources owned by you](working-with-sharing.md)\.
 
 ------
 #### [ AWS CLI ]
 
 **To create a resource share**  
-Use the [create\-resource\-share](https://docs.aws.amazon.com/cli/latest/reference/ram/create-resource-share.html) command\. The following command creates a resource share that is shared with all of the AWS accounts in the organization\. The share contains an AWS License Manager license configuration, and it grants the default permissions for that resource type\.
+Use the [https://docs.aws.amazon.com/cli/latest/reference/ram/create-resource-share.html](https://docs.aws.amazon.com/cli/latest/reference/ram/create-resource-share.html) command\. The following command creates a resource share that is shared with all of the AWS accounts in the organization\. The share contains an AWS License Manager license configuration, and it grants the default managed permissions for that resource type\.
+
+**Note**  
+If you want to use a customer managed permission with a resource type in this resource share, you can either use an existing customer managed permission or create a new customer managed permission\. Make note of the ARN for the customer managed permission, and then create the resource share\. For more information, see [Create a customer managed permission](create-customer-managed-permissions.md#create_cmp)\.
 
 ```
 $ aws ram create-resource-share \

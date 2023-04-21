@@ -2,6 +2,9 @@
 
 You can delete a resource share at any time\. When you delete a resource share, all principals that were associated with the resource share lose access to the shared resources\. Deleting a resource share doesn't delete the shared resources\.
 
+**To delete an AWS resource**  
+If you need to delete an AWS resource that you included in a resource share, AWS recommends that you first ensure that you either remove the resource from any resource share that includes it, or delete the resource share\.
+
 The deleted resource share remains visible in the AWS RAM console for a short period after deletion, but its status changes to `Deleted`\.
 
 ------
@@ -18,6 +21,8 @@ The deleted resource share remains visible in the AWS RAM console for a short pe
  Be sure to select the correct resource share\. You can't recover a resource share after you delete it\.
 
 1. Choose **Delete**, then in the confirmation message, choose **Delete**\.
+
+1. The deleted resource share disappears after two hours\. Until then, it remains visible in the console with a deleted status\.
 
 ------
 #### [ AWS CLI ]
@@ -46,7 +51,7 @@ $  aws ram get-resource-shares \
     ]
 }
 $ aws ram delete-resource-share \
-    -region us-east-1 \
+    --region us-east-1 \
     --resource-share-arn arn:aws:ram:us-east-1:123456789012:resource-share/2ebe77d7-4156-4a93-87a4-228568d04425
 {
     "returnValue": true
